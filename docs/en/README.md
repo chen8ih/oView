@@ -2,9 +2,9 @@
 nav: en
 ---
 
-## 简介
+## Introduction
 
-oView是基于Vue的PC端UI组件库，主要为统一部门前端UI风格，加速项目进度开发进度
+oView is based on the Vue PC-side UI component library, mainly for unified department front-end UI style, speed up the progress of project development progress
 
-<a href="#">文档地址</a>
-<a href="#">Github</a>
+<a href="https://chen8ih.github.io/oView/#/">Document Address</a>
+<a href="https://github.com/chen8ih/oView">Github</a>
