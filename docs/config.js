@@ -9,7 +9,17 @@ docute.init({
   languages: ['/', 'en'],
   nav: {
     default: [
-      {title: 'Home', path: '/'},
+      {title: '首页', path: '/'},
+      {
+        title: '组件',
+        type: 'dropdown',
+        items: [
+          {
+            title: '全部组件',
+            path: '/zh-CN/components'
+          }
+        ]
+      },
       {
         title: 'Languages',
         type: 'dropdown',
@@ -18,6 +28,16 @@ docute.init({
     ],
     en: [
       {title: 'Home', path: '/en/'},
+      {
+        title: 'Components',
+        type: 'dropdown',
+        items: [
+          {
+            title: 'All Components',
+            path: '/en/components'
+          }
+        ]
+      },
       {
         title: 'Languages',
         type: 'dropdown',
