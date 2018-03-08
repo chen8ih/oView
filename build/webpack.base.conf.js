@@ -19,10 +19,10 @@ const createLintingRule = () => ({
   }
 })
 
-module.exports = {
+const webpackConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: './examples/main.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -35,6 +35,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      'oview': '../../src/index',
       '@': resolve('src'),
     }
   },
@@ -49,7 +50,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('examples'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -90,3 +91,7 @@ module.exports = {
     child_process: 'empty'
   }
 }
+
+const vuxLoader = require('vux-loader')
+const vuxLoaderConfig = require('./vux-loader.conf')
+module.exports = vuxLoader.merge(webpackConfig, vuxLoaderConfig)
