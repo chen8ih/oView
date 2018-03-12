@@ -21,6 +21,28 @@ docute.init({
         ]
       },
       {
+        title: '资料',
+        type: 'dropdown',
+        items: [
+          {
+            title: 'nodejs',
+            path: '/zh-CN/node'
+          },
+          {
+            title: 'vue',
+            path: '/zh-CN/vue'
+          },
+          {
+            title: 'gulp',
+            path: '/zh-CN/gulp'
+          },
+          {
+            title: 'yapi',
+            path: '/zh-CN/yapi'
+          }
+        ]
+      },
+      {
         title: 'Languages',
         type: 'dropdown',
         items: langs
