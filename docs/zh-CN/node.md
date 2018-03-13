@@ -66,11 +66,7 @@
 
     node -v
 
-  ![node](../images/node_8.png)
-
     npm -v
-
-  ![npm](../images/node_9.png)
 
   如果显示出版本号，则表示已安装完毕，版本号如果与上图显示不一致不用在意，可能是安装的版本不同所致
 

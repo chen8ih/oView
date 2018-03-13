@@ -25,7 +25,7 @@ docute.init({
         type: 'dropdown',
         items: [
           {
-            title: 'nodejs',
+            title: 'node',
             path: '/zh-CN/node'
           },
           {
