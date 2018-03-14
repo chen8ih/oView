@@ -46,7 +46,7 @@ Gulp是运行在node环境中的，所以需要优先安装node，安装教程�
 
 #### 安装依赖
 
-npm install --save-dev gulp-less gulp-concat gulp-uglify gulp-rename
+        npm install --save-dev gulp-less gulp-concat gulp-uglify gulp-rename
 
 * gulp-less 编译less文件所需插件
 * gulp-concat 合并js文件插件
