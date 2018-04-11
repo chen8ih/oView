@@ -1,0 +1,23 @@
+icon: '&#xe619;'
+tags:
+  en:
+    - icon
+  zh-CN:
+    - 图标
+props:
+  type:
+    type: String
+    default: ''
+    en: icon name, optional values are shown in demo
+    zh-CN: 图标名字，可选值见demo
+  is-msg:
+    type: Boolean
+    default: false
+    en: if used as msg icon. Icon's font-size will be bigger(93px) than default
+    zh-CN: 是否用作消息提示页面图标，图标尺寸会使用93px
+changes:
+  v0.0.1:
+    en:
+      - add icon component
+    zh-CN:
+      - 增加Icon控件

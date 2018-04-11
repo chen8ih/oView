@@ -8,7 +8,7 @@ export default new Router({
     {
       path: '/test',
       name: 'test',
-      component: r => require.ensure([], () => r(require('../docs/test.md')))
+      component: r => require.ensure([], () => r(require('../docs/oicon.md')))
     }
   ]
 })
