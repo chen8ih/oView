@@ -5,9 +5,10 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/o-input',
-    //   component: (resolve) => require(['../demos/OInput.vue'], resolve)
-    // }
+    {
+      path: '/test',
+      name: 'test',
+      component: r => require.ensure([], () => r(require('../docs/test.md')))
+    }
   ]
 })
