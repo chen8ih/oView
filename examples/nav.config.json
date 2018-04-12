@@ -33,8 +33,13 @@
       "items": [
         {
           "desc": "Icon 图标",
-          "name": "icon",
-          "path": "/icon"
+          "name": "oicon",
+          "path": "/oicon"
+        },
+        {
+          "desc": "OButton",
+          "name": "obutton",
+          "path": "/obutton"
         }
       ]
     }

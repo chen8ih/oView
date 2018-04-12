@@ -1,0 +1,6 @@
+changes:
+  v0.0.1:
+    en:
+      - add input component
+    zh-CN:
+      - 增加Input控件

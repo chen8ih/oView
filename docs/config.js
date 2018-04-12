@@ -43,6 +43,16 @@ docute.init({
         ]
       },
       {
+        title: 'Vue教程',
+        type: 'dropdown',
+        items: [
+          {
+            title: '环境搭建与发布',
+            path: '/zh-CN/vue/class_1'
+          }
+        ]
+      },
+      {
         title: 'Languages',
         type: 'dropdown',
         items: langs
