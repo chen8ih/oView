@@ -165,8 +165,8 @@ function buildChanges (infos, lang = 'zh-CN') {
     }
   })
 
-  let str = `---
-title: ${APPNAME}发布日志
+  let str = `# ${APPNAME}发布日志
+
 ---\n`
 
   rs = sortObj(rs, {
@@ -188,11 +188,11 @@ title: ${APPNAME}发布日志
 
   for (let i in rs) {
     releases[i] = {}
-    str += `\n### ${parseTag(firstTag, i)}\n`
+    str += `\n## ${parseTag(firstTag, i)}\n`
 
     for (let j in rs[i]) {
       releases[i][j] = []
-      str += `\n#### ${_camelCase(j)}\n`
+      str += `\n### ${_camelCase(j)}\n`
       str += `<ul>`
       rs[i][j] && rs[i][j].forEach(one => {
         str += `${parseChange(getChangeTagHTML(one))}`
@@ -215,8 +215,8 @@ title: ${APPNAME}发布日志
       components: []
     }
 
-    let content = `---
-    title: ${APPNAME} ${_camelCase(i)} 发布日志
+    let content = `# ${APPNAME} ${_camelCase(i)} 发布日志
+
     ---`
 
     for (let j in release) {

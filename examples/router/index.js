@@ -30,8 +30,6 @@ let addComponent = (router) => {
 
 addComponent(routes)
 
-console.log(routes)
-
 export default new Router({
   routes: routes
 })

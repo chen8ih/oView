@@ -64,6 +64,64 @@ export default {
       width: calc(~'100% - 215px');
       padding: 32px 48px 48px;
       box-sizing: border-box;
+
+      // 定制markdown显示页面
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      h3 {
+        font-size: 1.25em
+      }
+
+      h4 {
+        font-size: 1em
+      }
+
+      h5 {
+        font-size: .875em
+      }
+
+      h6 {
+        font-size: .85em;
+        color: #6a737d
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: 600;
+        line-height: 1.25;
+      }
+
+      p {
+        margin: 5px;
+        font-size: 14px;
+      }
+
+      ul {
+        padding-left: 40px;
+        list-style-type: disc;
+
+        li {
+          margin-bottom: 5px;
+          font-size: 14px;
+        }
+      }
+
+      .code_inline {
+        padding: 0;
+        padding-top: .2em;
+        padding-bottom: .2em;
+        margin: 0;
+        font-size: 85%;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px
+      }
     }
   }
 

@@ -1,11 +1,20 @@
 'use strict'
+require("babel-polyfill")
 const path = require('path')
+const os = require('os')
 const utils = require('./utils')
 const config = require('../config')
+const webpack = require('webpack')
+const autoprefixer = require('autoprefixer')
 const vueLoaderConfig = require('./vue-loader.conf')
+
+const HappyPack = require('happypack');
+var happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 
 const MarkdownItContainer = require('markdown-it-container')
 const striptags = require('./strip-tags')
+
+const Scan = require('charactor-scanner')
 
 const vueMarkdown = {
   preprocess: (MarkdownIt, source) => {
@@ -48,6 +57,12 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+let strFontCharactors = Scan({
+  dir: [path.resolve(__dirname, '../examples'), path.resolve(__dirname, '../packages')],
+  sync: true,
+  appendAscii: false
+}).join('')
+
 const createLintingRule = () => ({
   test: /\.(js|vue)$/,
   loader: 'eslint-loader',
@@ -62,7 +77,7 @@ const createLintingRule = () => ({
 const webpackConfig = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './examples/main.js'
+    app: ['babel-polyfill', './examples/main.js']
   },
   output: {
     path: config.build.assetsRoot,
@@ -108,12 +123,17 @@ const webpackConfig = {
         }
       },
       {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-        }
+        test: /\.(woff2?|eot|TTF|otf)(\?.*)?$/,
+        use: [
+          {
+            loader: 'awesome-fontmin-loader',
+            options: {
+              limit: 1000,
+              name: utils.assetsPath('css/fonts/[name].[hash:7].[ext]'),
+              text: strFontCharactors
+            }
+          }
+        ]
       },
       {
         test: /\.md$/,
@@ -122,6 +142,27 @@ const webpackConfig = {
       }
     ]
   },
+  plugins: [
+    new HappyPack({
+      id: 'happybabel',
+      loaders: ['babel-loader'],
+      threadPool: happyThreadPool,
+      verbose: true
+    }),
+    new webpack.DllReferencePlugin({
+      context: path.resolve(__dirname, '..'),
+      manifest: require('./vendor-manifest.json')
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: [
+          autoprefixer({
+            browsers: ['last 2 version']
+          })
+        ]
+      }
+    })
+  ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).
