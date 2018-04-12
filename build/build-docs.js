@@ -10,10 +10,6 @@ const rimraf = require('rimraf')
 const semver = require('semver')
 const sortObj = require('sort-object')
 
-// 创建目录
-mkdirp.sync(path.resolve(__dirname, '../examples/docs/changelog'))
-
-
 let tMaps = {
   '组件列表': 'Components',
   '该组件已经停止维护。': 'This Component is Deprecated. ',
@@ -209,8 +205,8 @@ title: ${APPNAME}发布日志
 
   for (let i in releases) {
     const release = releases[i]
-    let file = getPath(`../examples/docs/changelog/${i}.md`)
-    let htmlFile = getPath(`../examples/docs/changes/${i}.html`)
+    let file = getPath(`../examples/docs/logs.md`)
+    let htmlFile = getPath(`../examples/docs/logs.html`)
 
     let data = {
       lang: lang,

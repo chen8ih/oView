@@ -29,7 +29,7 @@ module.exports = {
     },
     {
       name: 'less-theme',
-      path: 'src/styles/custom.less'
+      path: 'examples/styles/custom.less'
     }
   ]
 }
