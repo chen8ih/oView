@@ -2,7 +2,8 @@
   <div id="app">
     <o-header></o-header>
     <div class="container" v-if="!isIndex">
-      <router-view></router-view>
+      <o-sidebar class="nav"></o-sidebar>
+      <router-view class="view"></router-view>
     </div>
     <router-view class="page" v-else></router-view>
     <o-footer v-if="!isIndex"></o-footer>
@@ -12,12 +13,14 @@
 <script>
 import OHeader from './components/o-header'
 import OFooter from './components/o-footer'
+import OSidebar from './components/o-sidebar'
 
 export default {
   name: 'App',
   components: {
     OHeader,
-    OFooter
+    OFooter,
+    OSidebar
   },
   data () {
     return {

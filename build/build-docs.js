@@ -149,7 +149,7 @@ function parseTag (firstTag, tag) {
   return tag
 }
 
-function buildChanges (infos) {
+function buildChanges (infos, lang = 'zh-CN') {
   let rs = {}
 
   infos.forEach(one => {
@@ -238,7 +238,7 @@ title: ${APPNAME}发布日志
   }
 
   str += '\n'
-  fs.writeFileSync(getPath(`../examples/docs/changelog/changelog.md`), str)
+  fs.writeFileSync(getPath(`../examples/docs/logs.md`), str)
 }
 
 function render (files, tag) {
@@ -419,7 +419,7 @@ nav: ${lang}
       }
       docs += `\n\n\n`
     })
-    fs.writeFileSync(getPath(`../examples/docs/${lang}/components.md`), docs)
+    fs.writeFileSync(getPath(`../examples/docs/components.md`), docs)
   }
 }
 
