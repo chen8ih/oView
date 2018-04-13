@@ -1,13 +1,16 @@
 <template>
-  <button class="o-button" @click="handerClick"></button>
+  <button class="o-button" @click="handerClick">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
-  export default {
-    methods: {
-      handerClick(evt) {
-        this.$emit('click', evt)
-      }
+export default {
+  name: 'OButton',
+  methods: {
+    handerClick (evt) {
+      this.$emit('click', evt)
     }
   }
+}
 </script>

@@ -1,29 +1,38 @@
 /*
- * @Author: oppo.chenhang 
- * @Date: 2018-04-11 15:01:28 
+ * @Author: oppo.chenhang
+ * @Date: 2018-04-11 15:01:28
  * @Last Modified by: oppo.chenhang
- * @Last Modified time: 2018-04-11 16:27:16
+ * @Last Modified time: 2018-04-13 09:50:54
  */
 
+import pkg from '../package.json'
 import OIcon from '../packages/oicon'
+import OButton from '../packages/obutton'
 
 const components = [
-  OIcon
+  OIcon,
+  OButton
 ]
 
-const install = (Vue) => {
+const oview = {
+  ...components
+}
+
+const install = (Vue, opts = {}) => {
   if (install.installed) return
-  components.map(component => Vue.component(component.name, component))
+  Object.keys(oview).forEach(key => {
+    Vue.component(oview[key].name, oview[key])
+  })
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-module.exports = {
-  version: '0.0.1',
+const API = {
+  version: pkg.version,
   install,
-  OIcon
+  ...components
 }
 
-module.exports.default = module.exports
+export default API

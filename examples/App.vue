@@ -72,35 +72,33 @@ export default {
 
       h2 {
         font-size: 1.5em;
+        color: #1f2d3d;
+        margin: 0;
       }
-
       h3 {
-        font-size: 1.25em
+        font-size: 1.25rm;
       }
-
-      h4 {
-        font-size: 1em
-      }
-
-      h5 {
-        font-size: .875em
-      }
-
-      h6 {
-        font-size: .85em;
-        color: #6a737d
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        margin-top: 24px;
-        margin-bottom: 16px;
-        font-weight: 600;
-        line-height: 1.25;
+      h2, h3, h4, h5 {
+        font-weight: normal;
+        color: #1f2f3d;
+        &:hover a {
+          opacity: .4;
+        }
+        a {
+          float: left;
+          margin-left: -20px;
+          opacity: 0;
+          cursor: pointer;
+          &:hover {
+            opacity: .4;
+          }
+        }
       }
 
       p {
-        margin: 5px;
         font-size: 14px;
+        color: #5e6d82;
+        line-height: 1.5em;
       }
 
       ul {
@@ -122,6 +120,10 @@ export default {
         background-color: rgba(27,31,35,.05);
         border-radius: 3px
       }
+    }
+
+    .demo {
+      margin: 20px 0;
     }
   }
 

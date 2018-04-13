@@ -6,7 +6,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-Vue.config.productionTip = false
+import DemoBlock from './components/demo-block'
+import oView from '../src/index'
+
+// Vue.config.productionTip = false
+Vue.config.debug = true
+
+Vue.component('DemoBlock', DemoBlock)
+Vue.use(oView)
 
 /* eslint-disable no-new */
 new Vue({
