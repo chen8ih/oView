@@ -32,14 +32,9 @@
       "path": "/component",
       "items": [
         {
-          "desc": "OIcon",
-          "name": "oicon",
-          "path": "/oicon"
-        },
-        {
-          "desc": "OButton",
-          "name": "obutton",
-          "path": "/obutton"
+          "desc": "Grid",
+          "name": "grid",
+          "path": "/grid"
         }
       ]
     }

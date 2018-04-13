@@ -14,7 +14,7 @@ var happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 const MarkdownItContainer = require('markdown-it-container')
 const striptags = require('./strip-tags')
 
-const Scan = require('charactor-scanner')
+const pkg = require('../package.json')
 
 const vueMarkdown = {
   preprocess: (MarkdownIt, source) => {
@@ -56,12 +56,6 @@ const vueMarkdown = {
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-
-let strFontCharactors = Scan({
-  dir: [path.resolve(__dirname, '../examples'), path.resolve(__dirname, '../packages')],
-  sync: true,
-  appendAscii: false
-}).join('')
 
 const createLintingRule = () => ({
   test: /\.(js|vue)$/,
@@ -123,17 +117,13 @@ const webpackConfig = {
         }
       },
       {
-        test: /\.(woff2?|eot|TTF|otf)(\?.*)?$/,
-        use: [
-          {
-            loader: 'awesome-fontmin-loader',
-            options: {
-              limit: 1000,
-              name: utils.assetsPath('css/fonts/[name].[hash:7].[ext]'),
-              text: strFontCharactors
-            }
-          }
-        ]
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        exclude: /node_modules/,
+        query: {
+          limit: 10000,
+          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+        }
       },
       {
         test: /\.md$/,
@@ -161,7 +151,10 @@ const webpackConfig = {
           })
         ]
       }
-    })
+    }),
+    new webpack.DefinePlugin({
+      'process.env.VERSION': `'${pkg.version}'`
+    }),
   ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue

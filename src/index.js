@@ -2,17 +2,32 @@
  * @Author: oppo.chenhang
  * @Date: 2018-04-11 15:01:28
  * @Last Modified by: oppo.chenhang
- * @Last Modified time: 2018-04-13 10:42:16
+ * @Last Modified time: 2018-04-13 15:05:06
  */
+// 引入kendoUI组件
+import '@progress/kendo-ui'
+import '@progress/kendo-theme-default/dist/all.css'
+import { MaskedTextBox, NumericTextBox, ColorPicker, Slider, RangeSlider, Switch } from '@progress/kendo-inputs-vue-wrapper'
+import { Button } from '@progress/kendo-buttons-vue-wrapper'
+import { Grid } from '@progress/kendo-grid-vue-wrapper'
 
-import pkg from '../package.json'
+// 自定义业务组件
 import OIcon from './components/oicon'
 import OButton from './components/obutton'
 
 const components = [
+  MaskedTextBox,
+  NumericTextBox,
+  ColorPicker,
+  Slider,
+  RangeSlider,
+  Switch,
+  Button,
+  Grid,
   OIcon,
   OButton
 ]
+console.log(components)
 
 const oview = {
   ...components
@@ -30,7 +45,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 const API = {
-  version: pkg.version,
+  version: process.env.VERSION,
   install,
   ...components
 }

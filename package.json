@@ -18,6 +18,12 @@
     "style": "gulp --gulpfile build/build-style.js"
   },
   "dependencies": {
+    "@progress/kendo-buttons-vue-wrapper": "^2018.1.313",
+    "@progress/kendo-dateinputs-vue-wrapper": "^2018.1.313",
+    "@progress/kendo-grid-vue-wrapper": "^2018.1.313",
+    "@progress/kendo-inputs-vue-wrapper": "^2018.1.313",
+    "@progress/kendo-theme-default": "^2.50.0",
+    "@progress/kendo-ui": "^2018.1.411",
     "babel-polyfill": "^6.26.0",
     "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.5",
@@ -29,7 +35,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
-    "awesome-fontmin-loader": "^1.0.4",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -42,7 +47,6 @@
     "babel-preset-stage-2": "^6.22.0",
     "chai": "^4.1.2",
     "chalk": "^2.0.1",
-    "charactor-scanner": "^1.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.0",

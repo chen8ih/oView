@@ -19,7 +19,7 @@
 <template>
   <footer class="page-footer">
     <div class="footer-container">
-      <p>2005 - {{end}} OPPO版权所有</p>
+      <p>2005 - {{end}} 版权所有</p>
     </div>
   </footer>
 </template>

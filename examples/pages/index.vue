@@ -3,7 +3,7 @@
   <div  class="pg-index">
     <div class="index-container">
       <img src="../assets/logo.png">
-      <p>一款轻量级、模块化的前端 UI 组件库</p>
+      <p>基于KendoUI的Vue组件库</p>
     </div>
     <div class="separate-panel">
       <div class="about">
