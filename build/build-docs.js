@@ -56,7 +56,7 @@ function saveMaps (key, value) {
     _list[one[0]] = one[1]
   })
 
-  fs.writeFileSync(getPath('../packages/map.json'), JSON.stringify(_list, null, 2))
+  fs.writeFileSync(getPath('../src/components/map.json'), JSON.stringify(_list, null, 2))
 }
 
 function getVersion(version) {
