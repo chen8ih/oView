@@ -33,6 +33,10 @@ docute.init({
             path: '/zh-CN/vue'
           },
           {
+            title: 'axios',
+            path: '/zh-CN/axios'
+          },
+          {
             title: 'gulp',
             path: '/zh-CN/gulp'
           },

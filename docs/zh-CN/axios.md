@@ -301,9 +301,68 @@ axios.interceptors.response.use（function（response）{
 
 也可以对单个请求示例增加拦截器
 
-    let
+    let instance = axios.create();
+    instance.interceptors.request.use(function () {/*...*/});
 
 ### 错误处理
 
+    axios.get（'/ user / 12345'）
+      .catch（function（error）{
+        if（error.response）{
+          //请求已发出，但服务器使用状态代码进行响应
+          //落在2xx的范围之外
+          console.log（error.response.data）;
+          console.log（error.response.status）;
+          console.log（error.response.headers）;
+        } else {
+          //在设置触发错误的请求时发生了错误
+          console.log（'Error'，error.message）;
+        }}
+        console.log（error.config）;
+      }）
+
+  可以使用validateStatus配置定义HTTP状态码错误范围
+
+      axios.get（'/ user / 12345'，{
+        validateStatus：function（status）{
+          return status < 500; //仅当状态代码大于或等于500时拒绝
+        }}
+      }）
+
 ### 消除
 
+  可以使用取消令牌来取消请求
+
+  > axios cancel token API 基于可取消的Promise提议
+
+  可以使用CancelToken.source工厂创建一个取消令牌，如下所示
+
+      let CancelToken = axios.CancelToken;
+      let source = CancelToken.source（）;
+      axios.get('/user/12345', {
+        cancelToken: source.token
+      }).catch(function(thrown) {
+        if (axios.isCancel(thrown)) {
+          console.log('Request canceled', thrown.message);
+        } else {
+          // 处理错误
+        }
+      });
+      //取消请求（消息参数是可选的）
+      source.cancel（'操作被用户取消。'）;
+
+
+  也可以通过将执行器函数传递给CancelToken构造函数来创建取消令牌：
+
+      let CancelToken = axios.CancelToken;
+      let cancel;
+      
+      axios.get（'/ user / 12345'，{
+        cancelToken：new CancelToken（function executor（c）{
+          //一个执行器函数接收一个取消函数作为参数
+          cancel = c;
+        }）
+      }）;
+      
+      // 取消请求
+      clear();
