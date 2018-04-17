@@ -9,8 +9,7 @@ import router from './router'
 import DemoBlock from './components/demo-block'
 import oView from '../src/index'
 
-// Vue.config.productionTip = false
-Vue.config.debug = true
+Vue.config.productionTip = false
 
 Vue.component('DemoBlock', DemoBlock)
 Vue.use(oView)

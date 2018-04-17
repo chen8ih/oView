@@ -32,6 +32,11 @@
       "path": "/component",
       "items": [
         {
+          "desc": "ColorPicker",
+          "name": "colorpicker",
+          "path": "/colorpicker"
+        },
+        {
           "desc": "Grid",
           "name": "grid",
           "path": "/grid"
