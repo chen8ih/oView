@@ -73,3 +73,36 @@
 ### Node和Npm升级
 
 
+1. 查看本机node.js版本
+
+      node -v
+
+2. 清楚node.js的缓存
+
+      sudo npm cache clean -f
+
+3. 安装n工具，这个工具专门用来管理node.js版本的
+
+      sudo npm install -g n
+
+4. 安装最新版本的node.js
+
+      sudo n latest
+
+   或者选择安装使用某一个版本的node.js
+
+      sudo n 8.9.0
+
+   删除某个版本的node.js
+
+      sudo n rm 9.8.0
+
+5. 再次查看本机的node.js版本，此时应该是你更新后的版本号
+
+6. 更新npm到最新版
+
+      sudo npm install npm@latest -g
+
+7. 查看npm 版本
+
+      npm -v
