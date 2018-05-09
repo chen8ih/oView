@@ -32,14 +32,29 @@
       "path": "/component",
       "items": [
         {
-          "desc": "ColorPicker",
-          "name": "colorpicker",
-          "path": "/colorpicker"
-        },
-        {
-          "desc": "Grid",
+          "desc": "栅格 Grid",
           "name": "grid",
           "path": "/grid"
+        },
+        {
+          "desc": "布局 Layout",
+          "name": "layout",
+          "path": "/layout"
+        },
+        {
+          "desc": "色彩 Color",
+          "name": "color",
+          "path": "/color"
+        },
+        {
+          "desc": "图标 Icon",
+          "name": "icon",
+          "path": "/icon"
+        },
+        {
+          "desc": "按钮 Button",
+          "name": "button",
+          "path": "/button" 
         }
       ]
     }

@@ -9,6 +9,8 @@ import router from './router'
 import DemoBlock from './components/demo-block'
 import oView from '../src/index'
 
+import './styles/index.less'
+
 Vue.config.productionTip = false
 
 Vue.component('DemoBlock', DemoBlock)

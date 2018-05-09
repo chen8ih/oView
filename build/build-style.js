@@ -1,16 +1,16 @@
 /*
  * @Author: chenhang 
  * @Date: 2018-04-12 08:25:08 
- * @Last Modified by: chenhang
- * @Last Modified time: 2018-04-13 15:56:41
+ * @Last Modified by: oppo.chenhang
+ * @Last Modified time: 2018-05-08 08:22:33
  * @Desc Gulp脚本，完成相应任务
  */
 
-gulp = require('gulp');
-var cleanCSS = require('gulp-clean-css');
-var less = require('gulp-less');
-var rename = require('gulp-rename');
-var autoprefixer = require('gulp-autoprefixer');
+const gulp = require('gulp')
+const cleanCSS = require('gulp-clean-css')
+const less = require('gulp-less')
+const rename = require('gulp-rename')
+const autoprefixer = require('gulp-autoprefixer')
 
 //编译less
 gulp.task('css', function(){

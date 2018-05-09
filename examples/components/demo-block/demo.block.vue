@@ -25,6 +25,10 @@
     font-size: 12px;
     padding: 10px 0;
     background-color: #FAFBFC;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
   .docs-demo__code,
   .highlight-wrapper,
