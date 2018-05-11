@@ -2,6 +2,8 @@
   <kendo-button :type="htmlType"
                 :class="classes"
                 :disabled="disabled"
+                :icon="icon"
+                :img-url="imgurl"
                 @click="handerClick">
     <span v-if="showSlot" ref="slot"><slot></slot></span>
   </kendo-button>
@@ -15,9 +17,19 @@ const prefixCls = 'ovu-btn'
 export default {
   name: 'OButton',
   props: {
-    types: {
+    type: {
       validator (value) {
         return oneOf(value, ['primary', 'ghost', 'dashed', 'text', 'info', 'success', 'warning', 'error', 'default'])
+      }
+    },
+    shape: {
+      validator (value) {
+        return oneOf(value, ['circle', 'circle-outline'])
+      }
+    },
+    size: {
+      validator (value) {
+        return oneOf(value, ['large', 'small', 'default'])
       }
     },
     htmlType: {
@@ -26,7 +38,9 @@ export default {
         return oneOf(value, ['button', 'submit', 'reset'])
       }
     },
-    disabled: Boolean
+    disabled: Boolean,
+    icon: String,
+    imgurl: String
   },
   data () {
     return {
@@ -38,7 +52,10 @@ export default {
       return [
         `${prefixCls}`,
         {
-          [`${prefixCls}-${this.type}`]: !!this.type
+          [`${prefixCls}-${this.type}`]: !!this.type,
+          [`${prefixCls}-${this.shape}`]: !!this.shape,
+          [`${prefixCls}-${this.size}`]: !!this.size,
+          [`${prefixCls}-icon-only`]: !this.showSlot && (!!this.icon)
         }
       ]
     }
@@ -53,3 +70,6 @@ export default {
   }
 }
 </script>
+<style lang="less">
+@import '../../theme-defaults/widget/button.less';
+</style>

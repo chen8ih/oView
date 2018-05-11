@@ -1,0 +1,114 @@
+.button-size(@padding; @font-size; @border-radius) {
+  padding: @padding;
+  font-size: @font-size;
+  border-radius: @border-radius;
+}
+
+.button-color(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  > a:only-child {
+    color: currentColor;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: transparent;
+    }
+  }
+}
+
+.button-variant(@color; @background; @border) {
+  .button-color(@color; @background; @border);
+
+  &:hover {
+    .button-color(tint(@color, 20%); tint(@background, 20%); tint(@border, 20%));
+  }
+
+  &:active,
+  &.active {
+    .button-color(tint(@color, 5%); tint(@background, 5%); tint(@border, 5%));
+  }
+}
+
+// Primary
+.btn-primary {
+  .button-variant(@--btn-primary-color; @--btn-primary-bg; @--color-primary);
+
+  &:hover,
+  &:active,
+  &.active {
+    color: @--btn-primary-color;
+  }
+
+  .active-btn-color(@--color-primary);
+}
+
+// Ghost
+.btn-ghost {
+  .button-variant(@--btn-ghost-color; @--btn-ghost-bg; @--btn-ghost-border);
+
+ &:hover {
+   .button-color(tint(@--color-primary, 20%); @--btn-ghost-bg; tint(@--color-primary, 20%));
+ }
+
+ &:active,
+ &.active {
+   .button-color(shade(@--color-primary, 5%); @--btn-ghost-bg; shade(@--color-primary, 5%));
+ }
+
+  .active-btn-color(@--color-primary);
+}
+
+
+.btn-color (@color) {
+  .button-variant(@--btn-primary-color; @color; @color);
+
+  &:hover,
+  &:active,
+  &.active {
+    color: @--btn-primary-color;
+  }
+
+  .active-btn-color(@color);
+}
+
+// Circle for Icon
+.btn-circle(@btnClassName: ivu-btn) {
+  border-radius: @--btn-circle-size;
+
+  &.@{btnClassName}-large {
+    border-radius: @--btn-circle-size-large;
+  }
+
+  &.@{btnClassName}-small {
+    border-radius: @--btn-circle-size-small
+  }
+
+  &.@{btnClassName}-icon-only{
+    .square(@--btn-circle-size);
+    .button-size(0; @--font-size-base + 2; 50%);
+
+    &.@{btnClassName}-large{
+        .square(@--btn-circle-size-large);
+        .button-size(0; @--btn-font-size-large + 2; 50%);
+    }
+
+    &.@{btnClassName}-small{
+        .square(@--btn-circle-size-small);
+        .button-size(0; @--font-size-base; 50%);
+    }
+  }
+}
+
+.active-btn-color(@color) {
+  &:focus {
+    box-shadow: 0 0 0 2px fade(@color, 20%);
+  }
+}

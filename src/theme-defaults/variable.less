@@ -1,11 +1,18 @@
 @css-prefix: ovu-;
 @css-prefix-iconfont: ovu-icon;
+
+/* Animation
+------------------------ */
+@--animation-time: .3s;
+@--transition-time: .2s;
+@--ease-in-out: ease-in-out;
+
 /* Colors
 ------------------------ */
-@--color-white: #fff !important;
-@--color-blank: #000 !important;
+@--color-white: #fff;
+@--color-blank: #000;
 
-@--color-primary: #19cbab;
+@--color-primary: #009b72;
 @--color-primary-light-1: mix(@--color-white, @--color-primary, 10%);
 @--color-primary-light-2: mix(@--color-white, @--color-primary, 20%);
 @--color-primary-light-3: mix(@--color-white, @--color-primary, 30%);
@@ -16,7 +23,7 @@
 @--color-primary-light-8: mix(@--color-white, @--color-primary, 80%);
 @--color-primary-light-9: mix(@--color-white, @--color-primary, 90%);
 
-@--color-success: #009b72;
+@--color-success: #19cbab;
 @--color-warning: #e6a23c;
 @--color-danger: #f56c6c;
 @--color-info: #909399;
@@ -42,15 +49,61 @@
 /* Box-shadow
 ------------------------ */
 
+/* Fill
+------------------------ */
+@--fill-base: @--color-white !important;
 
 /* Font
 ------------------------ */
-@--font-size-base: 14px;
+@--font-size-base: 13px;
+@--font-size-small: 12px;
+@--font-size-large: 18px;
+@--font-color-disabled-base: #bbb;
+@--font-weight-primary: 500;
+@--font-line-height-primary: 24px;
+@--cursor-disabled: not-allowed;
+
 
 /* Size
 ------------------------ */
 @--size-base: 14px;
 
+
+/* Button
+------------------------ */
+@--btn-font-size: @--font-size-base;
+@--btn-font-weight: @--font-weight-primary;
+@--btn-border-radius: @--border-radius-base;
+@--btn-line-height-base: 1;
+@--btn-padding-base: 6px 15px;
+
+@--btn-font-size-large: @--font-size-base + 1;
+@--btn-padding-large: 6px 15px 7px 15px;
+@--btn-font-size-small: @--font-size-small;
+@--btn-padding-small: 2px 7px;
+@--btn-border-radius-small: 3px;
+
+@--btn-hover-tint-percent: 20%;
+@--btn-active-shade-percent: 10%;
+
+@--btn-default-color: #606266;
+@--btn-default-bg: #fff;
+@--btn-default-border: @--border-color-base;
+
+@--btn-primary-color: #fff;
+@--btn-primary-bg: @--color-primary;
+
+@--btn-ghost-color: @--color-text-primary;
+@--btn-ghost-bg: transparent;
+@--btn-ghost-border: @--border-color-base;
+
+@--btn-disable-color: #bbbec4;
+@--btn-disable-bg: #f7f7f7;
+@--btn-disable-border: #dddee1;
+
+@--btn-circle-size: 32px;
+@--btn-circle-size-large: 36px;
+@--btn-circle-size-small: 24px;
 
 /* Layout and Grid
 ------------------------ */

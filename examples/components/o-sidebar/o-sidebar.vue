@@ -45,7 +45,7 @@
         font-size: 14px;
       }
       .active{
-        color: #3FAAF5;
+        color: #19cbab;
       }
     }
   }
