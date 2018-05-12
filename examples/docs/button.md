@@ -5,7 +5,7 @@
     }
   }
 </style>
-# Button 按钮
+# 按钮 Button
 
 ---
 
@@ -141,6 +141,10 @@
     <o-button type="success" icon="search">Search</o-button>
     <o-button type="success" shape="circle" icon="search">Search</o-button>
   </o-row>
+  <p>使用图片小图标</p>
+  <o-row>
+    <o-button imgurl="http://demos.telerik.com/kendo-ui/content/web/16x16/Chart.png">Chart</o-button>
+  </o-row>
 </div>
 
 :::demo
@@ -148,6 +152,10 @@
 <o-row>
   <o-button type="success" icon="search">Search</o-button>
   <o-button type="success" shape="circle" icon="search">Search</o-button>
+</o-row>
+<p>使用图片小图标</p>
+<o-row>
+  <o-button imgurl="http://demos.telerik.com/kendo-ui/content/web/16x16/Chart.png">Chart</o-button>
 </o-row>
 ```
 :::
@@ -162,99 +170,3 @@
 | icon | 图标 | String | - | - |
 | disabled | 是否禁用状态 | Boolean | - | false |
 | image-url | 图片图标地址 | String | - | - |
-
-## KendoUI Button基础用法
-
-基础的按钮用法
-
-<div class="demo-block">
-  <o-row>
-    <kendo-button>默认按钮</kendo-button>
-    <kendo-button class="k-primary">默认按钮</kendo-button>
-    <kendo-button class="k-bare">默认按钮</kendo-button>
-    <kendo-button class="k-flat">默认按钮</kendo-button>
-    <kendo-button class="k-outline">默认按钮</kendo-button>
-    <kendo-button class="k-primary k-bare">默认按钮</kendo-button>
-  </o-row>
-</div>
-
-:::demo
-```html
-<o-row>
-  <kendo-button>默认按钮</kendo-button>
-  <kendo-button class="k-primary">默认按钮</kendo-button>
-  <kendo-button class="k-bare">默认按钮</kendo-button>
-  <kendo-button class="k-flat">默认按钮</kendo-button>
-  <kendo-button class="k-outline">默认按钮</kendo-button>
-  <kendo-button class="k-primary k-bare">默认按钮</kendo-button>
-</o-row>
-```
-:::
-
-
-
-## KendoUI Button 禁用状态
-
-按钮不可用状态
-
-<div class="demo-block">
-  <o-row>
-    <kendo-button :disabled="true">默认按钮</kendo-button>
-    <kendo-button class="k-primary" :disabled="true">默认按钮</kendo-button>
-    <kendo-button class="k-bare" :disabled="true">默认按钮</kendo-button>
-    <kendo-button class="k-primary k-bare" :disabled="true">默认按钮</kendo-button>
-  </o-row>
-</div>
-
-:::demo
-```html
-<o-row>
-  <kendo-button :disabled="true">默认按钮</kendo-button>
-  <kendo-button class="k-primary" :disabled="true">默认按钮</kendo-button>
-  <kendo-button class="k-bare" :disabled="true">默认按钮</kendo-button>
-  <kendo-button class="k-primary k-bare" :disabled="true">默认按钮</kendo-button>
-</o-row>
-```
-:::
-
-## KendoUI Button 带图标按钮
-
-带图标的按钮
-
-<div class="demo-block">
-  <o-row>
-    <kendo-button icon="folder">文件夹</kendo-button>
-    <kendo-button icon="pencil" class="k-primary">编辑</kendo-button>
-    <kendo-button icon="folder" class="k-bare">文件夹</kendo-button>
-    <kendo-button icon="pencil" class="k-primary k-bare">编辑</kendo-button>
-  </o-row>
-</div>
-
-:::demo
-```html
-<o-row>
-  <kendo-button icon="folder">文件夹</kendo-button>
-  <kendo-button icon="pencil" class="k-primary">编辑</kendo-button>
-  <kendo-button icon="folder" class="k-bare">文件夹</kendo-button>
-  <kendo-button icon="pencil" class="k-primary k-bare">编辑</kendo-button>
-</o-row>
-```
-:::
-
-使用图片作为图标
-
-<div class="demo-block">
-  <o-row>
-    <kendo-button image-url="http://demos.telerik.com/kendo-ui/content/web/16x16/Chart.png">Chart</kendo-button>
-  </o-row>
-</div>
-
-:::demo
-```html
-<o-row>
-  <kendo-button image-url="http://demos.telerik.com/kendo-ui/content/web/16x16/Chart.png">Chart</kendo-button>
-</o-row>
-```
-:::
-
-

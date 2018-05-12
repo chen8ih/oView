@@ -16,6 +16,11 @@
       "desc": "快速开始"
     },
     {
+      "name": "i18n",
+      "path": "/i18n",
+      "desc": "多语言"
+    },
+    {
       "name": "index",
       "path": "/",
       "type": "pages"
@@ -55,6 +60,50 @@
           "desc": "按钮 Button",
           "name": "button",
           "path": "/button" 
+        }
+      ]
+    },
+    {
+      "desc": "表单组件",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "输入框 Input",
+          "name": "input",
+          "path": "/input"
+        }
+      ]
+    },
+    {
+      "desc": "视图组件",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "模态框 Modal",
+          "name": "modal",
+          "path": "/modal"
+        }
+      ]
+    },
+    {
+      "desc": "控制组件",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "菜单 Menu",
+          "name": "menu",
+          "path": "/menu"
+        }
+      ]
+    },
+    {
+      "desc": "数据可视化",
+      "path": "/component",
+      "items": [
+        {
+          "desc": "线图 Line",
+          "name": "line",
+          "path": "/line"
         }
       ]
     }

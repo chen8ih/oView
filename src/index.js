@@ -2,12 +2,14 @@
  * @Author: chenhang
  * @Date: 2018-04-11 15:01:28
  * @Last Modified by: oppo.chenhang
- * @Last Modified time: 2018-05-11 09:16:15
+ * @Last Modified time: 2018-05-11 17:17:53
  */
 // 引入kendoUI组件
-import '@progress/kendo-ui'
+import Vue from 'vue'
+import '@progress/kendo-ui/js/kendo.button.js'
+import '@progress/kendo-ui/js/kendo.buttongroup.js'
 import '@progress/kendo-theme-default/dist/all.css'
-import { Button } from '@progress/kendo-buttons-vue-wrapper'
+import { ButtonsInstaller } from '@progress/kendo-buttons-vue-wrapper'
 // import { Grid } from '@progress/kendo-grid-vue-wrapper'
 
 // 布局组件
@@ -18,19 +20,26 @@ import Col from './components/col'
 import OIcon from './components/icon'
 import OButton from './components/button'
 
+const kendoWidgets = {
+  ButtonsInstaller
+}
+const installKendoWidget = (Vue, opt = {}) => {
+  Object.keys(kendoWidgets).forEach(key => {
+    Vue.use(kendoWidgets[key])
+  })
+}
+installKendoWidget(Vue)
+
 const components = [
   Row,
   Col,
   OIcon,
-  Button,
   OButton
 ]
 
 const oview = {
   ...components
 }
-
-console.log(oview)
 
 const install = (Vue, opts = {}) => {
   if (install.installed) return

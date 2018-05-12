@@ -3,7 +3,7 @@
                 :class="classes"
                 :disabled="disabled"
                 :icon="icon"
-                :img-url="imgurl"
+                :image-url="imgurl"
                 @click="handerClick">
     <span v-if="showSlot" ref="slot"><slot></slot></span>
   </kendo-button>
