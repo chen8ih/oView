@@ -1,21 +1,24 @@
 <template>
-  <kendo-button :type="htmlType"
-                :class="classes"
-                :disabled="disabled"
-                :icon="icon"
-                :image-url="imgurl"
-                @click="handerClick">
-    <span v-if="showSlot" ref="slot"><slot></slot></span>
-  </kendo-button>
+    <button
+        :type="htmlType"
+        :class="classes"
+        :disabled="disabled"
+        @click="handleClick">
+        <okendo-icon class="ovu-load-loop" type="load-c" v-if="loading"></okendo-icon>
+        <okendo-icon :type="icon" v-if="icon && !loading"></okendo-icon>
+        <span v-if="showSlot" ref="slot"><slot></slot></span>
+    </button>
 </template>
 
 <script>
+import OkendoIcon from '../icon'
 import { oneOf } from '../../utils/assist'
 
 const prefixCls = 'ovu-btn'
 
 export default {
   name: 'OButton',
+  components: { OkendoIcon },
   props: {
     type: {
       validator (value) {

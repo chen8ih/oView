@@ -1,5 +1,5 @@
-@css-prefix: ovu-;
-@css-prefix-iconfont: ovu-icon;
+@css-prefix: okendo-;
+@css-prefix-iconfont: okendo-icon;
 
 /* Animation
 ------------------------ */
@@ -7,12 +7,17 @@
 @--transition-time: .2s;
 @--ease-in-out: ease-in-out;
 
+/* Transition
+------------------------ */
+@--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1);
+@--transition-color-base: color .2s cubic-bezier(.645,.045,.355,1);
+
 /* Colors
 ------------------------ */
 @--color-white: #fff;
 @--color-blank: #000;
 
-@--color-primary: #009b72;
+@--color-primary: #05b570;
 @--color-primary-light-1: mix(@--color-white, @--color-primary, 10%);
 @--color-primary-light-2: mix(@--color-white, @--color-primary, 20%);
 @--color-primary-light-3: mix(@--color-white, @--color-primary, 30%);
@@ -38,20 +43,30 @@
 @--link-color: @--color-primary-light-2;
 @--link-color-hover: @--color-primary;
 
+/* Background
+------------------------ */
+@--background-color-base: #f5f7fa;
+
 /* Border
 ------------------------ */
 @--border-width-base: 1px;
 @--border-style-base: solid;
 @--border-color-base: #dcdfe6;
+@--border-color-light: #e4e7ed;
+@--border-color-lighter: #ebeef5;
+@--border-color-extra-light: #f2f6fc;
 @--border-base: @--border-width-base @--border-style-base @--border-color-base;
+@--border-color-hover: @--color-text-placeholder;
 @--border-radius-base: 4px;
+@--border-radius-small: 2px;
+@--border-radius-circle: 100%;
 
 /* Box-shadow
 ------------------------ */
 
 /* Fill
 ------------------------ */
-@--fill-base: @--color-white !important;
+@--fill-base: @--color-white;
 
 /* Font
 ------------------------ */
@@ -68,6 +83,11 @@
 ------------------------ */
 @--size-base: 14px;
 
+/* Disabled
+------------------------ */
+@--disabled-fill-base: @--background-color-base;
+@--disabled-color-base: @--color-text-placeholder;
+@--disabled-border-base: @--border-color-light;
 
 /* Button
 ------------------------ */
@@ -104,6 +124,92 @@
 @--btn-circle-size: 32px;
 @--btn-circle-size-large: 36px;
 @--btn-circle-size-small: 24px;
+
+/* Input
+------------------------ */
+@--input-font-size: @--font-size-base;
+@--input-color: @--color-text-regular;
+@--input-width: 140px;
+@--input-height: 40px;
+@--input-border: @--border-base;
+@--input-border-color: @--border-color-base;
+@--input-border-radius: @--border-radius-base;
+@--input-icon-color: @--color-text-secondary;
+@--input-placeholder-color: @--color-text-placeholder;
+@--input-fill: @--color-white;
+
+@--input-max-width: 314px;
+
+@--input-hover-border-color: @--border-color-hover;
+@--input-clear-hover-color: @--color-primary;
+
+@--input-focus-border-color: @--color-primary;
+@--input-focus-fill: @--color-white;
+
+@--input-disabled-fill: @--disabled-fill-base;
+@--input-disabled-border: @--disabled-border-base;
+@--input-disabled-color: @--disabled-color-base;
+@--input-disabled-placeholder: @--color-text-placeholder;
+
+@--input-medium-font-size: 14px;
+@--input-medium-height: 36px;
+
+@--input-small-font-size: 13px;
+@--input-small-height: 32px;
+
+@--input-mini-font-size: 12px;
+@--input-mini-height: 28px;
+
+/* Radio
+------------------------ */
+@--radio-color: @--color-text-regular;
+@--radio-font-size: 14px;
+@--radio-font-weight: @--font-weight-primary;
+@--radio-input-height: 14px;
+@--radio-input-width: 14px;
+@--radio-input-border-radius: @--border-radius-circle;
+@--radio-input-fill: @--color-white;
+@--radio-input-border: @--border-base;
+@--radio-input-border-color: @--border-color-base;
+@--radio-icon-color: @--color-white;
+
+@--radio-disabled-input-border-color: @--disabled-border-base;
+@--radio-disabled-input-fill: @--disabled-fill-base;
+@--radio-disabled-icon-color: @--disabled-fill-base;
+
+@--radio-disabled-checked-input-border-color: @--disabled-border-base;
+@--radio-disabled-checked-input-fill: @--disabled-fill-base;
+@--radio-disabled-checked-icon-color: @--color-text-placeholder;
+
+@--radio-checked-text-color: @--color-primary;
+@--radio-checked-input-border-color: @--color-primary;
+@--radio-checked-icon-color: @--color-primary;
+
+@--radio-input-border-color-hover: @--color-primary;
+
+@--radio-bordered-height: 40px;
+@--radio-bordered-padding: 12px 20px 0 10px;
+@--radio-bordered-medium-padding: 10px 20px 0 10px;
+@--radio-bordered-small-padding: 8px 15px 0 10px;
+@--radio-bordered-mini-padding: 6px 15px 0 10px;
+@--radio-bordered-medium-input-height: 14px;
+@--radio-bordered-medium-input-width: 14px;
+@--radio-bordered-medium-height: 36px;
+@--radio-bordered-small-input-height: 12px;
+@--radio-bordered-small-input-width: 12px;
+@--radio-bordered-mini-input-height: 12px;
+@--radio-bordered-mini-input-width: 12px;
+@--radio-bordered-mini-height: 28px;
+
+@--radio-button-font-size: @--font-size-base;
+@--radio-button-checked-fill: @--color-primary;
+@--radio-button-checked-color: @--color-white;
+@--radio-button-checked-border-color: @--color-primary;
+@--radio-button-disabled-checked-fill: @--border-color-extra-light;
+
+/* Checkbox
+------------------------ */
+
 
 /* Layout and Grid
 ------------------------ */

@@ -22,7 +22,6 @@
     "@progress/kendo-dateinputs-vue-wrapper": "^2018.1.313",
     "@progress/kendo-grid-vue-wrapper": "^2018.1.313",
     "@progress/kendo-inputs-vue-wrapper": "^2018.1.313",
-    "@progress/kendo-theme-default": "^2.50.0",
     "@progress/kendo-ui": "^2018.1.411",
     "babel-polyfill": "^6.26.0",
     "cheerio": "^1.0.0-rc.2",

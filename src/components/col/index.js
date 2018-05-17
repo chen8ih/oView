@@ -1,2 +1,2 @@
-import OCol from './col.vue'
-export default OCol
+import OkendoCol from './col.vue'
+export default OkendoCol

@@ -6,7 +6,7 @@
       'is-disabled': inputDisabled,
       'ovu-input-group': $slots.prepend || $slots.append,
       'ovu-input-group--append': $slots.append,
-      'ovu-input-group--prepend': $slot.prepend,
+      'ovu-input-group--prepend': $slots.prepend,
       'ovu-input--prefix': $slots.prefix || prefixIcon,
       'ovu-input--suffix': $slots.suffix || suffixIcon || clearable
     }
@@ -37,23 +37,23 @@
         @blur="handleBlur"
         @change="handleChange"
         :aria-label="label"
-      > 
+      >
       <!-- 前置内容-->
-      <span class="ovu-input__prefix" v-if="$slots.prepend || prefixIcon" :style="prefixOffset">
+      <span class="ovu-input__prefix" v-if="$slots.prefix || prefixIcon" :style="prefixOffset">
         <slot name="prefix"></slot>
-        <i class="el-input__icon" v-if="prefixIcon" :class="prefixIcon">
+        <i class="ovu-input__icon k-icon" v-if="prefixIcon" :class="prefixIcon"></i>
       </span>
       <!-- 后置内容-->
-      <span class="ovu-input__suffix" v-if="$slots.suffix || suffixIcon || showClear || validateState && needStatusIcon" :style="subffixOffset">
+      <span class="ovu-input__suffix" v-if="$slots.suffix || suffixIcon || showClear || validateState && needStatusIcon" :style="suffixOffset">
         <span class="ovu-input__suffix-inner">
           <template v-if="!showClear">
             <slot name="suffix"></slot>
-            <i class="ovu-input__icon" v-if="suffixIcon" :class="suffixIcon"></i>
+            <i class="ovu-input__icon k-icon" v-if="suffixIcon" :class="suffixIcon"></i>
           </template>
-          <i v-else class="ovu-input__icon ovu-icon-circle-close ovu-input__clear"
+          <i v-else class="ovu-input__icon ovu-input__clear k-icon k-i-close-circle"
           @click="clear"></i>
         </span>
-        <i class="ovu-input__icon" v-if="validateState" 
+        <i class="ovu-input__icon" v-if="validateState"
         :class="['ovu-input__validateIcon', validateState]"></i>
       </span>
       <!--后置元素-->
@@ -66,9 +66,14 @@
 </template>
 
 <script>
+import emitter from '../../mixins/emitter'
+import Migrating from '../../mixins/migrating'
+// import merge from '../../utils/merge'
+import { isKorean } from '../../utils/assist'
 export default {
-  name: 'OInput',
-  componentName: 'OInput',
+  name: 'KendoInput',
+  componentName: 'KendoInput',
+  mixins: [emitter, Migrating],
   inject: {
     // 父组件向子组件直接传递上下文，配合provide函数使用
     ovuForm: {
@@ -82,11 +87,15 @@ export default {
     value: [String, Number],
     type: {
       type: String,
-      default: 'text' 
+      default: 'text'
     },
     autoComplete: {
       type: String,
       default: 'off'
+    },
+    validateEvent: {
+      type: Boolean,
+      default: true
     },
     size: String,
     resize: String,
@@ -101,35 +110,43 @@ export default {
     },
     tabindex: String
   },
-  data() {
+  data () {
     return {
       currentValue: this.value === undefined || this.value === null ? '' : this.value,
       prefixOffset: null,
       suffixOffset: null,
       hovering: false,
-      focused: false
+      focused: false,
+      isOnComposition: false
     }
   },
   computed: {
-    _ovuFormItemSize() {
+    _ovuFormItemSize () {
       return (this.ovuFormItem || {}).ovuFormItemSize
     },
-    validateState() {
+    validateState () {
       return this.ovuFormItem ? this.ovuFormItem.validateState : ''
     },
-    needStatusIcon() {
+    needStatusIcon () {
       return this.ovuForm ? this.ovuForm.statusIcon : false
     },
-    inputSize() {
+    validateIcon () {
+      return {
+        validating: 'k-i-reload',
+        success: 'k-i-check',
+        error: 'k-i-error'
+      }[this.validateState]
+    },
+    inputSize () {
       return this.size || this._ovuFormItemSize || (this.$ELEMENT || {}).size
     },
-    inputDisabled() {
+    inputDisabled () {
       return this.disabled || (this.ovuForm || {}).disabled
     },
-    isGroup() {
+    isGroup () {
       return this.$slots.prepend || this.$slots.append
     },
-    showClear() {
+    showClear () {
       return this.clearable &&
         !this.disabled &&
         !this.readonly &&
@@ -138,52 +155,99 @@ export default {
     }
   },
   watch: {
-    'value'(val, oldValue) {
+    'value' (val, oldValue) {
       this.setCurrentValue(val)
     }
   },
   methods: {
-    focus() {
+    focus () {
       (this.$refs.input || this.$refs.textarea).focus()
     },
-    blur() {
+    blur () {
       (this.$refs.input || this.$refs.textarea).blur()
     },
-    handleFocus() {
-
+    getMigratingConfig () {
+      return {
+        props: {
+          'icon': 'icon is removed, use suffix-icon / prefix-icon instead.',
+          'on-icon-click': 'on-icon-click is removed.'
+        },
+        events: {
+          'click': 'click is removed.'
+        }
+      }
     },
-    handleBlur() {
-
+    handleBlur (event) {
+      this.focused = false
+      this.$emit('blur', event)
+      if (this.validateEvent) {
+        this.dispatch('ovuFormItem', 'ovu.form.blur', [this.currentValue])
+      }
     },
-    select() {
+    handleFocus (event) {
+      this.focused = true
+      this.$emit('focus', event)
+    },
+    select () {
       (this.$refs.input || this.$refs.textarea).select()
     },
-    handleInput() {
-
+    handleComposition (event) {
+      if (event.type === 'compositionend') {
+        this.isOnComposition = false
+        this.handleInput(event)
+      } else {
+        const text = event.target.value
+        const lastCharacter = text[text.length - 1] || ''
+        this.isOnComposition = !isKorean(lastCharacter)
+      }
     },
-    handleChange() {
-
+    handleInput (event) {
+      if (this.isOnComposition) {
+        return
+      }
+      const value = event.target.value
+      this.$emit('input', value)
+      this.setCurrentValue(value)
     },
-    calcIconOffset(place) {
+    handleChange () {
+      this.$emit('change', event.target.value)
+    },
+    setCurrentValue (value) {
+      if (value === this.currentValue) {
+        return
+      }
+      // this.$nextTick(_ => {
+      //   this
+      // })
+      this.currentValue = value
+      if (this.validateEvent) {
+        this.dispatch('ovuFormItem', 'ovu.form.change', [value])
+      }
+    },
+    calcIconOffset (place) {
       const pendantMap = {
         'suf': 'append',
         'pre': 'prepend'
       }
 
-      const pendant = pendantMap(place)
+      const pendant = pendantMap[place]
 
       if (this.$slots[pendant]) {
-        return { transform: `translateX(${palce} === 'suf' ? '-' : ''}${this.$el.querySelector(`.ovu-input-group__${place}`).offsetWidth}px)` }
+        return { transform: `translateX(${place === 'suf' ? '-' : ''}${this.$el.querySelector(`.ovu-input-group__${pendant}`).offsetWidth}px)` }
       }
     },
-    clear() {
-
+    clear () {
+      this.$emit('input', '')
+      this.$emit('change', '')
+      this.$emit('clear')
+      this.setCurrentValue('')
+      this.focus()
     }
   },
-  created() {
+  created () {
     this.$on('inputSelect', this.select)
   },
-  mounted() {
+  mounted () {
     if (this.isGroup) {
       this.prefixOffset = this.calcIconOffset('pre')
       this.suffixOffset = this.calcIconOffset('suf')
@@ -191,4 +255,6 @@ export default {
   }
 }
 </script>
-
+<style lang="less">
+@import '../../theme-defaults/widget/input.less';
+</style>

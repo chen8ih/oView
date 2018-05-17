@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: 'ORow',
-  componentName: 'ORow', // 自定义属性，用于Col获取当前节点的gutter
+  name: 'OkendoRow',
+  componentName: 'OkendoRow', // 自定义属性，用于Col获取当前节点的gutter
   props: {
     tag: {
       type: String,
@@ -33,10 +33,10 @@ export default {
   render (h) {
     return h(this.tag, {
       class: [
-        'ovu-row',
+        'okendo-row',
         this.justify !== 'start' ? `is-justify-${this.justify}` : '',
         this.align !== 'top' ? `is-align-${this.align}` : '',
-        {'ovu-row--flex': this.type === 'flex'}
+        {'okendo-row--flex': this.type === 'flex'}
       ],
       style: this.style
     }, this.$slots.default)

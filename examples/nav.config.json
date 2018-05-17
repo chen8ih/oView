@@ -71,6 +71,16 @@
           "desc": "输入框 Input",
           "name": "input",
           "path": "/input"
+        },
+        {
+          "desc": "单选框 Radio",
+          "name": "radio",
+          "path": "/radio"
+        },
+        {
+          "desc": "多选框 Checkbox",
+          "name": "checkbox",
+          "path": "/checkbox"
         }
       ]
     },

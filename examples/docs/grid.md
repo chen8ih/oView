@@ -1,6 +1,6 @@
 <style lang="less">
 .demo-block {
-  .ovu-row {
+  .okendo-row {
     margin-bottom: 20px;
 
     &:last-child {
@@ -36,57 +36,57 @@
 使用单一分栏创建基础的栅格布局
 
 <div class="demo-block">
-  <o-row>
-    <o-col :span="24"><div class="grid-content bg-purple-dark"></div></o-col>
-  </o-row>
-  <o-row>
-    <o-col :span="12"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="12"><div class="grid-content bg-purple-light"></div></o-col>
-  </o-row>
-  <o-row>
-    <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="6"><div class="grid-content bg-purple-light"></div></o-col>
-    <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="6"><div class="grid-content bg-purple-light"></div></o-col>
-  </o-row>
-  <o-row>
-    <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="4"><div class="grid-content bg-purple-light"></div></o-col>
-    <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="4"><div class="grid-content bg-purple-light"></div></o-col>
-    <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="4"><div class="grid-content bg-purple-light"></div></o-col>
-  </o-row>
+  <okendo-row>
+    <okendo-col :span="24"><div class="grid-content bg-purple-dark"></div></okendo-col>
+  </okendo-row>
+  <okendo-row>
+    <okendo-col :span="12"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="12"><div class="grid-content bg-purple-light"></div></okendo-col>
+  </okendo-row>
+  <okendo-row>
+    <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="6"><div class="grid-content bg-purple-light"></div></okendo-col>
+    <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="6"><div class="grid-content bg-purple-light"></div></okendo-col>
+  </okendo-row>
+  <okendo-row>
+    <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="4"><div class="grid-content bg-purple-light"></div></okendo-col>
+    <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="4"><div class="grid-content bg-purple-light"></div></okendo-col>
+    <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="4"><div class="grid-content bg-purple-light"></div></okendo-col>
+  </okendo-row>
 </div>
 
 通过`Row`和`Col`组件， 并通过`Col`组件的`span`属性我们可以自由地组合布局
 
 :::demo
 ```html
-<o-row>
-  <o-col :span="24"><div class="grid-content bg-purple-dark"></div></o-col>
-</o-row>
-<o-row>
-  <o-col :span="12"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="12"><div class="grid-content bg-purple-light"></div></o-col>
-</o-row>
-<o-row>
-  <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="6"><div class="grid-content bg-purple-light"></div></o-col>
-  <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="6"><div class="grid-content bg-purple-light"></div></o-col>
-</o-row>
-<o-row>
-  <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="4"><div class="grid-content bg-purple-light"></div></o-col>
-  <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="4"><div class="grid-content bg-purple-light"></div></o-col>
-  <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="4"><div class="grid-content bg-purple-light"></div></o-col>
+<okendo-row>
+  <okendo-col :span="24"><div class="grid-content bg-purple-dark"></div></okendo-col>
+</okendo-row>
+<okendo-row>
+  <okendo-col :span="12"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="12"><div class="grid-content bg-purple-light"></div></okendo-col>
+</okendo-row>
+<okendo-row>
+  <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="6"><div class="grid-content bg-purple-light"></div></okendo-col>
+  <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="6"><div class="grid-content bg-purple-light"></div></okendo-col>
+</okendo-row>
+<okendo-row>
+  <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="4"><div class="grid-content bg-purple-light"></div></okendo-col>
+  <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="4"><div class="grid-content bg-purple-light"></div></okendo-col>
+  <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="4"><div class="grid-content bg-purple-light"></div></okendo-col>
 </o-row>
 
 <style lang="less">
-  .ovu-row {
+  .okendo-row {
     margin-bottom: 20px;
 
     &:last-child {
@@ -121,25 +121,25 @@
 可以通过指定`Row`组件的`gutter`属性值设置每一栏之间的间隔， 默认为0, 推荐使用 `(16+8n)px` 作为栅格间隔
 
 <div class="demo-block">
-  <o-row :gutter="16">
-    <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-  </o-row>
+  <okendo-row :gutter="16">
+    <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+  </okendo-row>
 </div>
 
 :::demo
 ```html
-<o-row :gutter="16">
-  <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="6"><div class="grid-content bg-purple"></div></o-col>
-</o-row>
+<okendo-row :gutter="16">
+  <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="6"><div class="grid-content bg-purple"></div></okendo-col>
+</okendo-row>
 
 <style lang="less">
-  .ovu-row {
+  .okendo-row {
     margin-bottom: 20px;
 
     &:last-child {
@@ -173,43 +173,43 @@
 通过基础的1/24分栏任意扩展组合形成较为复杂的混合布局
 
 <div class="demo-block">
-  <o-row :gutter="16">
-    <o-col :span="16"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="8"><div class="grid-content bg-purple"></div></o-col>
-  </o-row>
-  <o-row :gutter="16">
-    <o-col :span="8"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="8"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-  </o-row>
-  <o-row :gutter="16">
-    <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="16"><div class="grid-content bg-purple"></div></o-col>
-    <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-  </o-row>
+  <okendo-row :gutter="16">
+    <okendo-col :span="16"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="8"><div class="grid-content bg-purple"></div></okendo-col>
+  </okendo-row>
+  <okendo-row :gutter="16">
+    <okendo-col :span="8"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="8"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+  </okendo-row>
+  <okendo-row :gutter="16">
+    <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="16"><div class="grid-content bg-purple"></div></okendo-col>
+    <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+  </okendo-row>
 </div>
 
 :::demo
 ```html
-<o-row :gutter="16">
-  <o-col :span="16"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="8"><div class="grid-content bg-purple"></div></o-col>
-</o-row>
-<o-row :gutter="16">
-  <o-col :span="8"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="8"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-</o-row>
-<o-row :gutter="16">
-  <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="16"><div class="grid-content bg-purple"></div></o-col>
-  <o-col :span="4"><div class="grid-content bg-purple"></div></o-col>
-</o-row>
+<okendo-row :gutter="16">
+  <okendo-col :span="16"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="8"><div class="grid-content bg-purple"></div></okendo-col>
+</okendo-row>
+<okendo-row :gutter="16">
+  <okendo-col :span="8"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="8"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+</okendo-row>
+<okendo-row :gutter="16">
+  <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="16"><div class="grid-content bg-purple"></div></okendo-col>
+  <okendo-col :span="4"><div class="grid-content bg-purple"></div></okendo-col>
+</okendo-row>
 
 <style lang="less">
-  .ovu-row {
+  .okendo-row {
     margin-bottom: 20px;
 
     &:last-child {

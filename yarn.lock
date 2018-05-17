@@ -114,10 +114,6 @@
   dependencies:
     "@progress/kendo-base-components-vue-wrapper" "2018.1.313"
 
-"@progress/kendo-theme-default@^2.50.0":
-  version "2.50.0"
-  resolved "https://registry.yarnpkg.com/@progress/kendo-theme-default/-/kendo-theme-default-2.50.0.tgz#8d0827bd822c3c780a19eecb3d52f7bd59fc7372"
-
 "@progress/kendo-ui@^2018.1.411":
   version "2018.1.411"
   resolved "https://registry.yarnpkg.com/@progress/kendo-ui/-/kendo-ui-2018.1.411.tgz#8c32d856059f27af40749b7fb3635cbc10ae4bdb"
