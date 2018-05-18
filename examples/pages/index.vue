@@ -1,14 +1,16 @@
 <!--首页-->
 <template>
-  <div  class="pg-index">
+  <div class="pg-index">
     <div class="index-container">
-      <img src="../assets/logo.png">
-      <p>基于KendoUI的Vue组件库</p>
-    </div>
-    <div class="separate-panel">
-      <div class="about">
-        <router-link :to="{name: 'giud'}">开始使用</router-link>
-        <a target="_blank" class="btn-github" href="https://github.com/chen8ih/oView">GitHub</a>
+      <div class="portal-banner">
+        <img src="../assets/portal.png">
+      </div>
+      <div class="separate-panel">
+        <h1>基于KendoUI的Vue组件库</h1>
+        <em>提升团队的确定性、标准化组件、节约无谓的设计且保持系统一致性</em>
+        <div class="about">
+          <router-link :to="{name: 'giud'}">开始使用</router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -20,64 +22,57 @@ export default{
     return {
       height: document.documentElement.clientHeight
     }
+  },
+  mounted () {
+    console.log('github: https://github.com/chen8ih/oView')
   }
 }
 </script>
 <style type="text/less" lang="less">
   .pg-index {
+    background-color: #f6f6f6;
+
     .index-container {
-      width: 960px;
+      width: 1080px;
       margin: 0 auto;
       text-align: center;
       padding: 100px 0;
-      p{
-        margin-top: 56px;
-        color: #8994C6;
-        font-size: 32px;
+    }
+
+    .portal-banner {
+      display: inline-block;
+      width: 48%;
+      img {
+        width: 60%;
       }
     }
-    .separate-panel{
-      position: relative;
-      .about{
-        position: absolute;
-        width: 100%;
-        height: 200px;
-        top: 20px;
-        z-index: 9;
-        background: #fff;
-        text-align: center;
+
+    .separate-panel {
+      display: inline-block;
+      width: 50%;
+      vertical-align: top;
+      text-align: left;
+      padding-left: 100px;
+      margin-top: 63px;
+      line-height: 28px;
+
+      .about {
         a {
           color: #fff;
-          background-image: linear-gradient(90deg, #009b72 0%, #009b72 100%);
+          text-align: center;
+          background-image: linear-gradient(90deg, #05b570 0%, #05b570 100%);
           box-shadow: 0 2px 6px 0 rgba(51,105,231,0.4);
           display: inline-block;
-          width: 190px;
-          height: 56px;
-          margin: 0 35px;
-          font-size: 18px;
-          line-height: 56px;
-          border-radius: 28px;
+          width: 156px;
+          height: 46px;
+          margin: 20px 3px;
+          font-size: 14px;
+          line-height: 46px;
+          border-radius: 2px;
           transition: all .3s;
           cursor: pointer;
         }
-        .btn-github{
-          color: #316DE9;
-          border: 1px solid #2F6EE9;
-          background: #fff;
-          box-shadow: none;
-        }
       }
-    }
-    .separate-panel:after{
-      content: '';
-      display: block;
-      position: absolute;
-      top: -80px;
-      width: 100%;
-      height: 250px;
-      background: #fff;
-      box-shadow: 0 -4px 30px 0 #DFE1E6;
-      transform: skewY(-4deg);
     }
   }
 </style>

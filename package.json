@@ -25,6 +25,7 @@
     "@progress/kendo-ui": "^2018.1.411",
     "babel-polyfill": "^6.26.0",
     "cheerio": "^1.0.0-rc.2",
+    "deepmerge": "^2.1.0",
     "lodash": "^4.17.5",
     "npm": "^6.0.0",
     "object-assign": "^4.1.1",
