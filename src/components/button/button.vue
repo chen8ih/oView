@@ -1,23 +1,33 @@
 <template>
-    <button
-        :type="htmlType"
-        :class="classes"
-        :disabled="disabled"
-        @click="handleClick">
-        <okendo-icon class="ovu-load-loop" type="load-c" v-if="loading"></okendo-icon>
-        <okendo-icon :type="icon" v-if="icon && !loading"></okendo-icon>
-        <span v-if="showSlot" ref="slot"><slot></slot></span>
-    </button>
+  <button
+      class="okendo-button"
+      @click="handerClick"
+      :disabled="buttonDisabled || loading"
+      :autofocus="autofocus"
+      :type="nativeType"
+      :class="[
+        type ? 'okendo-button--' + type: '',
+        buttonSize ? 'okendo-button--' + buttonSize : '',
+        {
+          'is-disabled': buttonDisabled,
+          'is-loading': loading,
+          'is-plain': plain,
+          'is-round': round,
+          'is-circle': circle
+        }
+      ]">
+      <okendo-icon class="ovu-load-loop" type="load-c" v-if="loading"></okendo-icon>
+      <okendo-icon :type="icon" v-if="icon && !loading"></okendo-icon>
+      <span v-if="showSlot" ref="slot"><slot></slot></span>
+  </button>
 </template>
 
 <script>
 import OkendoIcon from '../icon'
 import { oneOf } from '../../utils/assist'
 
-const prefixCls = 'ovu-btn'
-
 export default {
-  name: 'OButton',
+  name: 'OkendoButton',
   components: { OkendoIcon },
   props: {
     type: {
@@ -25,25 +35,22 @@ export default {
         return oneOf(value, ['primary', 'ghost', 'dashed', 'text', 'info', 'success', 'warning', 'error', 'default'])
       }
     },
-    shape: {
-      validator (value) {
-        return oneOf(value, ['circle', 'circle-outline'])
-      }
-    },
     size: {
       validator (value) {
         return oneOf(value, ['large', 'small', 'default'])
       }
     },
-    htmlType: {
-      default: 'button',
-      validator (value) {
-        return oneOf(value, ['button', 'submit', 'reset'])
-      }
+    nativeType: {
+      type: String,
+      default: 'button'
     },
+    loading: Boolean,
     disabled: Boolean,
     icon: String,
-    imgurl: String
+    plain: Boolean,
+    autofocus: Boolean,
+    round: Boolean,
+    circle: Boolean
   },
   data () {
     return {
@@ -51,16 +58,14 @@ export default {
     }
   },
   computed: {
-    classes () {
-      return [
-        `${prefixCls}`,
-        {
-          [`${prefixCls}-${this.type}`]: !!this.type,
-          [`${prefixCls}-${this.shape}`]: !!this.shape,
-          [`${prefixCls}-${this.size}`]: !!this.size,
-          [`${prefixCls}-icon-only`]: !this.showSlot && (!!this.icon)
-        }
-      ]
+    _elFormItemSize () {
+      return (this.elFormItem || {}).elFormItemSize
+    },
+    buttonSize () {
+      return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size
+    },
+    buttonDisabled () {
+      return this.disabled || (this.elForm || {}).disabled
     }
   },
   methods: {

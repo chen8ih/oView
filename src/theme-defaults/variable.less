@@ -1,5 +1,6 @@
 @css-prefix: okendo-;
 @css-prefix-iconfont: okendo-icon;
+@state-prefix: is-;
 
 /* Animation
 ------------------------ */
@@ -15,7 +16,7 @@
 /* Colors
 ------------------------ */
 @--color-white: #fff;
-@--color-blank: #000;
+@--color-black: #000;
 
 @--color-primary: #05b570;
 @--color-primary-light-1: mix(@--color-white, @--color-primary, 10%);
@@ -28,15 +29,15 @@
 @--color-primary-light-8: mix(@--color-white, @--color-primary, 80%);
 @--color-primary-light-9: mix(@--color-white, @--color-primary, 90%);
 
-@--color-success: #19cbab;
-@--color-warning: #e6a23c;
-@--color-danger: #f56c6c;
-@--color-info: #909399;
+@--color-success: #05b570;
+@--color-warning: #fcaa31;
+@--color-danger: #ff4c4c;
+@--color-info: #05b570;
 
-@--color-text-primary: #303133;
-@--color-text-regular: #606266;
-@--color-text-secondary: #909399;
-@--color-text-placeholder: #c0c4cc;
+@--color-text-primary: #252627;
+@--color-text-regular: #66686d;
+@--color-text-secondary: #989ba2;
+@--color-text-placeholder: #c9ccd3;
 
 /* Links
 ------------------------ */
@@ -45,13 +46,13 @@
 
 /* Background
 ------------------------ */
-@--background-color-base: #f5f7fa;
+@--background-color-base: #f6f6f6;
 
 /* Border
 ------------------------ */
 @--border-width-base: 1px;
 @--border-style-base: solid;
-@--border-color-base: #dcdfe6;
+@--border-color-base: #dfe0e2;
 @--border-color-light: #e4e7ed;
 @--border-color-lighter: #ebeef5;
 @--border-color-extra-light: #f2f6fc;
@@ -73,7 +74,7 @@
 @--font-size-base: 13px;
 @--font-size-small: 12px;
 @--font-size-large: 18px;
-@--font-color-disabled-base: #bbb;
+@--font-color-disabled-base: #d0d2d8;
 @--font-weight-primary: 500;
 @--font-line-height-primary: 24px;
 @--cursor-disabled: not-allowed;
@@ -95,7 +96,9 @@
 @--btn-font-weight: @--font-weight-primary;
 @--btn-border-radius: @--border-radius-base;
 @--btn-line-height-base: 1;
-@--btn-padding-base: 6px 15px;
+@--btn-padding-vertical: 6px;
+@--btn-padding-horizontal: 15px;
+@--btn-padding-base: @--btn-padding-vertical @--btn-padding-horizontal;
 
 @--btn-font-size-large: @--font-size-base + 1;
 @--btn-padding-large: 6px 15px 7px 15px;
@@ -110,20 +113,44 @@
 @--btn-default-bg: #fff;
 @--btn-default-border: @--border-color-base;
 
-@--btn-primary-color: #fff;
-@--btn-primary-bg: @--color-primary;
+@--btn-disabled-color: #bbbec4;
+@--btn-disabled-border: #dddee1;
+@--btn-disabled-fill: #f7f7f7;
 
-@--btn-ghost-color: @--color-text-primary;
-@--btn-ghost-bg: transparent;
-@--btn-ghost-border: @--border-color-base;
+@--btn-primary-color: @--color-white;
+@--btn-primary-fill: @--color-primary;
+@--btn-primary-border: @--color-primary;
 
-@--btn-disable-color: #bbbec4;
-@--btn-disable-bg: #f7f7f7;
-@--btn-disable-border: #dddee1;
+@--btn-success-color: @--color-white;
+@--btn-success-fill: @--color-success;
+@--btn-success-border: @--color-success;
 
-@--btn-circle-size: 32px;
-@--btn-circle-size-large: 36px;
-@--btn-circle-size-small: 24px;
+@--btn-info-color: @--color-white;
+@--btn-info-fill: @--color-primary;
+@--btn-info-border: @--color-primary;
+
+@--btn-warning-color: @--color-white;
+@--btn-warning-fill: @--color-warning;
+@--btn-warning-border: @--color-warning;
+
+@--btn-danger-color: @--color-white;
+@--btn-danger-fill: @--color-danger;
+@--btn-danger-border: @--color-danger;
+
+@--btn-medium-padding-vertical: 10px;
+@--btn-medium-padding-horizontal: 20px;
+@--btn-medium-font-size: 14px;
+@--btn-medium-border-radius: @--border-radius-base;
+
+@--btn-small-padding-vertical: 9px;
+@--btn-small-padding-horizontal: 15px;
+@--btn-small-font-size: 12px;
+@--btn-small-border-radius: @--border-radius-base - 1;
+
+@--btn-mini-padding-vertical: 7px;
+@--btn-mini-padding-horizontal: 15px;
+@--btn-mini-font-size: 12px;
+@--btn-mini-border-radius: @--border-radius-base - 1;
 
 /* Input
 ------------------------ */
@@ -211,6 +238,48 @@
 ------------------------ */
 
 
+/* TreeSelect
+------------------------ */
+@--treeselect-font-size: @--font-size-base;
+@--treeselect-padding: 5px;
+@--treeselect-border: @--border-base;
+@--treeselect-border-radius: @--border-radius-base;
+@--treeselect-icon-size: 12px;
+@--treeselect-transition-duration: 200ms;
+@--treeselect-transition-duration-slow: 400ms;
+@--treeselect-max-level: 8;
+
+@--treeselect-control-height: 36px;
+@--treeselect-control-inner-height: @--treeselect-control-height - @--treeselect-border-width * 2;
+@--treeselect-border-width: 1px;
+@--treeselect-control-border-color-focus: #dfe0e2;
+@--treeselect-control-border-color-active: #dfe0e2;
+@--treeselect-control-bg: #f6f6f6;
+@--treeselect-control-box-shadow-focus: 0 0 0 3px fade(@--treeselect-control-border-color-focus, 10%);
+@--treeselect-control-bg-disabled: #d0d2d8;
+
+@--treeselect-placeholder-font-color: #c9ccd3;
+@--treeselect-single-value-font-color: #c9ccd3;
+@--treeselect-single-value-font-color-focused: #c9ccd3;
+
+@--treeselect-multi-value-item-bg: #f6f6f6;
+@--treeselect-multi-value-margin-y: 5px;
+@--treeselect-multi-value-margin-x: 5px;
+@--treeselect-multi-value-padding-x: 5px;
+@--treeselect-multi-value-padding-y: 5px;
+@--treeselect-multi-value-item-border-width: 1px;
+@--treeselect-multi-value-item-border-color: @--border-base;
+@--treeselect-multi-value-font-color: @--color-text-regular;
+@--treeselect-multi-value-font-size: @--font-size-base;
+@--treeselect-multi-value-item-bg-hover: #f6f6f6;
+@--treeselect-multi-value-font-color-hover: @--color-text-primary;
+@--treeselect-multi-value-item-bg-disabled: @--disabled-fill-base;
+@--treeselect-multi-value-font-color-disabled: @--disabled-color-base;
+@--treeselect-multi-value-item-bg-control-disabled: @--disabled-fill-base;
+@--treeselect-multi-value-item-border-color-control-disabled: @--disabled-border-base;
+@--treeselect-multi-value-item-font-color-control-disabled: @--disabled-color-base;
+@--treeselect-multi-value-remove-color: @--color-text-secondary;
+@--treeselect-multi-value-divider-color: @--color-text-regular;
 /* Layout and Grid
 ------------------------ */
 @--grid-columns: 24;

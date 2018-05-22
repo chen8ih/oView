@@ -57,25 +57,28 @@
 }
 
 .loop-generate-columns-res(@index, @class) when (@index > 0) {
-  .@{col-prefix-cls}-@{class}-@{index} {
-    width: percentage((@index / @--grid-columns));
+  @screen-width: ~"@{--screen-@{class}}";
+  @media only screen and (min-width: @screen-width) {
+    .@{col-prefix-cls}-@{class}-@{index} {
+      width: percentage((@index / @--grid-columns));
+    }
+  
+    .@{col-prefix-cls}-@{class}--offset-@{index} {
+      margin-left: percentage((@index / @--grid-columns));
+    }
+  
+    .@{col-prefix-cls}-@{class}-push-@{index} {
+      position: relative;
+      left: percentage((@index / @--grid-columns));
+    }
+  
+    .@{col-prefix-cls}-@{class}-pull-@{index} {
+      position: relative;
+      right: percentage((@index / @--grid-columns));
+    }
   }
 
-  .@{col-prefix-cls}-@{class}--offset-@{index} {
-    margin-left: percentage((@index / @--grid-columns));
-  }
-
-  .@{col-prefix-cls}-@{class}-push-@{index} {
-    position: relative;
-    left: percentage((@index / @--grid-columns));
-  }
-
-  .@{col-prefix-cls}-@{class}-pull-@{index} {
-    position: relative;
-    right: percentage((@index / @--grid-columns));
-  }
-
-  .loop-generate-columns-res((@index - 1), @class);
+  .loop-generate-columns-res((@index - 1), @class); 
 }
 
 .loop-generate-columns-res(@index, @class) when (@index = 0) {
@@ -107,5 +110,5 @@
   .loop-columns(@list, (@i + 1));
 }
 
-@classes: xs, sm, md, lg, xl, xxl;
+@classes: xs, sm, md, lg, xl;
 .loop-columns(@classes);

@@ -1,14 +1,14 @@
 <template>
   <div :class="[
-    type === 'textarea' ? 'ovu-textarea' : 'ovu-input',
-    inputSize ? 'ovu-input--' + inputSize : '',
+    type === 'textarea' ? 'okendo-textarea' : 'okendo-input',
+    inputSize ? 'okendo-input--' + inputSize : '',
     {
       'is-disabled': inputDisabled,
-      'ovu-input-group': $slots.prepend || $slots.append,
-      'ovu-input-group--append': $slots.append,
-      'ovu-input-group--prepend': $slots.prepend,
-      'ovu-input--prefix': $slots.prefix || prefixIcon,
-      'ovu-input--suffix': $slots.suffix || suffixIcon || clearable
+      'okendo-input-group': $slots.prepend || $slots.append,
+      'okendo-input-group--append': $slots.append,
+      'okendo-input-group--prepend': $slots.prepend,
+      'okendo-input--prefix': $slots.prefix || prefixIcon,
+      'okendo-input--suffix': $slots.suffix || suffixIcon || clearable
     }
   ]"
   @mouseenter="hovering = true"
@@ -16,13 +16,13 @@
   >
     <template v-if="type !== 'textarea'">
       <!-- 前置元素 -->
-      <div class="ovu-input-group__prepend" v-if="$slots.prepend">
+      <div class="okendo-input-group__prepend" v-if="$slots.prepend">
         <slot name="prepend"></slot>
       </div>
       <input
         :tabindex="tabindex"
         v-if="type !== 'textarea'"
-        class="ovu-input__inner"
+        class="okendo-input__inner"
         v-bind="$attrs"
         :type="type"
         :disabled="inputDisabled"
@@ -39,25 +39,25 @@
         :aria-label="label"
       >
       <!-- 前置内容-->
-      <span class="ovu-input__prefix" v-if="$slots.prefix || prefixIcon" :style="prefixOffset">
+      <span class="okendo-input__prefix" v-if="$slots.prefix || prefixIcon" :style="prefixOffset">
         <slot name="prefix"></slot>
-        <i class="ovu-input__icon k-icon" v-if="prefixIcon" :class="prefixIcon"></i>
+        <i class="okendo-input__icon k-icon" v-if="prefixIcon" :class="prefixIcon"></i>
       </span>
       <!-- 后置内容-->
-      <span class="ovu-input__suffix" v-if="$slots.suffix || suffixIcon || showClear || validateState && needStatusIcon" :style="suffixOffset">
-        <span class="ovu-input__suffix-inner">
+      <span class="okendo-input__suffix" v-if="$slots.suffix || suffixIcon || showClear || validateState && needStatusIcon" :style="suffixOffset">
+        <span class="okendo-input__suffix-inner">
           <template v-if="!showClear">
             <slot name="suffix"></slot>
-            <i class="ovu-input__icon k-icon" v-if="suffixIcon" :class="suffixIcon"></i>
+            <i class="okendo-input__icon k-icon" v-if="suffixIcon" :class="suffixIcon"></i>
           </template>
-          <i v-else class="ovu-input__icon ovu-input__clear k-icon k-i-close-circle"
+          <i v-else class="okendo-input__icon okendo-input__clear k-icon k-i-close-circle"
           @click="clear"></i>
         </span>
-        <i class="ovu-input__icon" v-if="validateState"
-        :class="['ovu-input__validateIcon', validateState]"></i>
+        <i class="okendo-input__icon" v-if="validateState"
+        :class="['okendo-input__validateIcon', validateState]"></i>
       </span>
       <!--后置元素-->
-      <div class="ovu-input-group__append" v-if="$slots.append">
+      <div class="okendo-input-group__append" v-if="$slots.append">
         <slot name="append"></slot>
       </div>
     </template>
@@ -71,15 +71,15 @@ import Migrating from '../../mixins/migrating'
 // import merge from '../../utils/merge'
 import { isKorean } from '../../utils/assist'
 export default {
-  name: 'KendoInput',
+  name: 'OkendoInput',
   componentName: 'KendoInput',
   mixins: [emitter, Migrating],
   inject: {
     // 父组件向子组件直接传递上下文，配合provide函数使用
-    ovuForm: {
+    okendoForm: {
       default: ''
     },
-    ovuFormItem: {
+    okendoFormItem: {
       default: ''
     }
   },
@@ -121,14 +121,14 @@ export default {
     }
   },
   computed: {
-    _ovuFormItemSize () {
-      return (this.ovuFormItem || {}).ovuFormItemSize
+    _okendoFormItemSize () {
+      return (this.okendoFormItem || {}).okendoFormItemSize
     },
     validateState () {
-      return this.ovuFormItem ? this.ovuFormItem.validateState : ''
+      return this.okendoFormItem ? this.okendoFormItem.validateState : ''
     },
     needStatusIcon () {
-      return this.ovuForm ? this.ovuForm.statusIcon : false
+      return this.okendoForm ? this.okendoForm.statusIcon : false
     },
     validateIcon () {
       return {
@@ -138,10 +138,10 @@ export default {
       }[this.validateState]
     },
     inputSize () {
-      return this.size || this._ovuFormItemSize || (this.$ELEMENT || {}).size
+      return this.size || this._okendoFormItemSize || (this.$ELEMENT || {}).size
     },
     inputDisabled () {
-      return this.disabled || (this.ovuForm || {}).disabled
+      return this.disabled || (this.okendoForm || {}).disabled
     },
     isGroup () {
       return this.$slots.prepend || this.$slots.append
@@ -181,7 +181,7 @@ export default {
       this.focused = false
       this.$emit('blur', event)
       if (this.validateEvent) {
-        this.dispatch('ovuFormItem', 'ovu.form.blur', [this.currentValue])
+        this.dispatch('okendoFormItem', 'okendo.form.blur', [this.currentValue])
       }
     },
     handleFocus (event) {
@@ -221,7 +221,7 @@ export default {
       // })
       this.currentValue = value
       if (this.validateEvent) {
-        this.dispatch('ovuFormItem', 'ovu.form.change', [value])
+        this.dispatch('okendoFormItem', 'okendo.form.change', [value])
       }
     },
     calcIconOffset (place) {
@@ -233,7 +233,7 @@ export default {
       const pendant = pendantMap[place]
 
       if (this.$slots[pendant]) {
-        return { transform: `translateX(${place === 'suf' ? '-' : ''}${this.$el.querySelector(`.ovu-input-group__${pendant}`).offsetWidth}px)` }
+        return { transform: `translateX(${place === 'suf' ? '-' : ''}${this.$el.querySelector(`.okendo-input-group__${pendant}`).offsetWidth}px)` }
       }
     },
     clear () {

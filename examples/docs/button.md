@@ -1,6 +1,6 @@
 <style lang="less">
   .demo-block {
-    .ovu-row:not(:last-child) {
+    .okendo-row:not(:last-child) {
       margin-bottom: 10px;
     }
   }
@@ -14,60 +14,60 @@
 基础的按钮用法
 
 <div class="demo-block">
-  <o-row>
-    <o-button>default</o-button>
-    <o-button type="primary">primary</o-button>
-    <o-button type="success">success</o-button>
-    <o-button type="warning">warning</o-button>
-    <o-button type="error">error</o-button>
-    <o-button type="info">info</o-button>
-  </o-row>
-  <o-row>
-    <o-button shape="circle">default</o-button>
-    <o-button shape="circle" type="success">primary</o-button>
-    <o-button shape="circle" type="success">success</o-button>
-    <o-button shape="circle" type="warning">warning</o-button>
-    <o-button shape="circle" type="error">error</o-button>
-    <o-button shape="circle" type="info">info</o-button>
-  </o-row>
-  <o-row>
-    <o-button shape="circle" icon="search"></o-button>
-    <o-button shape="circle" type="success" icon="edit"></o-button>
-    <o-button shape="circle" type="success" icon="check"></o-button>
-    <o-button shape="circle" type="warning" icon="delete"></o-button>
-    <o-button shape="circle" type="error" icon="close"></o-button>
-    <o-button shape="circle" type="info" icon="marker-pin-target"></o-button>
-  </o-row>
+  <okendo-row>
+    <okendo-button>default</okendo-button>
+    <okendo-button type="primary">primary</okendo-button>
+    <okendo-button type="success">success</okendo-button>
+    <okendo-button type="warning">warning</okendo-button>
+    <okendo-button type="danger">error</okendo-button>
+    <okendo-button type="info">info</okendo-button>
+  </okendo-row>
+  <okendo-row>
+    <okendo-button shape="circle">default</okendo-button>
+    <okendo-button shape="circle" type="success">primary</okendo-button>
+    <okendo-button shape="circle" type="success">success</okendo-button>
+    <okendo-button shape="circle" type="warning">warning</okendo-button>
+    <okendo-button shape="circle" type="danger">error</okendo-button>
+    <okendo-button shape="circle" type="info">info</okendo-button>
+  </okendo-row>
+  <okendo-row>
+    <okendo-button shape="circle" icon="search"></okendo-button>
+    <okendo-button shape="circle" type="success" icon="edit"></okendo-button>
+    <okendo-button shape="circle" type="success" icon="check"></okendo-button>
+    <okendo-button shape="circle" type="warning" icon="delete"></okendo-button>
+    <okendo-button shape="circle" type="danger" icon="close"></okendo-button>
+    <okendo-button shape="circle" type="info" icon="marker-pin-target"></okendo-button>
+  </okendo-row>
 </div> 
 
 `type`, `shape`, `icon`分别控制按钮类型，是否圆角，以及图标按钮的图形
 
 :::demo
 ```html
-<o-row>
-  <o-button>default</o-button>
-  <o-button type="primary">primary</o-button>
-  <o-button type="success">success</o-button>
-  <o-button type="warning">warning</o-button>
-  <o-button type="error">error</o-button>
-  <o-button type="info">info</o-button>
-</o-row>
-<o-row>
-  <o-button shape="circle">default</o-button>
-  <o-button shape="circle" type="success">primary</o-button>
-  <o-button shape="circle" type="success">success</o-button>
-  <o-button shape="circle" type="warning">warning</o-button>
-  <o-button shape="circle" type="error">error</o-button>
-  <o-button shape="circle" type="info">info</o-button>
-</o-row>
-<o-row>
-  <o-button shape="circle" icon="search"></o-button>
-  <o-button shape="circle" type="success" icon="edit"></o-button>
-  <o-button shape="circle" type="success" icon="check"></o-button>
-  <o-button shape="circle" type="warning" icon="delete"></o-button>
-  <o-button shape="circle" type="error" icon="close"></o-button>
-  <o-button shape="circle" type="info" icon="marker-pin-target"></o-button>
-</o-row>
+<okendo-row>
+  <okendo-button>default</okendo-button>
+  <okendo-button type="primary">primary</okendo-button>
+  <okendo-button type="success">success</okendo-button>
+  <okendo-button type="warning">warning</okendo-button>
+  <okendo-button type="danger">error</okendo-button>
+  <okendo-button type="info">info</okendo-button>
+</okendo-row>
+<okendo-row>
+  <okendo-button shape="circle">default</okendo-button>
+  <okendo-button shape="circle" type="success">primary</okendo-button>
+  <okendo-button shape="circle" type="success">success</okendo-button>
+  <okendo-button shape="circle" type="warning">warning</okendo-button>
+  <okendo-button shape="circle" type="danger">error</okendo-button>
+  <okendo-button shape="circle" type="info">info</okendo-button>
+</okendo-row>
+<okendo-row>
+  <okendo-button shape="circle" icon="search"></okendo-button>
+  <okendo-button shape="circle" type="success" icon="edit"></okendo-button>
+  <okendo-button shape="circle" type="success" icon="check"></okendo-button>
+  <okendo-button shape="circle" type="warning" icon="delete"></okendo-button>
+  <okendo-button shape="circle" type="danger" icon="close"></okendo-button>
+  <okendo-button shape="circle" type="info" icon="marker-pin-target"></okendo-button>
+</okendo-row>
 ```
 :::
 
@@ -76,26 +76,26 @@
 使用`disable`属性控制按钮是否被禁用
 
 <div class="demo-block">
-  <o-row>
-    <o-button :disabled="true">default</o-button>
-    <o-button type="primary" :disabled="true">primary</o-button>
-    <o-button type="success" :disabled="true">success</o-button>
-    <o-button type="warning" :disabled="true">warning</o-button>
-    <o-button type="error" :disabled="true">error</o-button>
-    <o-button type="info" :disabled="true">info</o-button>
-  </o-row>
+  <okendo-row>
+    <okendo-button :disabled="true">default</okendo-button>
+    <okendo-button type="primary" :disabled="true">primary</okendo-button>
+    <okendo-button type="success" :disabled="true">success</okendo-button>
+    <okendo-button type="warning" :disabled="true">warning</okendo-button>
+    <okendo-button type="danger" :disabled="true">error</okendo-button>
+    <okendo-button type="info" :disabled="true">info</okendo-button>
+  </okendo-row>
 </div>
 
 :::demo
 ```html
-<o-row>
-  <o-button :disabled="true">default</o-button>
-  <o-button type="primary" :disabled="true">primary</o-button>
-  <o-button type="success" :disabled="true">success</o-button>
-  <o-button type="warning" :disabled="true">warning</o-button>
-  <o-button type="error" :disabled="true">error</o-button>
-  <o-button type="info" :disabled="true">info</o-button>
-</o-row>
+<okendo-row>
+  <okendo-button :disabled="true">default</okendo-button>
+  <okendo-button type="primary" :disabled="true">primary</okendo-button>
+  <okendo-button type="success" :disabled="true">success</okendo-button>
+  <okendo-button type="warning" :disabled="true">warning</okendo-button>
+  <okendo-button type="danger" :disabled="true">error</okendo-button>
+  <okendo-button type="info" :disabled="true">info</okendo-button>
+</okendo-row>
 ```
 :::
 
@@ -105,30 +105,30 @@
 通过设置`size`为`large`或者`small`, 将按钮设置成大和小尺寸，不设置则为默认尺寸
 
 <div class="demo-block">
-  <o-row>
-    <o-button type="success" size="large">large</o-button>
-    <o-button type="success">default</o-button>
-    <o-button type="success" size="small">small</o-button>
-  </o-row>
-  <o-row>
-    <o-button type="success" shape="circle" size="large">large</o-button>
-    <o-button type="success" shape="circle">default</o-button>
-    <o-button type="success" shape="circle" size="small">small</o-button>
-  </o-row>
+  <okendo-row>
+    <okendo-button type="success" size="large">large</okendo-button>
+    <okendo-button type="success">default</okendo-button>
+    <okendo-button type="success" size="small">small</okendo-button>
+  </okendo-row>
+  <okendo-row>
+    <okendo-button type="success" shape="circle" size="large">large</okendo-button>
+    <okendo-button type="success" shape="circle">default</okendo-button>
+    <okendo-button type="success" shape="circle" size="small">small</okendo-button>
+  </okendo-row>
 </div>
 
 :::demo
 ```html
-<o-row>
-  <o-button type="success" size="large">large</o-button>
-  <o-button type="success">default</o-button>
-  <o-button type="success" size="small">small</o-button>
-</o-row>
-<o-row>
-  <o-button type="success" shape="circle" size="large">large</o-button>
-  <o-button type="success" shape="circle">default</o-button>
-  <o-button type="success" shape="circle" size="small">small</o-button>
-</o-row>
+<okendo-row>
+  <okendo-button type="success" size="large">large</okendo-button>
+  <okendo-button type="success">default</okendo-button>
+  <okendo-button type="success" size="small">small</okendo-button>
+</okendo-row>
+<okendo-row>
+  <okendo-button type="success" shape="circle" size="large">large</okendo-button>
+  <okendo-button type="success" shape="circle">default</okendo-button>
+  <okendo-button type="success" shape="circle" size="small">small</okendo-button>
+</okendo-row>
 ```
 :::
 
@@ -137,26 +137,18 @@
 带图标的按钮
 
 <div class="demo-block">
-  <o-row>
-    <o-button type="success" icon="search">Search</o-button>
-    <o-button type="success" shape="circle" icon="search">Search</o-button>
-  </o-row>
-  <p>使用图片小图标</p>
-  <o-row>
-    <o-button imgurl="http://demos.telerik.com/kendo-ui/content/web/16x16/Chart.png">Chart</o-button>
-  </o-row>
+  <okendo-row>
+    <okendo-button type="success" icon="search">Search</okendo-button>
+    <okendo-button type="success" shape="circle" icon="search">Search</okendo-button>
+  </okendo-row>
 </div>
 
 :::demo
 ```html
-<o-row>
-  <o-button type="success" icon="search">Search</o-button>
-  <o-button type="success" shape="circle" icon="search">Search</o-button>
-</o-row>
-<p>使用图片小图标</p>
-<o-row>
-  <o-button imgurl="http://demos.telerik.com/kendo-ui/content/web/16x16/Chart.png">Chart</o-button>
-</o-row>
+<okendo-row>
+  <okendo-button type="success" icon="search">Search</okendo-button>
+  <okendo-button type="success" shape="circle" icon="search">Search</okendo-button>
+</okendo-row>
 ```
 :::
 

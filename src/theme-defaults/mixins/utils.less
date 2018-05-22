@@ -26,7 +26,6 @@
   }
 }
 
-
 .scroll-bar {
   @--scrollbar-thumb-background: #b4bccc;
   @--scrollbar-track-background: #fff;
@@ -67,4 +66,24 @@
 
 .square(@size) {
   .size(@size; @size);
+}
+
+.horizontal-padding(@value) {
+  padding-left: @value;
+  padding-right: @value;
+}
+
+.vertical-padding(@value) {
+  padding-top: @value;
+  padding-bottom: @value;
+}
+
+.border-radius-bottom(@size) {
+  border-bottom-left-radius: @size;
+  border-bottom-right-radius: @size;
+}
+
+.border-radius-top(@size) {
+  border-top-left-radius: @size;
+  border-top-right-radius: @size;
 }

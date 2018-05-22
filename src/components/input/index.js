@@ -1,2 +1,2 @@
-import OInput from './input.vue'
-export default OInput
+import OkendoInput from './input.vue'
+export default OkendoInput

@@ -90,17 +90,21 @@
   version "2018.1.313"
   resolved "https://registry.yarnpkg.com/@progress/kendo-base-components-vue-wrapper/-/kendo-base-components-vue-wrapper-2018.1.313.tgz#e7dad4ef37d359f46f9784e1759eb224dd3dad95"
 
+"@progress/kendo-base-components-vue-wrapper@2018.2.516":
+  version "2018.2.516"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-base-components-vue-wrapper/-/kendo-base-components-vue-wrapper-2018.2.516.tgz#8067bda44a8cfad38466da3e46e68f5583155ebc"
+
 "@progress/kendo-buttons-vue-wrapper@^2018.1.313":
   version "2018.1.313"
   resolved "https://registry.yarnpkg.com/@progress/kendo-buttons-vue-wrapper/-/kendo-buttons-vue-wrapper-2018.1.313.tgz#8e70987af8fe9aef457e16bc176434ec78bcc336"
   dependencies:
     "@progress/kendo-base-components-vue-wrapper" "2018.1.313"
 
-"@progress/kendo-dateinputs-vue-wrapper@^2018.1.313":
-  version "2018.1.313"
-  resolved "https://registry.yarnpkg.com/@progress/kendo-dateinputs-vue-wrapper/-/kendo-dateinputs-vue-wrapper-2018.1.313.tgz#35364505293bed5f6912185c353975c22f4d247f"
+"@progress/kendo-dateinputs-vue-wrapper@^2018.2.516":
+  version "2018.2.516"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-dateinputs-vue-wrapper/-/kendo-dateinputs-vue-wrapper-2018.2.516.tgz#5ecea6bbb60654f2b971317355d26eaa883800ac"
   dependencies:
-    "@progress/kendo-base-components-vue-wrapper" "2018.1.313"
+    "@progress/kendo-base-components-vue-wrapper" "2018.2.516"
 
 "@progress/kendo-grid-vue-wrapper@^2018.1.313":
   version "2018.1.313"
@@ -113,6 +117,10 @@
   resolved "https://registry.yarnpkg.com/@progress/kendo-inputs-vue-wrapper/-/kendo-inputs-vue-wrapper-2018.1.313.tgz#d9375024222019f0c2a68393231fc3885d515217"
   dependencies:
     "@progress/kendo-base-components-vue-wrapper" "2018.1.313"
+
+"@progress/kendo-theme-default@^2.53.1":
+  version "2.53.1"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-theme-default/-/kendo-theme-default-2.53.1.tgz#a63e915104cb2187c47531482e3b799aa9c30191"
 
 "@progress/kendo-ui@^2018.1.411":
   version "2018.1.411"
@@ -3800,6 +3808,10 @@ function-bind@^1.0.2, function-bind@^1.1.1:
 functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
+
+fuzzysearch@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/fuzzysearch/-/fuzzysearch-1.0.3.tgz#dffc80f6d6b04223f2226aa79dd194231096d008"
 
 gauge@~2.7.3:
   version "2.7.4"

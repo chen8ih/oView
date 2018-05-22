@@ -1,2 +1,2 @@
-import OIcon from './icon.vue'
-export default OIcon
+import OkendoIcon from './icon.vue'
+export default OkendoIcon

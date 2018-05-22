@@ -79,7 +79,7 @@
 
 使用`OIcon`组件, 通过指定图标对应的type属性，示例代码
 
-    <kendo-icon type="calendar"></kendo-icon>
+    <okendo-icon type="calendar"></okendo-icon>
 
 渲染后为
 
@@ -99,7 +99,7 @@
 <ul class="icon-list">
   <li v-for="name in icons" :key="name">
     <span>
-      <kendo-icon :type="name"></kendo-icon>
+      <okendo-icon :type="name"></okendo-icon>
       <span class="icon-name">{{'k-i-' + name}}</span>
     </span>
   </li>

@@ -92,6 +92,11 @@
           "desc": "模态框 Modal",
           "name": "modal",
           "path": "/modal"
+        },
+        {
+          "desc": "树形选择框 TreeSelect",
+          "name": "treeselect",
+          "path": "/treeselect"
         }
       ]
     },
