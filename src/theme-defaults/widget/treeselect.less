@@ -1,0 +1,159 @@
+@import '../variable.less';
+@import '../mixins/index.less';
+@treeselect-prefix-cls: ~"@{css-prefix}treeselect";
+
+.row {
+  .horizontal-padding(@--treeselect-padding);
+
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.@{treeselect-prefix-cls} {
+  position: relative;
+  text-align: left;
+
+  div,
+  span {
+    box-sizing: border-box;
+  }
+
+  &__control {
+    .row();
+
+    height: @--treeselect-control-height;
+    border: @--treeselect-border;
+    border-radius: @--treeselect-border-radius;
+    background: @--treeselect-control-bg;
+    transition-duration: @--treeselect-transition-duration;
+    transition-timing-function: ease-out-cubic; 
+  }
+
+  &:not(.okendo-treeselect--disabled):not(.okendo-treeselect--focus) &:hover {
+    border-color: @--treeselect-control-border-color-focus;
+  }
+
+  &--focused:not(.okendo-treeselect---open) & {
+    border-color: @--treeselect-control-border-color-focus;
+    box-shadow: @--treeselect-control-box-shadow-focus;
+  }
+
+  &--disabled & {
+    background-color: @--treeselect-control-bg-disabled;
+  }
+
+  &--open &,
+  &:hover {
+    border-color: @--treeselect-control-border-color-active;
+  }
+
+  &--open.okendo-treeselect--open-below & {
+    .border-radius-bottom(0);
+  }
+
+  &--open.okendo-treeselect--open-above & {
+    .border-radius-top(0);
+  }
+
+  &__value-container,
+  &__multi-value {
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  &__value-container {
+    display: table-cell;
+    position: relative;
+
+    .@{treeselect-prefix-cls}--searchable:not(.okendo-treeselect--disabled) & {
+      cursor: text;
+    }
+  }
+
+  &__multi-value {
+    display: inline-block;
+
+    .@{treeselect-prefix-cls}--has-value & {
+      margin-bottom: @--treeselect-padding;
+    }
+  }
+
+  &__placeholder,
+  &__single-value {
+    .utils-ellipsis();
+    .horizontal-padding(@--treeselect-padding);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    line-height: @--treeselect-control-inner-height;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &__placeholder {
+    color: @--treeselect-placeholder-font-color;
+  }
+
+  &__single-value {
+    color: @--treeselect-single-value-font-color;
+
+    .@{treeselect-prefix-cls}--focused.@{treeselect-prefix-cls}--searchable & {
+      color: @--treeselect-single-value-font-color-focused;
+    }
+  }
+
+  &__multi-value-item-container {
+    display: inline-block;
+    padding-top: @--treeselect-padding;
+    padding-right: @--treeselect-padding;
+    vertical-align: top;
+  }
+
+  &__multi-value-item {
+    display: inline-table;
+    background: @--treeselect-multi-value-item-bg;
+    padding: @--treeselect-multi-value-margin-y @--treeselect-multi-value-margin-x;
+    border: @--treeselect-multi-value-item-border-width solid @--treeselect-multi-value-item-border-color;
+    border-radius: @--treeselect-border-radius;
+    color: @--treeselect-multi-value-font-color;
+    font-size: @--treeselect-multi-value-font-size;
+    vertical-align: top;
+
+    .@{treeselect-prefix-cls}:not(.okendo-treeselect--disabled) &:not(.okendo-treeselect__multi-value-item-disabled):hover {
+      cursor: pointer;
+      background: @--treeselect-multi-value-item-bg-hover;
+      color: @--treeselect-multi-value-font-color-hover;
+    }
+
+    &.@{treeselect-prefix-cls}__multi-value-item-disabled {
+      cursor: default;
+      background: @--treeselect-multi-value-item-bg-disabled;
+      color: @--treeselect-multi-value-font-color-disabled;
+    }
+
+    .@{treeselect-prefix-cls}--disabled & {
+      cursor: default;
+      background: @--treeselect-multi-value-item-bg-control-disabled;
+      border-color: @--treeselect-multi-value-item-border-color-control-disabled;
+      color: @--treeselect-multi-value-item-font-color-control-disabled;
+    }
+  }
+
+  &__value-remove,
+  &__multi-value-label {
+    display: table-cell;
+    padding: @--treeselect-multi-value-padding-y @--treeselect-multi-value-padding-x;
+    vertical-align: middle;
+  }
+
+  &__value-remove {
+    cursor: pointer;
+    color: @--treeselect-multi-value-remove-color;
+    padding-left: @--treeselect-multi-value-padding-x;
+    border-left: 1px solid @--treeselect-multi-value-divider-color;
+    line-height: 0;
+  }
+}

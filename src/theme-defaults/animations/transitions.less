@@ -1,0 +1,52 @@
+/* Transitions
+------------------------ */
+.okendo-treeselect__multi-value-item-transition {
+  &-enter-active,
+  &-leave-active {
+    transition-duration: @--treeselect-transition-duration;
+    transition-property: transform, opacity;
+  }
+
+  &-enter-active {
+    transition-timing-function: ease-out-circ;
+  }
+
+  &-leave-active {
+    transition-timing-function: ease-out-circ;
+    position: absolute;
+  }
+
+  &-enter,
+  &-leave-to {
+    transform: scale(.7);
+    opacity: 0;
+  }
+
+  &-move {
+    transition: @--treeselect-transition-duration transform ease-out-quart;
+  }
+}
+
+// .okendo-treeselect__menu-transition {
+//   &-enter-active,
+//   &-leave-active {
+//     /* to be overriden */
+//   }
+
+//   &-enter,
+//   &-leave-to {
+//     /* to be overriden */
+//   }
+// }
+
+// .okendo-treeselect__list--transition {
+//   &-enter-active,
+//   &-leave-active {
+//     /* to be overriden */
+//   }
+
+//   &-enter,
+//   &-leave-to {
+//     /* to be overriden */
+//   }
+// }
