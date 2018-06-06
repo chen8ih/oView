@@ -1,11 +1,3 @@
-/*
- * @Author: oppo.chenhang
- * @Date: 2018-05-14 08:22:18
- * @Last Modified by: oppo.chenhang
- * @Last Modified time: 2018-05-14 11:30:17
- * @Desc: show migrating guide in browser console
- */
-
 export default {
   mounted () {
     if (process.env.NODE_ENV === 'production') {

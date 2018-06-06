@@ -1,10 +1,3 @@
-/*
- * @Author: oppo.chenhang
- * @Date: 2018-05-14 08:18:47
- * @Last Modified by: oppo.chenhang
- * @Last Modified time: 2018-05-14 11:19:38
- * @Desc: 调用/触发指定子孙组件的时间
- */
 function childEmitter (componentName, eventName, params) {
   this.$children.forEach(child => {
     let name = child.$options.componentName

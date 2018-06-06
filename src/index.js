@@ -1,9 +1,3 @@
-/*
- * @Author: chenhang
- * @Date: 2018-04-11 15:01:28
- * @Last Modified by: oppo.chenhang
- * @Last Modified time: 2018-05-22 11:30:51
- */
 import Vue from 'vue'
 // 引入kendoUI组件
 import '@progress/kendo-ui/js/kendo.core.js'
