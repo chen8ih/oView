@@ -1,6 +1,6 @@
 <script>
-import { deepExtend, includes } from '@/utils/assist'
-import { MIN_INPUT_WIDTH, KEY_CODES } from '@/utils/constants'
+import { deepExtend, includes } from '../../utils/assist'
+import { MIN_INPUT_WIDTH, KEY_CODES } from '../../utils/constants'
 
 const keysThatRequireMenuBeingOpen = [
   KEY_CODES.ENTER,

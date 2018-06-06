@@ -4,6 +4,7 @@ dist/
 docs/
 node_modules/
 examples/
+static/
 test/
 .babelrc
 index.html

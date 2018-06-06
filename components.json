@@ -1,0 +1,4 @@
+{
+  "OkendoRow": "./src/components/row/index.js",
+  "OkendoCol": "./src/components/col/index.js"
+}

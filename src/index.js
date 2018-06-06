@@ -13,10 +13,10 @@ import OkendoRow from './components/row'
 import OkendoCol from './components/col'
 
 // 自定义业务组件
-import OkendoIcon from './components/icon'
-import OkendoButton from './components/button'
-import OkendoInput from './components/input'
-import OkendoTreeselect from './components/treeselect'
+// import OkendoIcon from './components/icon'
+// import OkendoButton from './components/button'
+// import OkendoInput from './components/input'
+// import OkendoTreeselect from './components/treeselect'
 
 import locale from './locale'
 
@@ -25,11 +25,11 @@ import locale from './locale'
 
 const components = [
   OkendoRow,
-  OkendoCol,
-  OkendoIcon,
-  OkendoButton,
-  OkendoInput,
-  OkendoTreeselect
+  OkendoCol
+  // OkendoIcon,
+  // OkendoButton,
+  // OkendoInput,
+  // OkendoTreeselect
 ]
 
 const install = (Vue, opts = {}) => {
@@ -51,11 +51,7 @@ const API = {
   i18n: locale.i18n,
   install,
   OkendoRow,
-  OkendoCol,
-  OkendoIcon,
-  OkendoButton,
-  OkendoInput,
-  OkendoTreeselect
+  OkendoCol
 }
 
 export default API
