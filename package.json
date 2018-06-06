@@ -1,6 +1,6 @@
 {
-  "name": "oview",
-  "version": "1.0.1",
+  "name": "@opp/oview",
+  "version": "1.0.3",
   "description": "A Vue.js project",
   "author": "chenh",
   "license": "MIT",

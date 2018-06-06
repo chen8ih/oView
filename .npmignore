@@ -1,1 +1,10 @@
-./docs
+build/
+config/
+dist/
+docs/
+node_modules/
+examples/
+test/
+.babelrc
+index.html
+yarn.lock
