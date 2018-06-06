@@ -25,14 +25,14 @@
       <single-value v-if="single" ref="value" />
       <multi-value v-else ref="value" />
       <div v-if="shouldShowX" class="okendo-treeselect__x-container" :title="multiple ? clearAllText : clearValueText" @mousedown="handleMouseDownOnClear">
-        <i class="okendo-treeselect__x"></i>
+        <i class="k-icon k-i-x okendo-treeselect__x"></i>
       </div>
       <div v-if="!menu.isOpen || !alwaysOpen" class="okendo-treeselect__control-arrow-container" @mousedown="handleMouseDownOnArrow">
-        <i :class="[ 'okendo-treeselect__control-arrow', { 'okendo-treeselect__control-arrow--rotated': menu.isOpen } ]"></i>
+        <i class="k-icon k-i-arrow-60-up" :class="[ 'okendo-treeselect__control-arrow', { 'okendo-treeselect__control-arrow--rotated': menu.isOpen } ]"></i>
       </div>
     </div>
     <transition name="okendo-treeselect__menu--transition">
-      <div v-if="menu.isOpen" class="okendo-treeselect__menu" ref="menu" :style="{ maxHeight: menu.optimizedHeight + 'px' }">
+      <div v-show="menu.isOpen" class="okendo-treeselect__menu" ref="menu" :style="{ maxHeight: menu.optimizedHeight + 'px' }">
         <template v-if="forest.isLoaded">
           <tip v-if="localSearch.active && localSearch.noResults" type="no-results" icon="warning">{{ noResultsText }}</tip>
           <tip v-else-if="forest.normalizedOptions.length === 0" type="no-options" icon="warning">{{ noOptionsText }}</tip>
@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import treeselectMixin from '../../mixins/treeSelect'
+import treeselectMixin from './mixins/treeSelect'
 import HiddenField from './hiddenValue'
 import MultiValue from './multiValue'
 import SingleValue from './singleValue'

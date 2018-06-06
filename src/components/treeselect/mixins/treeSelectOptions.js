@@ -1,4 +1,4 @@
-import { onlyOnLeftClick } from '../utils/assist'
+import { onlyOnLeftClick } from '@/utils/assist'
 
 export default {
   props: {

@@ -10,7 +10,7 @@
       <div v-if="shouldShowArrorPlaceholder" class="okendo-treeselect__option-arrow-placeholder">&nbsp;</div>
       <div v-else-if="node.isBranch" class="okendo-treeselect__option-arrow-container" @mousedown="handleMouseDownOnOptionArrow">
         <transition name="okendo-treeselect__option-arrow--prepare" appear>
-          <i :class="[ 'okendo-treeselect__option-arrow', { 'okendo-treeselect__option-arrow--rotated': shouldExpand } ]"></i>
+          <i class="k-icon k-i-arrow-60-down" :class="[ 'okendo-treeselect__option-arrow', { 'okendo-treeselect__option-arrow--rotated': shouldExpand } ]"></i>
         </transition>
       </div>
       <div class="okendo-treeselect__label-container" @mousedown="handleMouseDownOnOption">
@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import optionMixin from '../../mixins/treeSelectOptions'
+import optionMixin from './mixins/treeSelectOptions'
 import Tip from './tip'
 export default {
   name: 'okendo-treeselect--option',

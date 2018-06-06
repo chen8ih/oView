@@ -5,7 +5,7 @@
         <div class="okendo-treeselect__multi-value-item-container" :key="'value-' + node.id">
           <div :class="[ 'okendo-treeselect__multi-value-item', { 'okendo-treeselect__multi-value-item-disabled': node.isDisabled } ]" @mousedown="handleMouseDownOnValueItem($event, node)">
             <span class="okendo-treeselect__multi-value-label">{{ node.label }}</span>
-            <span class="okendo-treeselect__icon okendo-treeselect__value-remove"><delete-icon /></span>
+            <span class="okendo-treeselect__icon okendo-treeselect__value-remove"><i class="k-icon k-i-x"></i></span>
           </div>
         </div>
       </template>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import valueMixin from '../../mixins/treeSelectValue'
+import valueMixin from './mixins/treeSelectValue'
 import Placeholder from './Placeholder'
 import SearchInput from './SearchInput'
 

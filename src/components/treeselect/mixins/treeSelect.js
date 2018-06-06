@@ -7,7 +7,7 @@ import {
   identity, constant, createMap,
   assign,
   quickDiff, getLast, includes, find, removeFromArray
-} from '../utils/assist'
+} from '@/utils/assist'
 
 import {
   UNCHECKED, INDETERMINATE, CHECKED,
@@ -17,7 +17,7 @@ import {
   ALL_CHILDREN, ALL_DESCENDANTS, LEAF_CHILDREN, LEAF_DESCENDANTS,
   ORDER_SELECTED, LEVEL, INDEX,
   INPUT_DEBOUNCE_DELAY, MENU_BUFFER
-} from '../utils/constants'
+} from '@/utils/constants'
 
 function sortValueByIndex (a, b) {
   let i = 0

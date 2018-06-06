@@ -2801,6 +2801,10 @@ duplexify@^3.4.2, duplexify@^3.5.3:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
+easings-css@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/easings-css/-/easings-css-1.0.0.tgz#dde569003bb7a4a0c0b77878f5db3e0be5679c81"
+
 eastasianwidth@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/eastasianwidth/-/eastasianwidth-0.1.1.tgz#44d656de9da415694467335365fb3147b8572b7c"

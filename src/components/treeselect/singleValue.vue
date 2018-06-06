@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import valueMixin from '../../mixins/treeSelectValue'
+import valueMixin from './mixins/treeSelectValue'
 import Placeholder from './Placeholder'
 import SearchInput from './SearchInput'
 export default {

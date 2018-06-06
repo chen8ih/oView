@@ -87,3 +87,58 @@
   border-top-left-radius: @size;
   border-top-right-radius: @size;
 }
+
+.row {
+  .horizontal-padding(@--treeselect-padding);
+
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.wide-cell {
+  .cell();
+  .utils-ellipsis();
+
+  width: @--treeselect-wide-cell-width;
+  padding-left: @--treeselect-padding;
+}
+
+.narrow-cell {
+  .cell();
+
+  width: 16px;
+  text-align: center;
+  line-height: 0;
+}
+
+// based on: https://github.com/strues/retinajs/blob/master/dist/retina.less
+.retina(@path, @cap: 2) {
+  @lowretina: ~"(min-resolution: 1.5dppx)";
+  @2xpath: replace(@path, "(\.\w+)$", "@2x$1");
+
+  background-image: url(@path);
+
+  @media @lowretina {
+    background-image: url(@2xpath);
+  }
+
+  .create-queries() when (@cap >= 2) {
+    .loop(@env) when (@env <= @cap) {
+      @retinapath: replace(@path, "(\.\w+)$", "@@{env}x$1");
+      @media (min-resolution: @env * 96dpi) {
+        background-image: url(@retinapath);
+      }
+
+      .loop((@env + 1));
+    }
+
+    .loop(2);
+  }
+  .create-queries();
+}

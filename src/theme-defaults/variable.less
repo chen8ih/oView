@@ -1,3 +1,4 @@
+@import '~easings-css/easings.less';
 @css-prefix: okendo-;
 @css-prefix-iconfont: okendo-icon;
 @state-prefix: is-;
@@ -33,6 +34,14 @@
 @--color-warning: #fcaa31;
 @--color-danger: #ff4c4c;
 @--color-info: #05b570;
+
+@--color-success-light: mix(@--color-white, @--color-success, 80%);
+@--color-warning-light: mix(@--color-white, @--color-warning, 80%);
+@--color-danger-light: mix(@--color-white, @--color-danger, 80%);
+
+@--color-success-lighter: mix(@--color-white, @--color-success, 90%);
+@--color-warning-lighter: mix(@--color-white, @--color-warning, 90%);
+@--color-danger-lighter: mix(@--color-white, @--color-danger, 90%);
 
 @--color-text-primary: #252627;
 @--color-text-regular: #66686d;
@@ -241,45 +250,137 @@
 /* TreeSelect
 ------------------------ */
 @--treeselect-font-size: @--font-size-base;
+@--treeselect-font-size-sm: @--font-size-small;
 @--treeselect-padding: 5px;
-@--treeselect-border: @--border-base;
 @--treeselect-border-radius: @--border-radius-base;
+@--treeselect-border-radius-lg: 5px;
+@--treeselect-border-radius-sm: 2px;
+@--treeselect-narrow-cell-width: 20px;
+@--treeselect-wide-cell-width: 100%;
 @--treeselect-icon-size: 12px;
 @--treeselect-transition-duration: 200ms;
 @--treeselect-transition-duration-slow: 400ms;
 @--treeselect-max-level: 8;
 
 @--treeselect-control-height: 36px;
-@--treeselect-control-inner-height: @--treeselect-control-height - @--treeselect-border-width * 2;
-@--treeselect-border-width: 1px;
-@--treeselect-control-border-color-focus: #dfe0e2;
-@--treeselect-control-border-color-active: #dfe0e2;
-@--treeselect-control-bg: #f6f6f6;
+@--treeselect-control-inner-height: @--treeselect-control-height - @--treeselect-control-border-width * 2;
+@--treeselect-control-border-width: 1px;
+@--treeselect-control-border-color: #ddd;
+@--treeselect-control-border-color-hover: #cfcfcf;
+@--treeselect-control-border-color-active: @--treeselect-control-border-color-hover;
+@--treeselect-control-border-color-focus: #989ba2;
+@--treeselect-control-border-radius: @--treeselect-border-radius-lg;
+@--treeselect-control-bg: #fff;
 @--treeselect-control-box-shadow-focus: 0 0 0 3px fade(@--treeselect-control-border-color-focus, 10%);
-@--treeselect-control-bg-disabled: #d0d2d8;
+@--treeselect-control-bg-disabled: #f9f9f9;
 
 @--treeselect-placeholder-font-color: #c9ccd3;
-@--treeselect-single-value-font-color: #c9ccd3;
-@--treeselect-single-value-font-color-focused: #c9ccd3;
-
-@--treeselect-multi-value-item-bg: #f6f6f6;
-@--treeselect-multi-value-margin-y: 5px;
-@--treeselect-multi-value-margin-x: 5px;
-@--treeselect-multi-value-padding-x: 5px;
-@--treeselect-multi-value-padding-y: 5px;
+@--treeselect-single-value-font-color: #333;
+@--treeselect-single-value-font-color-focused: @--treeselect-placeholder-font-color;
+@--treeselect-multi-value-margin-x: 0;
+@--treeselect-multi-value-margin-y: 2px;
+@--treeselect-multi-value-padding-x: @--treeselect-padding;
+@--treeselect-multi-value-padding-y: 0;
+@--treeselect-multi-value-font-size: @--treeselect-font-size-sm;
+@--treeselect-multi-value-font-color: #989ba2;
+@--treeselect-multi-value-item-bg: @--color-primary-light-5;
 @--treeselect-multi-value-item-border-width: 1px;
-@--treeselect-multi-value-item-border-color: @--border-base;
-@--treeselect-multi-value-font-color: @--color-text-regular;
-@--treeselect-multi-value-font-size: @--font-size-base;
-@--treeselect-multi-value-item-bg-hover: #f6f6f6;
-@--treeselect-multi-value-font-color-hover: @--color-text-primary;
-@--treeselect-multi-value-item-bg-disabled: @--disabled-fill-base;
-@--treeselect-multi-value-font-color-disabled: @--disabled-color-base;
-@--treeselect-multi-value-item-bg-control-disabled: @--disabled-fill-base;
-@--treeselect-multi-value-item-border-color-control-disabled: @--disabled-border-base;
-@--treeselect-multi-value-item-font-color-control-disabled: @--disabled-color-base;
-@--treeselect-multi-value-remove-color: @--color-text-secondary;
-@--treeselect-multi-value-divider-color: @--color-text-regular;
+@--treeselect-multi-value-item-border-color: transparent;
+@--treeselect-multi-value-font-color-hover: @--treeselect-multi-value-font-color;
+@--treeselect-multi-value-item-bg-hover: @--treeselect-multi-value-item-bg;
+@--treeselect-multi-value-font-color-disabled: #c9ccd3;
+@--treeselect-multi-value-item-bg-disabled:#c9ccd3;
+@--treeselect-multi-value-item-font-color-control-disabled: #555;
+@--treeselect-multi-value-item-bg-control-disabled: #fff;
+@--treeselect-multi-value-item-border-color-control-disabled: #e5e5e5;
+@--treeselect-multi-value-remove-color: @--treeselect-multi-value-font-color;
+@--treeselect-multi-value-remove-color-hover: #fcaa31;
+@--treeselect-multi-value-remove-size: 6px;
+@--treeselect-multi-value-divider-color: #fff;
+@--treeselect-limit-tip-font-color: #989ba2;
+@--treeselect-limit-tip-font-size: @--treeselect-multi-value-font-size;
+@--treeselect-limit-tip-font-weight: 600;
+@--treeselect-single-input-font-size: inherit;
+@--treeselect-multi-input-font-size: @--treeselect-multi-value-font-size;
+
+@--treeselect-menu-bg: #fff;
+@--treeselect-menu-padding-y: @--treeselect-padding;
+@--treeselect-menu-line-height: 180%;
+@--treeselect-menu-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+@--treeselect-control-menu-divider-color: #f2f2f2;
+
+@--treeselect-arrow-size: 9px;
+@--treeselect-arrow-color: #ccc;
+@--treeselect-arrow-color-hover: #989ba2;
+@--treeselect-arrow-transition-timing-function: @ease-out-expo;
+
+@--treeselect-x-size: 8px;
+@--treeselect-x-color: @--treeselect-arrow-color;
+@--treeselect-x-color-hover: #989ba2;
+
+@--treeselect-option-bg-highlight: @--background-color-base;
+@--treeselect-option-selected-bg: @--background-color-base;
+@--treeselect-option-selected-bg-hover: @--treeselect-option-selected-bg;
+@--treeselect-checkbox-size: @--treeselect-icon-size;
+@--treeselect-checkbox-border-radius: @--treeselect-border-radius-sm;
+@--treeselect-checkbox-color: @--background-color-base;
+@--treeselect-checkbox-color-highlight: @--background-color-base;
+@--treeselect-checkbox-border-color: @--treeselect-checkbox-color;
+@--treeselect-checkbox-bg: #fff;
+@--treeselect-checkbox-border-color-hover: @--treeselect-checkbox-color-highlight;
+@--treeselect-checkbox-bg-hover: @--treeselect-checkbox-bg;
+@--treeselect-checkbox-indeterminate-border-color: @--treeselect-checkbox-color-highlight;
+@--treeselect-checkbox-indeterminate-bg: @--treeselect-checkbox-color-highlight;
+@--treeselect-checkbox-indeterminate-icon: "../../assets/checkbox-indeterminate.png";
+@--treeselect-checkbox-indeterminate-border-color-hover: @--treeselect-checkbox-color-highlight;
+@--treeselect-checkbox-indeterminate-bg-hover: @--treeselect-checkbox-color-highlight;
+@--treeselect-checkbox-checked-border-color: @--treeselect-checkbox-color-highlight;
+@--treeselect-checkbox-checked-bg: @--treeselect-checkbox-color-highlight;
+@--treeselect-checkbox-checked-icon: "../../assets/checkbox-checked.png";
+@--treeselect-checkbox-checked-border-color-hover: @--treeselect-checkbox-color-highlight;
+@--treeselect-checkbox-checked-bg-hover: @--treeselect-checkbox-color-highlight;
+@--treeselect-checkbox-disabled-border-color: @--treeselect-checkbox-border-color;
+@--treeselect-checkbox-disabled-bg-color: darken(@--treeselect-checkbox-bg, 3%);
+@--treeselect-checkbox-disabled-indeterminate-icon: "../../assets/checkbox-indeterminate-disabled.png";
+@--treeselect-checkbox-disabled-checked-icon: "../../assets/checkbox-checked-disabled.png";
+@--treeselect-option-label-color: inherit;
+@--treeselect-option-label-color-disabled: rgba(0, 0, 0, 0.25);
+
+@--treeselect-loader-color-dark: #989ba2;
+@--treeselect-loader-color-light: #989ba2;
+@--treeselect-loader-animation-duration: 1.6s;
+@--treeselect-warning-icon-bg: #989ba2;
+@--treeselect-error-icon-bg: #989ba2;
+@--treeselect-tip-color: #989ba2;
+@--treeselect-tip-font-size: @--treeselect-font-size-sm;
+@--treeselect-retry-text-color: #989ba2;
+
+/* Alert
+------------------------ */
+@--alert-padding: 8px 16px;
+@--alert-icon-size:  16px;
+@--alert-icon-large-size: 28px;
+
+@--alert-title-font-size: @--font-size-base;
+@--alert-description-font-size: @--font-size-small;
+@--alert-close-font-size: @--font-size-small;
+@--alert-close-customed-font-size: @--font-size-small;
+
+@--alert-border-radius: @--border-radius-base;
+@--alert-success-color: @--color-success-lighter;
+@--alert-warning-color: @--color-warning-lighter;
+@--alert-danger-color: @--color-danger-lighter;
+
+/* Message
+------------------------ */
+//@--message-min-width: 
+
+/* MsgBox
+------------------------ */
+
+/* Notification
+------------------------ */
+
 /* Layout and Grid
 ------------------------ */
 @--grid-columns: 24;

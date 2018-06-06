@@ -5,7 +5,7 @@
 ## 基本用法
 
 <div class="demo-block">
-  <okendo-treeselect v-model='value' :multiple="false" :options="options"></okendo-treeselect>
+  <okendo-treeselect v-model='value' :multiple="true" :options="options"></okendo-treeselect>
 </div>
 
 <script>
@@ -20,6 +20,12 @@ export default {
           children: [{
             id: 'aa',
             label: 'aa',
+            children: [
+              {
+                id: 'cc',
+                label: 'cc'
+              }
+            ]
           }, {
             id: 'ab',
             label: 'ab',
