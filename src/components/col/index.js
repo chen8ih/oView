@@ -1,7 +1,7 @@
-import OkendoCol from './col.vue'
+import Col from './col.vue'
 
-OkendoCol.install = (vue) => {
-  Vue.component(OkendoCol.name, OkendoCol)
+Col.install = (vue) => {
+  Vue.component(Col.name, Col)
 }
 
-export default OkendoCol
+export default Col

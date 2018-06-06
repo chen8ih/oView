@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'OkendoCol',
+  name: 'Col',
   props: {
     span: [Number, String],
     tag: {
@@ -22,7 +22,7 @@ export default {
     gutter () {
       let parent = this.$parent
 
-      while (parent && parent.$options.componentName !== 'OkendoRow') {
+      while (parent && parent.$options.componentName !== 'Row') {
         parent = parent.$parent
       }
       return parent ? parent.gutter : 0

@@ -9,14 +9,14 @@ import '@progress/kendo-theme-default/dist/all.css'
 // import { Grid } from '@progress/kendo-grid-vue-wrapper'
 
 // 布局组件
-import OkendoRow from './components/row'
-import OkendoCol from './components/col'
+import Row from './components/row'
+import Col from './components/col'
 
 // 自定义业务组件
 // import OkendoIcon from './components/icon'
 // import OkendoButton from './components/button'
 // import OkendoInput from './components/input'
-// import OkendoTreeselect from './components/treeselect'
+import Treeselect from './components/treeselect'
 
 import locale from './locale'
 
@@ -24,12 +24,9 @@ import locale from './locale'
 // Vue.use(DateinputsInstaller)
 
 const components = [
-  OkendoRow,
-  OkendoCol
-  // OkendoIcon,
-  // OkendoButton,
-  // OkendoInput,
-  // OkendoTreeselect
+  Row,
+  Col,
+  Treeselect
 ]
 
 const install = (Vue, opts = {}) => {
@@ -50,8 +47,9 @@ const API = {
   locale: locale,
   i18n: locale.i18n,
   install,
-  OkendoRow,
-  OkendoCol
+  Row,
+  Col,
+  Treeselect
 }
 
 export default API

@@ -1,7 +1,7 @@
-import OkendoRow from './row.vue'
+import Row from './row.vue'
 
-OkendoRow.install = (vue) => {
-  Vue.component(OkendoRow.name, OkendoRow)
+Row.install = (vue) => {
+  Vue.component(Row.name, Row)
 }
 
-export default OkendoRow
+export default Row

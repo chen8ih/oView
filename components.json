@@ -1,4 +1,5 @@
 {
-  "OkendoRow": "./src/components/row/index.js",
-  "OkendoCol": "./src/components/col/index.js"
+  "Row": "./src/components/row/index.js",
+  "Col": "./src/components/col/index.js",
+  "Treeselect": "./src/components/treeselect/index.js"
 }
