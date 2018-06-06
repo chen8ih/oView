@@ -16,6 +16,8 @@ const striptags = require('./strip-tags')
 
 const pkg = require('../package.json')
 
+const buildConfig = require('./config')
+
 const vueMarkdown = {
   preprocess: (MarkdownIt, source) => {
     MarkdownIt.renderer.rules.table_open = function () {
@@ -82,10 +84,7 @@ const webpackConfig = {
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
-    }
+    alias: buildConfig.alias
   },
   module: {
     rules: [
