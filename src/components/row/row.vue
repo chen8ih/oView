@@ -43,7 +43,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less">
-@import '../../theme-defaults/widget/row.less';
-</style>

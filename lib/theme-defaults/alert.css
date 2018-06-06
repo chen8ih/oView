@@ -1,0 +1,191 @@
+/* Animation
+------------------------ */
+/* Transition
+------------------------ */
+/* Colors
+------------------------ */
+/* Links
+------------------------ */
+/* Background
+------------------------ */
+/* Border
+------------------------ */
+/* Box-shadow
+------------------------ */
+/* Fill
+------------------------ */
+/* Font
+------------------------ */
+/* Size
+------------------------ */
+/* Disabled
+------------------------ */
+/* Button
+------------------------ */
+/* Input
+------------------------ */
+/* Radio
+------------------------ */
+/* Checkbox
+------------------------ */
+/* TreeSelect
+------------------------ */
+/* Alert
+------------------------ */
+/* Message
+------------------------ */
+/* MsgBox
+------------------------ */
+/* Notification
+------------------------ */
+/* Layout and Grid
+------------------------ */
+/* Header
+------------------------ */
+/* Footer
+------------------------ */
+/* Main
+------------------------ */
+/* Break-point
+------------------------ */
+/* Grid and Layout
+------------------------ */
+.utils-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.scroll-bar::-webkit-scrollbar {
+  z-index: 11;
+  width: 6px;
+}
+.scroll-bar::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+.scroll-bar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  width: 6px;
+  background: #b4bccc;
+}
+.scroll-bar::-webkit-scrollbar-corner {
+  background: #fff;
+}
+.scroll-bar::-webkit-scrollbar--track {
+  background: #fff;
+}
+.scroll-bar::-webkit-scrollbar--track--piece {
+  background: #fff;
+  width: 6px;
+}
+.row {
+  padding-left: 5px;
+  padding-right: 5px;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+.wide-cell {
+  display: table-cell;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  padding-left: 5px;
+}
+.narrow-cell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 16px;
+  text-align: center;
+  line-height: 0;
+}
+.okendo-alert {
+  width: 100%;
+  padding: 8px 16px;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  opacity: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+.okendo-alert .is-center {
+  text-align: center;
+}
+.okendo-alert--success {
+  background-color: #e6f8f1;
+  color: #05b570;
+}
+.okendo-alert--success .okendo-alert__description {
+  color: #05b570;
+}
+.okendo-alert--warning {
+  background-color: #fff7ea;
+  color: #fcaa31;
+}
+.okendo-alert--warning .okendo-alert__description {
+  color: #fcaa31;
+}
+.okendo-alert--danger {
+  background-color: #ffeded;
+  color: #ff4c4c;
+}
+.okendo-alert--danger .okendo-alert__description {
+  color: #ff4c4c;
+}
+.okendo-alert--content {
+  display: table-cell;
+  padding: 0 8px;
+}
+.okendo-alert__icon {
+  font-size: 16px;
+  width: 16px;
+}
+.okendo-alert__icon .is-big {
+  font-size: 28px;
+  width: 28px;
+}
+.okendo-alert__title {
+  font-size: 13px;
+  line-height: 18px;
+}
+.okendo-alert__title .is-bold {
+  font-weight: bold;
+}
+.okendo-alert .okendo-alert__description {
+  font-size: 12px;
+  margin: 5px 0 0 0;
+}
+.okendo-alert__closebtn {
+  font-size: 12px;
+  color: #c9ccd3;
+  opacity: 1;
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  cursor: pointer;
+}
+.okendo-alert__closebtn .is-customed {
+  font-style: normal;
+  font-size: 12px;
+  top: 9px;
+}
+.okendo-alert-fade-enter,
+.okendo-alert-fade-leave:active {
+  opacity: 0;
+}

@@ -66,7 +66,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less">
-@import '../../theme-defaults/widget/col.less';
-</style>

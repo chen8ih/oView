@@ -6,22 +6,12 @@ const autoprefixer = require('gulp-autoprefixer')
 
 //编译less
 gulp.task('css', function(){
-  gulp.src('../examples/styles/index.less')
+  gulp.src('../src/theme-defaults/widget/*.less')
     .pipe(less())
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie > 8']
     }))
-    .pipe(cleanCSS())
-    .pipe(rename('oview.css'))
-    .pipe(gulp.dest('../static/css'));
-});
-
-//拷贝字体文件
-gulp.task('fonts', function () {
-  gulp.src([
-    '../examples/styles/common/iconfont/fonts/*.*',
-    '../examples/styles/common/fonts/*.*'
-    ]).pipe(gulp.dest('../static/css/fonts'));
-});
+    .pipe(gulp.dest('../lib/theme-defaults/'));
+})
 
 gulp.task('default', ['css']);
