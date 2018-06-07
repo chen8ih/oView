@@ -7,7 +7,7 @@ import router from './router'
 
 import DemoBlock from './components/demo-block'
 import okendo from '../src/index'
-import '../packages/theme-defaults/index.less'
+import '../lib/theme-defaults/index.css'
 import './styles/index.less'
 
 Vue.config.productionTip = false
