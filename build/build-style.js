@@ -6,7 +6,7 @@ const autoprefixer = require('gulp-autoprefixer')
 
 //编译less
 gulp.task('css', function(){
-  gulp.src(['../src/theme-defaults/*.less', '!../src/theme-defaults/variable.less'])
+  gulp.src(['../packages/theme-defaults/*.less', '!../src/theme-defaults/variable.less'])
     .pipe(less())
     .pipe(autoprefixer({
       browsers: ['last 2 versions', 'ie > 8']
@@ -14,4 +14,10 @@ gulp.task('css', function(){
     .pipe(gulp.dest('../lib/theme-defaults/'));
 })
 
-gulp.task('default', ['css']);
+//拷贝金泰文件
+gulp.task('assets', function () {
+  gulp.src('../packages/theme-defaults/assets/*.*')
+    .pipe(gulp.dest('../lib/theme-defaults/assets'));
+});
+
+gulp.task('default', ['css', 'assets']);

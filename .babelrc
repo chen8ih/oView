@@ -10,16 +10,22 @@
   ],
   "plugins": [
     "transform-vue-jsx", 
-    "transform-runtime",
-    ["import", {
-      "libraryName": "oView",
-      "libraryDirectory": "src/components"
-    }]
+    "transform-runtime"
   ],
   "env": {
     "test": {
       "presets": ["env", "stage-2"],
       "plugins": ["transform-vue-jsx", "istanbul"]
+    },
+    "utils": {
+      "plugins": [
+        ["module-resolver", {
+          "root": ["oview-ui"],
+          "alias": {
+            "oview-ui/src": "oview-ui/lib"
+          }
+        }]
+      ]
     }
   }
 }
