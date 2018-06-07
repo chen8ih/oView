@@ -9,20 +9,20 @@ const mixinsList = fs.readdirSync(path.resolve(__dirname, '../src/mixins'))
 let externals = {}
 
 Object.keys(Components).forEach(function(key) {
-  externals[`oview-ui/packages/${key}`] = `oview-ui/lib/${key}`
+  externals[`@opp/oview/packages/${key}`] = `@opp/oview/lib/${key}`
 })
 
-externals['oview-ui/src/assets'] = 'oview-ui/lib/assets'
-externals['oview-ui/src/locale'] = 'oview-ui/lib/locale'
+externals['@opp/oview/src/assets'] = '@opp/oview/lib/assets'
+externals['@opp/oview/src/locale'] = '@opp/oview/lib/locale'
 
 utilsList.forEach(function(file) {
   file = path.basename(file, '.js')
-  externals[`oview-ui/src/utils/${file}`] = `oview-ui/lib/utils/${file}`
+  externals[`@opp/oview/src/utils/${file}`] = `@opp/oview/lib/utils/${file}`
 })
 
 mixinsList.forEach(function(file) {
   file = path.basename(file, '.js')
-  externals[`oview-ui/src/mixins/${file}`] = `oview-ui/lib/mixins/${file}`
+  externals[`@opp/oview/src/mixins/${file}`] = `@opp/oview/lib/mixins/${file}`
 })
 
 externals = [Object.assign({
@@ -35,7 +35,7 @@ exports.alias = {
   'vue$': 'vue/dist/vue.esm.js',
   main: path.resolve(__dirname, '../src'),
   examples: path.resolve(__dirname, '../examples'),
-  'oview-ui': path.resolve(__dirname, '../')
+  '@opp/oview': path.resolve(__dirname, '../')
 }
 
 exports.vue = {

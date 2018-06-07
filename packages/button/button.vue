@@ -24,7 +24,7 @@
 
 <script>
 import OkendoIcon from '../icon'
-import { oneOf } from 'oview-ui/src/utils/assist'
+import { oneOf } from '@opp/oview/src/utils/assist'
 
 export default {
   name: 'OkendoButton',

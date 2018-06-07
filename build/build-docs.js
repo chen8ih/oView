@@ -3,7 +3,6 @@ const glob = require('glob')
 const fs = require('fs')
 const yaml = require('js-yaml')
 const path = require('path')
-const _ = require('lodash')
 const mkdirp = require('mkdirp')
 const rimraf = require('rimraf')
 
@@ -28,6 +27,11 @@ let tMaps = {
 // 获取文件路径
 function getPath (dir) {
   return path.join(__dirname, dir)
+}
+
+// 获取不一样的数组
+function oUniqBy(array, name) {
+  return array
 }
 
 const APPNAME='OView'
@@ -318,7 +322,9 @@ function render (files, tag) {
 
   })
   if (!tag) {
-    gComponents = _.uniqBy(gComponents, 'name')
+    // 返回不重复的数组， 此处需要自己实现，否则引入整个lodash包 不太好
+    // --todo
+    gComponents = oUniqBy(gComponents, 'name')
     fs.writeFileSync(getPath('../examples/components_list.json'), JSON.stringify(gComponents, null, 2))
   }
 

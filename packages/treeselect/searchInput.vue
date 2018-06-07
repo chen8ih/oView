@@ -1,6 +1,6 @@
 <script>
-import { deepExtend, includes } from 'oview-ui/src/utils/assist'
-import { MIN_INPUT_WIDTH, KEY_CODES } from 'oview-ui/src/utils/constants'
+import { deepExtend, includes } from '@opp/oview/src/utils/assist'
+import { MIN_INPUT_WIDTH, KEY_CODES } from '@opp/oview/src/utils/constants'
 
 const keysThatRequireMenuBeingOpen = [
   KEY_CODES.ENTER,

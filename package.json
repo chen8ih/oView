@@ -1,6 +1,6 @@
 {
   "name": "@opp/oview",
-  "version": "1.1.1",
+  "version": "1.1.4",
   "description": "基于kendoUI的Vue组件库",
   "author": "chenh",
   "license": "MIT",
@@ -20,20 +20,11 @@
     "dist": "npm run clean && webpack --config build/webpack.component.conf.js && npm run build:utils && npm run style"
   },
   "dependencies": {
-    "@progress/kendo-buttons-vue-wrapper": "^2018.1.313",
-    "@progress/kendo-dateinputs-vue-wrapper": "^2018.2.516",
-    "@progress/kendo-grid-vue-wrapper": "^2018.1.313",
-    "@progress/kendo-inputs-vue-wrapper": "^2018.1.313",
-    "@progress/kendo-theme-default": "^2.53.1",
-    "@progress/kendo-ui": "^2018.1.411",
     "babel-polyfill": "^6.26.0",
     "cheerio": "^1.0.0-rc.2",
     "deepmerge": "^2.1.0",
     "easings-css": "^1.0.0",
     "fuzzysearch": "^1.0.3",
-    "lodash": "^4.17.5",
-    "npm": "^6.0.0",
-    "object-assign": "^4.1.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",

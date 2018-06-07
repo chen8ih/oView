@@ -1,4 +1,4 @@
-import { onlyOnLeftClick } from 'oview-ui/src/utils/assist'
+import { onlyOnLeftClick } from '@opp/oview/src/utils/assist'
 
 export default {
   props: {

@@ -10,7 +10,8 @@ module.exports = {
     vendor: [
       'vue/dist/vue.esm.js',
       'vue-router',
-      'vuex'
+      'vuex',
+      'vuex-i18n'
     ]
   },
   output: {

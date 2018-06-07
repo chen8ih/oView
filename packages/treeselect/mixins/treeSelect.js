@@ -7,7 +7,7 @@ import {
   identity, constant, createMap,
   assign,
   quickDiff, getLast, includes, find, removeFromArray
-} from 'oview-ui/src/utils/assist'
+} from '@opp/oview/src/utils/assist'
 
 import {
   UNCHECKED, INDETERMINATE, CHECKED,
@@ -17,7 +17,7 @@ import {
   ALL_CHILDREN, ALL_DESCENDANTS, LEAF_CHILDREN, LEAF_DESCENDANTS,
   ORDER_SELECTED, LEVEL, INDEX,
   INPUT_DEBOUNCE_DELAY, MENU_BUFFER
-} from 'oview-ui/src/utils/constants'
+} from '@opp/oview/src/utils/constants'
 
 function sortValueByIndex (a, b) {
   let i = 0

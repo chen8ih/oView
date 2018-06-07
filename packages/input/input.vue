@@ -66,10 +66,10 @@
 </template>
 
 <script>
-import emitter from '../../mixins/emitter'
-import Migrating from '../../mixins/migrating'
+import emitter from '@opp/oview/src/mixins/emitter'
+import Migrating from '@opp/oview/src/mixins/migrating'
 // import merge from '../../utils/merge'
-import { isKorean } from '../../utils/assist'
+import { isKorean } from '@opp/oview/src/utils/assist'
 export default {
   name: 'OkendoInput',
   componentName: 'KendoInput',

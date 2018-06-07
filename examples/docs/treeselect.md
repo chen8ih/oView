@@ -5,7 +5,7 @@
 ## 基本用法
 
 <div class="demo-block">
-  <okendo-treeselect v-model='value' :multiple="true" :options="options"></okendo-treeselect>
+  <o-treeselect v-model='value' :multiple="true" :options="options"></o-treeselect>
 </div>
 
 <script>

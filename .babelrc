@@ -20,9 +20,9 @@
     "utils": {
       "plugins": [
         ["module-resolver", {
-          "root": ["oview-ui"],
+          "root": ["@opp/oview"],
           "alias": {
-            "oview-ui/src": "oview-ui/lib"
+            "@opp/oview/src": "@opp/oview/lib"
           }
         }]
       ]

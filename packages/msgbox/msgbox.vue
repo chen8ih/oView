@@ -76,11 +76,11 @@
 import OkendoInput from '../input'
 import OkendoButton from '../button'
 
-import Popup from 'oview-ui/src/utils/popup'
-import Dialog from 'oview-ui/src/utils/aria-dialog'
-import { addClass, removeClass } from 'oview-ui/src/utils/dom'
-import Locale from 'oview-ui/src/mixins/locale'
-import { t } from 'oview-ui/src/locale'
+import Popup from '@opp/oview/src/utils/popup'
+import Dialog from '@opp/oview/src/utils/aria-dialog'
+import { addClass, removeClass } from '@opp/oview/src/utils/dom'
+import Locale from '@opp/oview/src/mixins/locale'
+import { t } from '@opp/oview/src/locale'
 
 let msgbox
 let typeMap = {

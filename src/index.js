@@ -1,22 +1,22 @@
 // import Vue from 'vue'
 // 引入kendoUI组件
-import '@progress/kendo-ui/js/kendo.core.js'
+// import '@progress/kendo-ui/js/kendo.core.js'
 // import '@progress/kendo-ui/js/kendo.button.js'
 // import '@progress/kendo-ui/js/kendo.buttongroup.js'
-import '@progress/kendo-theme-default/dist/all.css'
+// import '@progress/kendo-theme-default/dist/all.css'
 // import { ButtonsInstaller } from '@progress/kendo-buttons-vue-wrapper'
 // import { DateinputsInstaller } from '@progress/kendo-dateinputs-vue-wrapper'
 // import { Grid } from '@progress/kendo-grid-vue-wrapper'
 
 // 布局组件
-import Row from './components/row'
-import Col from './components/col'
+import Row from '../packages/row'
+import Col from '../packages/col'
 
 // 自定义业务组件
 // import OkendoIcon from './components/icon'
 // import OkendoButton from './components/button'
 // import OkendoInput from './components/input'
-import Treeselect from './components/treeselect'
+import OTreeselect from '../packages/treeselect'
 
 import locale from './locale'
 
@@ -26,7 +26,7 @@ import locale from './locale'
 const components = [
   Row,
   Col,
-  Treeselect
+  OTreeselect
 ]
 
 const install = (Vue, opts = {}) => {
@@ -49,7 +49,7 @@ const API = {
   install,
   Row,
   Col,
-  Treeselect
+  OTreeselect
 }
 
 export default API
