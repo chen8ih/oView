@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
+    "clean": "rimraf lib && rimraf packages/*/lib && rimraf test/**/coverage",
+    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
@@ -15,7 +17,7 @@
     "dll": "webpack --config build/webpack.dll.conf.js",
     "docs": "node build/build-docs.js",
     "style": "gulp --gulpfile build/build-style.js",
-    "components": "webpack --config build/webpack.component.conf.js"
+    "dist": "npm run clean && webpack --config build/webpack.component.conf.js && npm run build:utils"
   },
   "dependencies": {
     "@progress/kendo-buttons-vue-wrapper": "^2018.1.313",
@@ -39,6 +41,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",

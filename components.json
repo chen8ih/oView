@@ -1,5 +1,5 @@
 {
-  "Row": "./src/components/row/index.js",
-  "Col": "./src/components/col/index.js",
-  "Treeselect": "./src/components/treeselect/index.js"
+  "Row": "./packages/row/index.js",
+  "Col": "./packages/col/index.js",
+  "Treeselect": "./packages/treeselect/index.js"
 }

@@ -1,0 +1,49 @@
+@import './variable.less';
+@import './mixins/index.less';
+
+@row-prefix-cls: ~"@{css-prefix}row";
+
+.make-row(@gutter: @--grid-gutter-width) {
+  .@{row-prefix-cls} {
+    position: relative;
+    margin-left: (@gutter / -2);
+    margin-right: (@gutter / -2);
+    height: auto;
+    .clearfix;
+
+    &--flex {
+      display: flex;
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .@{state-prefix}justify-center {
+    justify-content: center;  
+  }
+
+  .@{state-prefix}justify-end {
+    justify-content: flex-end;
+  }
+
+  .@{state-prefix}justify-space-between {
+    justify-content: space-between;
+  }
+
+  .@{state-prefix}justify-space-around {
+    justify-content: space-around;
+  }
+
+  .@{state-prefix}align-middle {
+    align-items: center;
+  }
+
+  .@{state-prefix}align-bottom {
+    align-items: flex-end;
+  }
+}
+
+.make-row();
+
