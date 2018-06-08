@@ -66,7 +66,7 @@
     <div class="header-container">
       <router-link :to="{name: 'index'}">
         <img src="../../assets/logo.png">
-        <span class="page-name">Okendo Design</span>
+        <span class="page-name">OView Design</span>
       </router-link>
       <router-link :to="{name: 'giud'}">
         <span class="page-widget">组件</span>

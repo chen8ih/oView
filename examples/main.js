@@ -7,6 +7,7 @@ import router from './router'
 
 import DemoBlock from './components/demo-block'
 import okendo from '../src/index'
+import '@progress/kendo-theme-default/dist/all.css';
 import '../lib/theme-defaults/index.css'
 import './styles/index.less'
 
