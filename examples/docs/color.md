@@ -106,137 +106,137 @@ okendo根据公司品牌规范制定了一套颜色模块，为所有构建的�
 ## 主色
 
 使用绿色作为主色调， 其中Light Primary用于`hover`, Dark Primary用于`active`
-<okendo-row :gutter="16">
-  <okendo-col :span="8">
+<o-row :gutter="16">
+  <o-col :span="8">
     <div class="demo-color-box bg-primary">
       Primary
       <div class="value">#05b570</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="8">
+  </o-col>
+  <o-col :span="8">
     <div class="demo-color-box bg-primary-light">
       Light Primary
       <div class="value">#01d182</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="8">
+  </o-col>
+  <o-col :span="8">
     <div class="demo-color-box bg-primary-dark">
       Dark Primary
       <div class="value">#059157</div>
     </div>
-  </okendo-col>
-</okendo-row>
+  </o-col>
+</o-row>
 
 ## 辅助色
 
 辅助色是具有代表性的颜色，常用于标示信息提示，比如成功，警告和失败
 
-<okendo-row :gutter="16">
-  <okendo-col :span="8">
+<o-row :gutter="16">
+  <o-col :span="8">
     <div class="demo-color-box bg-success">
       Success
       <div class="value">#05b570</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="8">
+  </o-col>
+  <o-col :span="8">
     <div class="demo-color-box bg-warning">
       Warning
       <div class="value">#fcaa31</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="8">
+  </o-col>
+  <o-col :span="8">
     <div class="demo-color-box bg-error">
       Error
       <div class="value">#ff4c4c</div>
     </div>
-  </okendo-col>
-</okendo-row>
+  </o-col>
+</o-row>
 
 ## 文本颜色
 
 根据不同状态显示不同文本显示
 
-<okendo-row :gutter="16">
-  <okendo-col :span="6">
+<o-row :gutter="16">
+  <o-col :span="6">
     <div class="demo-color-box bg-text-primary">
       Text Primary
       <div class="value">#252627</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="6">
+  </o-col>
+  <o-col :span="6">
     <div class="demo-color-box bg-text-regular">
       Text Regular
       <div class="value">#66686d</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="6">
+  </o-col>
+  <o-col :span="6">
     <div class="demo-color-box bg-text-secondary">
       Text Secondary
       <div class="value">#989ba2</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="6">
+  </o-col>
+  <o-col :span="6">
     <div class="demo-color-box bg-text-placeholder">
       Text PlaceHolder
       <div class="value">#c9ccd3</div>
     </div>
-  </okendo-col>
-</okendo-row>
+  </o-col>
+</o-row>
 
 
 ## 中性色
 
 常用于标示背景，边框，阴影等，用于体现出页面的层次结构
 
-<okendo-row :gutter="16">
-  <okendo-col :span="6">
+<o-row :gutter="16">
+  <o-col :span="6">
     <div class="demo-color-box bg-aid-icon">
       辅助/图标 Icon
       <div class="value">#858994</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="6">
+  </o-col>
+  <o-col :span="6">
     <div class="demo-color-box bg-aid-disabled">
       失效/禁用
       <div class="value">#d0d2d8</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="6">
+  </o-col>
+  <o-col :span="6">
     <div class="demo-color-box bg-aid-border">
       边框
       <div class="value">#dfe0e2</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="6">
+  </o-col>
+  <o-col :span="6">
     <div class="demo-color-box bg-aid-divider">
       分割
       <div class="value">#ebebeb</div>
     </div>
-  </okendo-col>
-</okendo-row>
-<okendo-row :gutter="16">
-  <okendo-col :span="6">
+  </o-col>
+</o-row>
+<o-row :gutter="16">
+  <o-col :span="6">
     <div class="demo-color-box bg-aid-modal">
       弹出层蒙版
       <div class="value">#000 40%</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="6">
+  </o-col>
+  <o-col :span="6">
     <div class="demo-color-box bg-aid-background">
       背景
       <div class="value">#f6f6f6</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="6">
+  </o-col>
+  <o-col :span="6">
     <div class="demo-color-box bg-aid-blank-background">
       黑色背景
       <div class="value">#000</div>
     </div>
-  </okendo-col>
-  <okendo-col :span="6">
+  </o-col>
+  <o-col :span="6">
     <div class="demo-color-box bg-aid-white-background">
       白色背景
       <div class="value">#fff</div>
     </div>
-  </okendo-col>
-</okendo-row>
+  </o-col>
+</o-row>

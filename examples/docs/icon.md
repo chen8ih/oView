@@ -99,7 +99,7 @@
 <ul class="icon-list">
   <li v-for="name in icons" :key="name">
     <span>
-      <okendo-icon :type="name"></okendo-icon>
+      <o-icon :type="name"></o-icon>
       <span class="icon-name">{{'k-i-' + name}}</span>
     </span>
   </li>

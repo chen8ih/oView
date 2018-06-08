@@ -1,2 +1,7 @@
-import OkendoButton from './button.vue'
-export default OkendoButton
+import OButton from './button.vue'
+
+OButton.install = (vue) => {
+  Vue.component(OButton.name, OButton)
+}
+
+export default OButton

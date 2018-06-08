@@ -1,2 +1,7 @@
-import OkendoIcon from './icon.vue'
-export default OkendoIcon
+import OIcon from './icon.vue'
+
+OIcon.install = (vue) => {
+  Vue.component(OIcon.name, OIcon)
+}
+
+export default OIcon

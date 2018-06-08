@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: 'Row',
-  componentName: 'Row', // 自定义属性，用于Col获取当前节点的gutter
+  name: 'ORow',
+  componentName: 'ORow', // 自定义属性，用于Col获取当前节点的gutter
   props: {
     tag: {
       type: String,

@@ -86,6 +86,10 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@progress/kendo-theme-default@^2.53.2":
+  version "2.53.2"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-theme-default/-/kendo-theme-default-2.53.2.tgz#eb105962e9ec42c860f8955a79ef7d592ee5f3df"
+
 "@sinonjs/formatio@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@sinonjs/formatio/-/formatio-2.0.0.tgz#84db7e9eb5531df18a8c5e0bfb6e449e55e654b2"

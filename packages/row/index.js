@@ -1,7 +1,7 @@
-import Row from './row.vue'
+import ORow from './row.vue'
 
-Row.install = (vue) => {
-  Vue.component(Row.name, Row)
+ORow.install = (vue) => {
+  Vue.component(ORow.name, ORow)
 }
 
-export default Row
+export default ORow

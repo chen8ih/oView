@@ -5,7 +5,7 @@
 <script>
 const prefixCls = 'k-icon'
 export default {
-  name: 'OkendoIcon',
+  name: 'OIcon',
   props: {
     type: String,
     size: [Number, String],

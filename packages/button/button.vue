@@ -16,23 +16,23 @@
           'is-circle': circle
         }
       ]">
-      <okendo-icon class="ovu-load-loop" type="load-c" v-if="loading"></okendo-icon>
-      <okendo-icon :type="icon" v-if="icon && !loading"></okendo-icon>
+      <o-icon class="ovu-load-loop" type="load-c" v-if="loading"></o-icon>
+      <o-icon :type="icon" v-if="icon && !loading"></o-icon>
       <span v-if="showSlot" ref="slot"><slot></slot></span>
   </button>
 </template>
 
 <script>
-import OkendoIcon from '../icon'
+import OIcon from '../icon'
 import { oneOf } from '@opp/oview/src/utils/assist'
 
 export default {
-  name: 'OkendoButton',
-  components: { OkendoIcon },
+  name: 'OButton',
+  components: { OIcon },
   props: {
     type: {
       validator (value) {
-        return oneOf(value, ['primary', 'ghost', 'dashed', 'text', 'info', 'success', 'warning', 'error', 'default'])
+        return oneOf(value, ['primary', 'ghost', 'dashed', 'text', 'info', 'success', 'warning', 'danger', 'default'])
       }
     },
     size: {

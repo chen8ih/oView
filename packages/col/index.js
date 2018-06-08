@@ -1,7 +1,7 @@
-import Col from './col.vue'
+import OCol from './col.vue'
 
-Col.install = (vue) => {
-  Vue.component(Col.name, Col)
+OCol.install = (vue) => {
+  Vue.component(OCol.name, OCol)
 }
 
-export default Col
+export default OCol

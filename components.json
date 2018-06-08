@@ -1,5 +1,7 @@
 {
-  "Row": "./packages/row/index.js",
-  "Col": "./packages/col/index.js",
+  "o-row": "./packages/row/index.js",
+  "o-col": "./packages/col/index.js",
+  "o-icon": "./packages/icon/index.js",
+  "o-button": "./packages/button/index.js",
   "Treeselect": "./packages/treeselect/index.js"
 }
