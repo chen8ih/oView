@@ -21,6 +21,7 @@ let i18nHandler = function () {
 }
 
 export const t = function (path, options) {
+  debugger
   let value = i18nHandler.apply(this, arguments)
   if (value !== null && value !== undefined) return value
 

@@ -1,2 +1,7 @@
-import OkendoMessage from './message.vue'
-export default OkendoMessage
+import OMessage from './message.vue'
+
+OMessage.install = (vue) => {
+  Vue.component(OMessage.name, OMessage)
+}
+
+export default OMessage

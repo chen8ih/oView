@@ -1,6 +1,6 @@
 <template>
   <transition name="okendo-alert-fade">
-    <div 
+    <div
     class="okendo-alert"
     :class="[typeClass, center ? 'is-center' : '']"
     v-show="visible"
@@ -52,7 +52,7 @@ export default {
     showIcon: Boolean,
     center: Boolean
   },
-  data() {
+  data () {
     return {
       visiable: true
     }
@@ -60,30 +60,29 @@ export default {
   mounted () {
     if (this.autoHide) {
       setTimeout(() => {
-        this.visiable = false;
-      }, this.hideTime);
+        this.visiable = false
+      }, this.hideTime)
     }
   },
   methods: {
     onClose () {
-      this.visiable = false,
+      this.visiable = false
       this.$emit('close')
     }
   },
   computed: {
     typeClasses () {
-      return `okendo-alert--${ this.type }`
+      return `okendo-alert--${this.type}`
     },
     iconClasses () {
-      return `okendo-icon-${ this.type }` || 'okendo-icon-info'
+      return `okendo-icon-${this.type}` || 'okendo-icon-info'
     },
     isBigIcon () {
       return this.description || this.$slots.default ? 'is-big' : ''
     },
     isBoldTitle () {
-      return this.description || this.$slots.default ? 'is-bold' : '';
+      return this.description || this.$slots.default ? 'is-bold' : ''
     }
   }
 }
 </script>
-

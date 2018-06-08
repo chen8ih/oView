@@ -34,14 +34,14 @@
 然后在页面中引入部分组件， 比如Button 或者 Input
 
     import Vue from 'vue'
-    import { Button, Input } from '@opp/oview'
+    import { OButton, OInput } from '@opp/oview'
     import App from './App.vue'
 
-    Vue.component(Button.name, Button)
-    Vue.component(Input.name, Input)
+    Vue.component(OButton.name, OButton)
+    Vue.component(OInput.name, OInput)
     /* 或者使用
-    * Vue.use(Button)
-    * Vue.use(Input)
+    * Vue.use(OButton)
+    * Vue.use(OInput)
     */
     new Vue({
       el: '#app',

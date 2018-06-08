@@ -28,7 +28,7 @@ const getModal = function () {
   return modalDom
 }
 
-const instances = {};
+const instances = {}
 
 const PopupManager = {
   modalFade: true,
@@ -66,7 +66,7 @@ const PopupManager = {
     }
   },
 
-  openModal: function(id, zIndex, dom, modalClass, modalFade) {
+  openModal: function (id, zIndex, dom, modalClass, modalFade) {
     if (Vue.prototype.$isServer) return
     if (!id || zIndex === undefined) return
     this.modalFade = modalFade
@@ -92,7 +92,7 @@ const PopupManager = {
     }
     setTimeout(() => {
       removeClass(modalDom, 'v-modal-enter')
-    }, 200);
+    }, 200)
 
     if (dom && dom.parentNode && dom.parentNode.nodeType !== 11) {
       dom.parentNode.appendChild(modalDom)
@@ -153,17 +153,17 @@ const PopupManager = {
 
 Object.defineProperty(PopupManager, 'zIndex', {
   configurable: true,
-  get() {
+  get () {
     if (!hasInitZIndex) {
       zIndex = (Vue.prototype.$ELEMENT || {}).zIndex || zIndex
       hasInitZIndex = true
     }
     return zIndex
   },
-  set(value) {
+  set (value) {
     zIndex = value
   }
-});
+})
 
 const getTopPopup = function () {
   if (Vue.prototype.$isServer) return

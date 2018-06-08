@@ -1,10 +1,10 @@
 <template>
   <transition name="okendo-message-fade">
     <div :class="['okendo-message',
-      type && !iconClass ? `okendo-message--${type}`: '', 
-      center ? 'is-center' : '', 
-      showClose ? 'is-closable': '', 
-      customClass]" 
+      type && !iconClass ? `okendo-message--${type}`: '',
+      center ? 'is-center' : '',
+      showClose ? 'is-closable' : '',
+      customClass]"
       v-show="visiable"
       @mouseenter="clearTimer"
       @mouseleave="clearTimer"
@@ -21,7 +21,7 @@
 </template>
 <script>
 export default {
-  name: 'OkendoMessage',
+  name: 'OMessage',
   data () {
     return {
       visiable: false,
@@ -42,13 +42,13 @@ export default {
     iconWrapClass () {
       const classes = ['okendo-message__icon']
       if (this.type && !this.iconClass) {
-        classes.push(`okendo-message__icon--${ this.type }`)
+        classes.push(`okendo-message__icon--${this.type}`)
       }
       return classes
     },
     typeClass () {
       return this.type && !this.iconClass
-        ? `okendo-message__icon okendo-icon-${ this.type }`
+        ? `okendo-message__icon okendo-icon-${this.type}`
         : ''
     }
   },

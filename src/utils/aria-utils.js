@@ -56,7 +56,7 @@ aria.Utils.attemptFocus = function (element) {
   }
   aria.Utils.IgnoreUtilFocusChanges = false
   return (document.activeElement === element)
-};
+}
 
 aria.Utils.isFocusable = function (element) {
   if (element.tabIndex > 0 || (element.tabIndex === 0 && element.getAttribute('tabIndex') !== null)) {
@@ -88,7 +88,7 @@ aria.Utils.isFocusable = function (element) {
  * @param  {String} name
  * @param  {*} opts
  */
-aria.Utils.triggerEvent = function(elm, name, ...opts) {
+aria.Utils.triggerEvent = function (elm, name, ...opts) {
   let eventName
 
   if (/^mouse|click/.test(name)) {
@@ -106,7 +106,7 @@ aria.Utils.triggerEvent = function(elm, name, ...opts) {
     : elm.fireEvent('on' + name, evt)
 
   return elm
-};
+}
 
 aria.Utils.keys = {
   tab: 9,

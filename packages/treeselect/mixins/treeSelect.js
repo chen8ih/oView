@@ -19,6 +19,11 @@ import {
   INPUT_DEBOUNCE_DELAY, MENU_BUFFER
 } from '@opp/oview/src/utils/constants'
 
+// 设置默认多语言
+import { t } from '@opp/oview/src/locale'
+
+console.log(t)
+
 function sortValueByIndex (a, b) {
   let i = 0
   do {
@@ -128,7 +133,7 @@ export default {
      */
     clearAllText: {
       type: String,
-      default: 'Clear all'
+      default: t('o.treeselect.clearall')
     },
 
     /**
@@ -146,7 +151,7 @@ export default {
      */
     clearValueText: {
       type: String,
-      default: 'Clear value'
+      default: t('o.treeselect.clearvalue')
     },
 
     /**
@@ -293,7 +298,7 @@ export default {
      */
     loadingText: {
       type: String,
-      default: 'Loading...'
+      default: t('o.treeselect.loading')
     },
 
     /**
@@ -332,7 +337,7 @@ export default {
      */
     noChildrenText: {
       type: String,
-      default: 'No sub-options.'
+      default: t('o.treeselect.nochildren')
     },
 
     /**
@@ -340,7 +345,7 @@ export default {
      */
     noOptionsText: {
       type: String,
-      default: 'No options available.'
+      default: t('o.treeselect.nooptions')
     },
 
     /**
@@ -348,7 +353,7 @@ export default {
      */
     noResultsText: {
       type: String,
-      default: 'No results found...'
+      default: t('o.treeselect.noresult')
     },
 
     /**
@@ -397,7 +402,7 @@ export default {
      */
     placeholder: {
       type: String,
-      default: 'Select...'
+      default: t('o.treeselect.placeholder')
     },
 
     /**
@@ -413,7 +418,7 @@ export default {
      */
     retryText: {
       type: String,
-      default: 'Retry?'
+      default: t('o.treeselect.retrytext')
     },
 
     /**
@@ -421,7 +426,7 @@ export default {
      */
     retryTitle: {
       type: String,
-      default: 'Click to retry'
+      default: t('o.treeselect.retry')
     },
 
     /**

@@ -10,24 +10,24 @@
       <div class="okendo-msgbox" :class="[customClass, center && 'okendo-msgbox--center']">
         <div class="okendo-msgbox__header" v-if="title !== null">
           <div class="okendo-msgbox__title">
-            <div 
+            <div
             :class="['okendo-msgbox__status', typeClass]"
             v-if="typeClass && center"></div>
             <span>{{ title }}</span>
           </div>
-          <button 
+          <button
             type="button"
-            class="okendo-msgbox__headerbtn" 
-            aria-label="Close" 
-            v-if="showClose" 
-            @click="handleAction('cancel')" 
+            class="okendo-msgbox__headerbtn"
+            aria-label="Close"
+            v-if="showClose"
+            @click="handleAction('cancel')"
             @keydown-enter="handleAction('cancel')">
-            <i class="okendo-msgbox__close okendo-icon-close"></i>  
+            <i class="okendo-msgbox__close okendo-icon-close"></i>
           </button>
         </div>
         <div class="okendo-msgbox__content">
-          <div 
-          :class="['okendo-msgbox__status', typeClass]" 
+          <div
+          :class="['okendo-msgbox__status', typeClass]"
           v-if="typeClass && !center && message !== ''"></div>
           <div class="okendo-msgbox__message" v-if="message !== ''">
             <slot>
@@ -36,45 +36,45 @@
             </slot>
           </div>
           <div class="okendo-msgbox__input" v-show="showInput">
-            <okendo-input 
+            <o-input
               v-model="inputValue"
               :type="inputType"
               @keydown.enter.native="handleInputEnter"
-              :placeholder="inputPlaceholder" 
-              ref="input"></okendo-input>
+              :placeholder="inputPlaceholder"
+              ref="input"></o-input>
               <div class="okendo-msgbox__errormsg" :style="{ visiability: !!editorErrorMessage ? 'visiable' : 'hidden'}">{{ editorErrorMessage }}</div>
           </div>
         </div>
         <div class="okendo-msgbox__btns">
-          <okendo-button 
-          :loading="cancelButtonLoading" 
+          <o-button
+          :loading="cancelButtonLoading"
           :class="[ cancelButtonClasses ]"
-          v-if="showCancelButton" 
-          :round="roundButton" 
-          :size="small" 
+          v-if="showCancelButton"
+          :round="roundButton"
+          :size="small"
           @click.native="handleAction('cancel')"
           @keydown.enter="handleAction('cancel')">
           {{ cancelButtonText || t('okendo.msgbox.cancel')}}
-          </okendo-button>
-          <okendo-button 
-          :loading="confirmButtonLoading" 
+          </o-button>
+          <o-button
+          :loading="confirmButtonLoading"
           :class="[ confirmButtonClasses ]"
-          ref="confirm" 
-          v-show="showConfirmButton" 
+          ref="confirm"
+          v-show="showConfirmButton"
           :round="roundButton"
-          :size="small" 
-          @click.native="handleAction('confirm')" 
+          :size="small"
+          @click.native="handleAction('confirm')"
           @keydown.enter="handleAction('confirm')">
           {{ confirmButtonText || t('okendo.msgbox.confirm')}}
-          </okendo-button>
+          </o-button>
         </div>
       </div>
     </div>
   </transition>
 </template>
 <script>
-import OkendoInput from '../input'
-import OkendoButton from '../button'
+import OInput from '../input'
+import OButton from '../button'
 
 import Popup from '@opp/oview/src/utils/popup'
 import Dialog from '@opp/oview/src/utils/aria-dialog'
@@ -82,7 +82,7 @@ import { addClass, removeClass } from '@opp/oview/src/utils/dom'
 import Locale from '@opp/oview/src/mixins/locale'
 import { t } from '@opp/oview/src/locale'
 
-let msgbox
+// let msgbox
 let typeMap = {
   success: 'success',
   info: 'info',
@@ -121,22 +121,22 @@ export default {
     }
   },
   components: {
-    OkendoInput,
-    OkendoButton
+    OInput,
+    OButton
   },
   computed: {
     typeClass () {
-      return this.type && typeMap[this.type] ? `okendo-icon-${ typeMap[this.type] }` : '';
+      return this.type && typeMap[this.type] ? `okendo-icon-${typeMap[this.type]}` : ''
     },
-    confirmButtonClasses() {
-      return `okendo-button--primary ${ this.confirmButtonClass }`;
+    confirmButtonClasses () {
+      return `okendo-button--primary ${this.confirmButtonClass}`
     },
-    cancelButtonClasses() {
-      return `${ this.cancelButtonClass }`;
+    cancelButtonClasses () {
+      return `${this.cancelButtonClass}`
     }
   },
   methods: {
-    getSafeClose() {
+    getSafeClose () {
       const currentId = this.uid
       return () => {
         this.$nextTick(() => {
@@ -144,7 +144,7 @@ export default {
         })
       }
     },
-    doClose() {
+    doClose () {
       if (!this.visible) return
       this.visible = false
       this._closing = true
@@ -159,17 +159,17 @@ export default {
         if (this.action) this.callback(this.action, this)
       })
     },
-    handleWrapperClick() {
+    handleWrapperClick () {
       if (this.closeOnClickModal) {
         this.handleAction('cancel')
       }
     },
-    handleInputEnter() {
+    handleInputEnter () {
       if (this.inputType !== 'textarea') {
         return this.handleAction('confirm')
       }
     },
-    handleAction(action) {
+    handleAction (action) {
       if (this.$type === 'prompt' && action === 'confirm' && !this.validate()) {
         return
       }
@@ -181,7 +181,7 @@ export default {
         this.doClose()
       }
     },
-    validate() {
+    validate () {
       if (this.$type === 'prompt') {
         const inputPattern = this.inputPattern
         if (inputPattern && !inputPattern.test(this.inputValue || '')) {
@@ -208,12 +208,12 @@ export default {
       removeClass(this.getInputElement(), 'invalid')
       return true
     },
-    getFirstFocus() {
+    getFirstFocus () {
       const btn = this.$el.querySelector('.okendo-message-box__btns .okendo-button')
       const title = this.$el.querySelector('.okendo-message-box__btns .okendo-message-box__title')
-      return btn || title;
+      return btn || title
     },
-    getInputElement() {
+    getInputElement () {
       const inputRefs = this.$refs.input.$refs
       return inputRefs.input || inputRefs.textarea
     }
@@ -221,7 +221,7 @@ export default {
   watch: {
     inputValue: {
       immediate: true,
-      handler(val) {
+      handler (val) {
         this.$nextTick(_ => {
           if (this.$type === 'prompt' && val !== null) {
             this.validate()
@@ -229,9 +229,9 @@ export default {
         })
       }
     },
-    visible(val) {
+    visible (val) {
       if (val) {
-        this.uid++;
+        this.uid++
         if (this.$type === 'alert' || this.$type === 'confirm') {
           this.$nextTick(() => {
             this.$refs.confirm.$el.focus()
@@ -257,19 +257,19 @@ export default {
   mounted () {
     this.$nextTick(() => {
       if (this.closeOnHashChange) {
-        window.addEventListener('hashchange', this.close);
+        window.addEventListener('hashchange', this.close)
       }
     })
   },
   beforeDestroy () {
     if (this.closeOnHashChange) {
-      window.removeEventListener('hashchange', this.close);
+      window.removeEventListener('hashchange', this.close)
     }
     setTimeout(() => {
-      messageBox.closeDialog();
+      messageBox.closeDialog()
     })
   },
-  data() {
+  data () {
     return {
       uid: 1,
       title: undefined,

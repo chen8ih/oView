@@ -41,7 +41,7 @@
 通过鼠标键盘输入字符
 
 <div class="demo-block">
-  <okendo-input v-model="value" placeholder="请输入内容"></okendo-input>
+  <o-input v-model="value" placeholder="请输入内容"></o-input>
 </div>
 <script>
   export default {
@@ -55,7 +55,7 @@
 
 :::demo
 ```html
-<okendo-input v-model="value" placeholder="请输入内容"></okendo-input>
+<o-input v-model="value" placeholder="请输入内容"></o-input>
 <script>
   export default {
     data () {
@@ -71,7 +71,7 @@
 ## 禁用状态
 
 <div class="demo-block">
-  <okendo-input v-model="value1" :disabled="true" placeholder="请输入内容"></okendo-input>
+  <o-input v-model="value1" :disabled="true" placeholder="请输入内容"></o-input>
 </div>
 <script>
   export default {
@@ -83,7 +83,7 @@
 
 :::demo
 ```html
-<okendo-input v-model="value1" :disabled="true" placeholder="请输入内容"></okendo-input>
+<o-input v-model="value1" :disabled="true" placeholder="请输入内容"></o-input>
 <script>
   export default {
     data () {
@@ -98,7 +98,7 @@
 ## 可清空
 
 <div class="demo-block">
-  <okendo-input v-model="value2" placeholder="请输入内容" clearable></okendo-input>
+  <o-input v-model="value2" placeholder="请输入内容" clearable></o-input>
 </div>
 <script>
   export default {
@@ -112,7 +112,7 @@
 
 :::demo
 ```html
-<okendo-input v-model="value2" placeholder="请输入内容" clearable></okendo-input>
+<o-input v-model="value2" placeholder="请输入内容" clearable></o-input>
 <script>
   export default {
     data () {
@@ -128,23 +128,23 @@
 可以通过`prefix-icon`和`suffix-icon`属性在input组件的首部或者尾部增加显示图标，也可以通过`slot`来放置图标
 
 <div class="demo-block">
-  <okendo-input placeholder="请输入内容" 
+  <o-input placeholder="请输入内容" 
            v-model="value3"
            prefix-icon="k-i-search">
-  </okendo-input>
-  <okendo-input placeholder="请输入内容" 
+  </o-input>
+  <o-input placeholder="请输入内容" 
            v-model="value4"
            suffix-icon="k-i-calculator">
-  </okendo-input>
+  </o-input>
   <p>slot 方式</p>
-  <okendo-input placeholder="请输入内容" 
+  <o-input placeholder="请输入内容" 
            v-model="value5">
     <i slot="prefix" class="okendo-input__icon k-icon k-i-search"></i>
-  </okendo-input>
-  <okendo-input placeholder="请输入内容" 
+  </o-input>
+  <o-input placeholder="请输入内容" 
            v-model="value6">
     <i slot="suffix" class="okendo-input__icon k-icon k-i-calculator"></i>
-  </okendo-input>
+  </o-input>
 </div>
 <script>
   export default {
@@ -161,23 +161,23 @@
 
 :::demo
 ```html
-<okendo-input placeholder="请输入内容" 
+<o-input placeholder="请输入内容" 
            v-model="value3"
           prefix-icon="k-i-search">
-</okendo-input>
-<okendo-input placeholder="请输入内容" 
+</o-input>
+<o-input placeholder="请输入内容" 
           v-model="value4"
           suffix-icon="k-i-calculator">
-</okendo-input>
+</o-input>
 <p>slot 方式</p>
-<okendo-input placeholder="请输入内容" 
+<o-input placeholder="请输入内容" 
           v-model="value5">
   <i slot="prefix" class="okendo-input__icon k-icon k-i-search"></i>
-</okendo-input>
-<okendo-input placeholder="请输入内容" 
+</o-input>
+<o-input placeholder="请输入内容" 
           v-model="value6">
   <i slot="suffix" class="okendo-input__icon k-icon k-i-calculator"></i>
-</okendo-input>
+</o-input>
 <script>
   export default {
     data () {
@@ -199,23 +199,23 @@
 
 <div class="demo-block">
   <div>
-    <okendo-input placeholder="请输入内容" v-model="value7">
+    <o-input placeholder="请输入内容" v-model="value7">
       <template slot="prepend">Http://</template>  
-    </okendo-input>
+    </o-input>
   </div>
   <div style="margin-top:10px;">
-    <okendo-input placeholder="请输入内容" v-model="value8">
+    <o-input placeholder="请输入内容" v-model="value8">
       <template slot="append">.com</template>
-    </okendo-input>
+    </o-input>
   </div>
   <div style="margin-top:10px;">
-    <okendo-input placeholder="请输入内容" v-model="value9" class="ovu-input-with-select">
+    <o-input placeholder="请输入内容" v-model="value9" class="ovu-input-with-select">
       <select class="ovu-select" v-model="select" slot="prepend" placeholder="请选择">
         <option value="1">广州</option>
         <option value="2">深圳</option>
         <option value="3">东莞</option>
       </select>
-    </okendo-input>
+    </o-input>
   </div>
 </div>
 <script>
@@ -234,23 +234,23 @@
 :::demo
 ```html
 <div>
-  <okendo-input placeholder="请输入内容" v-model="value7">
+  <o-input placeholder="请输入内容" v-model="value7">
     <template slot="prepend">Http://</template>  
-  </okendo-input>
+  </o-input>
 </div>
 <div style="margin-top:10px;">
-  <okendo-input placeholder="请输入内容" v-model="value8">
+  <o-input placeholder="请输入内容" v-model="value8">
     <template slot="append">.com</template>
-  </okendo-input>
+  </o-input>
 </div>
 <div style="margin-top:10px;">
-  <okendo-input placeholder="请输入内容" v-model="value9" class="ovu-input-with-select">
+  <o-input placeholder="请输入内容" v-model="value9" class="ovu-input-with-select">
     <select class="ovu-select" v-model="select" slot="prepend" placeholder="请选择">
       <option value="1">广州</option>
       <option value="2">深圳</option>
       <option value="3">东莞</option>
     </select>
-  </okendo-input>
+  </o-input>
 </div>
 <script>
   export default {
@@ -273,10 +273,10 @@
 可通过设置`size`属性来指定输入框的尺寸，除了默认的尺寸外，还提供large, small, mini三种尺寸
 
 <div class="demo-block">
-  <okendo-input placeholder="请输入内容" suffix-icon="k-i-search" v-model="value10"></okendo-input>
-  <okendo-input size="medium" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value10"></okendo-input>
-  <okendo-input size="small" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value11"></okendo-input>
-  <okendo-input size="mini" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value12"></okendo-input>
+  <o-input placeholder="请输入内容" suffix-icon="k-i-search" v-model="value10"></o-input>
+  <o-input size="medium" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value10"></o-input>
+  <o-input size="small" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value11"></o-input>
+  <o-input size="mini" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value12"></o-input>
 </div>
 <script>
   export default {
@@ -292,10 +292,10 @@
 
 :::demo
 ```html
-<okendo-input placeholder="请输入内容" suffix-icon="k-i-search" v-model="value10"></okendo-input>
-<okendo-input size="medium" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value10"></okendo-input>
-<okendo-input size="small" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value11"></okendo-input>
-<okendo-input size="mini" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value12"></okendo-input>
+<o-input placeholder="请输入内容" suffix-icon="k-i-search" v-model="value10"></o-input>
+<o-input size="medium" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value10"></o-input>
+<o-input size="small" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value11"></o-input>
+<o-input size="mini" placeholder="请输入内容" suffix-icon="k-i-search" v-model="value12"></o-input>
 <script>
   export default {
     data () {

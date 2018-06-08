@@ -73,7 +73,7 @@ import TreeselectOption from './options'
 import Tip from './tip'
 
 export default {
-  name: 'OTreeselect',
+  name: 'Treeselect',
   components: {
     HiddenField,
     MultiValue,

@@ -27,7 +27,7 @@ aria.Dialog = function (dialog, focusAfterClosed, focusFirst) {
   }
 
   if (typeof focusAfterClosed === 'string') {
-    this.focusAfterClosed = document.getElementById(focusAfterClosed);
+    this.focusAfterClosed = document.getElementById(focusAfterClosed)
   } else if (typeof focusAfterClosed === 'object') {
     this.focusAfterClosed = focusAfterClosed
   } else {

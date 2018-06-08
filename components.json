@@ -3,5 +3,8 @@
   "o-col": "./packages/col/index.js",
   "o-icon": "./packages/icon/index.js",
   "o-button": "./packages/button/index.js",
+  "o-alert": "./packages/alert/index.js",
+  "o-message": "./packages/message/index.js",
+  "o-msgbox": "./packages/msgbox/index.js",
   "Treeselect": "./packages/treeselect/index.js"
 }

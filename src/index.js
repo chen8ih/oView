@@ -7,11 +7,15 @@
 // import { DateinputsInstaller } from '@progress/kendo-dateinputs-vue-wrapper'
 // import { Grid } from '@progress/kendo-grid-vue-wrapper'
 
-// 布局组件
+// 组件
 import ORow from '../packages/row'
 import OCol from '../packages/col'
 import OIcon from '../packages/icon'
 import OButton from '../packages/button'
+import OInput from '../packages/input'
+import OAlert from '../packages/alert'
+import OMessage from '../packages/message'
+// import OMsgbox from '../packages/msgbox'
 import Treeselect from '../packages/treeselect'
 
 import locale from './locale'
@@ -24,6 +28,9 @@ const components = [
   OCol,
   OIcon,
   OButton,
+  OInput,
+  OAlert,
+  OMessage,
   Treeselect
 ]
 
@@ -49,6 +56,9 @@ const API = {
   OCol,
   OIcon,
   OButton,
+  OInput,
+  OAlert,
+  OMessage,
   Treeselect
 }
 

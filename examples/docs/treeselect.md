@@ -5,7 +5,7 @@
 ## 基本用法
 
 <div class="demo-block">
-  <o-treeselect v-model='value' :multiple="true" :options="options"></o-treeselect>
+  <treeselect v-model='value' :multiple="true" :options="options"></treeselect>
 </div>
 
 <script>

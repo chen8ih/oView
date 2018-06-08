@@ -1,9 +1,9 @@
 /* istanbul ignore next */
 
-import Vue from 'vue';
+import Vue from 'vue'
 
 const isServer = Vue.prototype.$isServer
-const SPECIAL_CHARS_REGEXP = /([\:\-\_]+(.))/g
+const SPECIAL_CHARS_REGEXP = /([:-_]+(.))/g
 const MOZ_HACK_REGEXP = /^moz([A-Z])/
 const ieVersion = isServer ? 0 : Number(document.documentMode)
 
@@ -118,7 +118,7 @@ export function removeClass (el, cls) {
 }
 
 /* istanbul ignore next */
-export const getStyle = ieVersion < 9 ? function(element, styleName) {
+export const getStyle = ieVersion < 9 ? function (element, styleName) {
   if (isServer) return
   if (!element || !styleName) return null
   styleName = camelCase(styleName)
@@ -155,7 +155,7 @@ export const getStyle = ieVersion < 9 ? function(element, styleName) {
 }
 
 /* istanbul ignore next */
-export function setStyle(element, styleName, value) {
+export function setStyle (element, styleName, value) {
   if (!element || !styleName) return
 
   if (typeof styleName === 'object') {

@@ -89,9 +89,19 @@
       "path": "/component",
       "items": [
         {
-          "desc": "模态框 Modal",
-          "name": "modal",
-          "path": "/modal"
+          "desc": "警告 Alert",
+          "name": "alert",
+          "path": "/alert"
+        },
+        {
+          "desc": "消息提示 Message",
+          "name": "message",
+          "path": "/message"
+        },
+        {
+          "desc": "弹框消息 Msgbox",
+          "name": "msgbox",
+          "path": "/msgbox"
         },
         {
           "desc": "树形选择框 TreeSelect",

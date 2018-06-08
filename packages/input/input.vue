@@ -71,8 +71,8 @@ import Migrating from '@opp/oview/src/mixins/migrating'
 // import merge from '../../utils/merge'
 import { isKorean } from '@opp/oview/src/utils/assist'
 export default {
-  name: 'OkendoInput',
-  componentName: 'KendoInput',
+  name: 'OInput',
+  componentName: 'OInput',
   mixins: [emitter, Migrating],
   inject: {
     // 父组件向子组件直接传递上下文，配合provide函数使用

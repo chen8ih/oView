@@ -10,10 +10,12 @@ import okendo from '../src/index'
 import '../lib/theme-defaults/index.css'
 import './styles/index.less'
 
+import locale from '../lib/locale/lang/zh-CN'
+
 Vue.config.productionTip = false
 
 Vue.component('DemoBlock', DemoBlock)
-Vue.use(okendo)
+Vue.use(okendo, {locale})
 
 /* eslint-disable no-new */
 new Vue({
