@@ -8,7 +8,8 @@ export default {
       nochildren: 'No sub-options',
       nooptions: 'No options available',
       noresult: 'No results found...',
-      retrytext: 'Retry?'
+      retrytext: 'Retry?',
+      retry: 'Click to retry'
     }
   }
 }
