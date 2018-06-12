@@ -32,7 +32,7 @@ export default {
   props: {
     type: {
       validator (value) {
-        return oneOf(value, ['primary', 'ghost', 'dashed', 'text', 'info', 'success', 'warning', 'danger', 'default'])
+        return oneOf(value, ['primary', 'ghost', 'dashed', 'text', 'info', 'success', 'warning', 'error', 'default'])
       }
     },
     size: {

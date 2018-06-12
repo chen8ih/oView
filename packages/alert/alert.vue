@@ -5,13 +5,13 @@
     :class="[typeClass, center ? 'is-center' : '']"
     v-show="visible"
     role="alert">
-      <i class="okendo-alert__icon" v-if="showIcon" :class="[iconClasses, isBigIcon]"></i>
+      <i class="okendo-alert__icon k-icon" v-if="showIcon" :class="[iconClasses, isBigIcon]"></i>
       <div class="okendo-alert__content">
         <span class="okendo-alert__title" :class="[ isBoldTitle ]" v-if="!!title">{{ title }}</span>
         <slot>
           <p class="okendo-alert__description" v-if="!!description">{{ description }}</p>
         </slot>
-        <i class="okendo-alert__closebtn" :class="{ 'is-customed' : closeText !== '', 'okendo-icon-close': closeText === '' }" v-show="closeable" @click="onClose()">{{ closeText }}</i>
+        <i class="okendo-alert__closebtn" :class="{ 'is-customed' : closeText !== '', 'k-icon k-i-close': closeText === '' }" v-show="closeable" @click="onClose()">{{ closeText }}</i>
       </div>
     </div>
   </transition>
@@ -54,7 +54,7 @@ export default {
   },
   data () {
     return {
-      visiable: true
+      visible: true
     }
   },
   mounted () {
@@ -66,16 +66,16 @@ export default {
   },
   methods: {
     onClose () {
-      this.visiable = false
+      this.visible = false
       this.$emit('close')
     }
   },
   computed: {
-    typeClasses () {
+    typeClass () {
       return `okendo-alert--${this.type}`
     },
     iconClasses () {
-      return `okendo-icon-${this.type}` || 'okendo-icon-info'
+      return `k-i-${this.type}` || 'k-i-info'
     },
     isBigIcon () {
       return this.description || this.$slots.default ? 'is-big' : ''

@@ -15,7 +15,7 @@
         <p v-if="!dangerouslyUseHTMLString" class="okendo-message__content">{{ message }}</p>
         <p v-else v-html="message" class="okendo-message__content"></p>
       </slot>
-      <i v-if="showClose" class="okendo-message__closeBtn okendo-icon-close" @click="close"></i>
+      <i v-if="showClose" class="okendo-message__closeBtn okendo-icon-close k-icon k-i-close" @click="close"></i>
     </div>
   </transition>
 </template>
@@ -39,16 +39,9 @@ export default {
     }
   },
   computed: {
-    iconWrapClass () {
-      const classes = ['okendo-message__icon']
-      if (this.type && !this.iconClass) {
-        classes.push(`okendo-message__icon--${this.type}`)
-      }
-      return classes
-    },
     typeClass () {
       return this.type && !this.iconClass
-        ? `okendo-message__icon okendo-icon-${this.type}`
+        ? `okendo-message__icon okendo-icon-${this.type} k-icon k-i-${this.type}`
         : ''
     }
   },
@@ -63,7 +56,7 @@ export default {
   methods: {
     destoryElement () {
       this.$el.removeEventListener('transitionend', this.destoryElement)
-      this.$destory(true)
+      this.$destroy(true)
       this.$el.parentNode.removeChild(this.$el)
     },
     clearTimer () {

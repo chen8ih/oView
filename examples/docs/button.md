@@ -19,7 +19,7 @@
     <o-button type="primary">primary</o-button>
     <o-button type="success">success</o-button>
     <o-button type="warning">warning</o-button>
-    <o-button type="danger">error</o-button>
+    <o-button type="error">error</o-button>
     <o-button type="info">info</o-button>
   </o-row>
   <o-row>
@@ -27,7 +27,7 @@
     <o-button shape="circle" type="success">primary</o-button>
     <o-button shape="circle" type="success">success</o-button>
     <o-button shape="circle" type="warning">warning</o-button>
-    <o-button shape="circle" type="danger">error</o-button>
+    <o-button shape="circle" type="error">error</o-button>
     <o-button shape="circle" type="info">info</o-button>
   </o-row>
   <o-row>
@@ -35,7 +35,7 @@
     <o-button shape="circle" type="success" icon="edit"></o-button>
     <o-button shape="circle" type="success" icon="check"></o-button>
     <o-button shape="circle" type="warning" icon="delete"></o-button>
-    <o-button shape="circle" type="danger" icon="close"></o-button>
+    <o-button shape="circle" type="error" icon="close"></o-button>
     <o-button shape="circle" type="info" icon="marker-pin-target"></o-button>
   </o-row>
 </div> 
@@ -49,7 +49,7 @@
   <o-button type="primary">primary</o-button>
   <o-button type="success">success</o-button>
   <o-button type="warning">warning</o-button>
-  <o-button type="danger">error</o-button>
+  <o-button type="error">error</o-button>
   <o-button type="info">info</o-button>
 </o-row>
 <o-row>
@@ -57,7 +57,7 @@
   <o-button shape="circle" type="success">primary</o-button>
   <o-button shape="circle" type="success">success</o-button>
   <o-button shape="circle" type="warning">warning</o-button>
-  <o-button shape="circle" type="danger">error</o-button>
+  <o-button shape="circle" type="error">error</o-button>
   <o-button shape="circle" type="info">info</o-button>
 </o-row>
 <o-row>
@@ -65,7 +65,7 @@
   <o-button shape="circle" type="success" icon="edit"></o-button>
   <o-button shape="circle" type="success" icon="check"></o-button>
   <o-button shape="circle" type="warning" icon="delete"></o-button>
-  <o-button shape="circle" type="danger" icon="close"></o-button>
+  <o-button shape="circle" type="error" icon="close"></o-button>
   <o-button shape="circle" type="info" icon="marker-pin-target"></o-button>
 </o-row>
 ```
@@ -81,7 +81,7 @@
     <o-button type="primary" :disabled="true">primary</o-button>
     <o-button type="success" :disabled="true">success</o-button>
     <o-button type="warning" :disabled="true">warning</o-button>
-    <o-button type="danger" :disabled="true">error</o-button>
+    <o-button type="error" :disabled="true">error</o-button>
     <o-button type="info" :disabled="true">info</o-button>
   </o-row>
 </div>
@@ -93,7 +93,7 @@
   <o-button type="primary" :disabled="true">primary</o-button>
   <o-button type="success" :disabled="true">success</o-button>
   <o-button type="warning" :disabled="true">warning</o-button>
-  <o-button type="danger" :disabled="true">error</o-button>
+  <o-button type="error" :disabled="true">error</o-button>
   <o-button type="info" :disabled="true">info</o-button>
 </o-row>
 ```
@@ -156,7 +156,7 @@
 
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
-| type | 类型 | String | primary / success / warning / danger / info / text | - |
+| type | 类型 | String | primary / success / warning / error / info / text | - |
 | size | 尺寸 | String | large / small | - |
 | shape | 形状 | String | circle / circle-outline | - |
 | icon | 图标 | String | - | - |

@@ -1,122 +1,122 @@
-// @import './variable.less';
-// @import './mixins/index.less';
-// @message-prefix-cls: ~"@{css-prefix}message";
+@import './variable.less';
+@import './mixins/index.less';
+@message-prefix-cls: ~"@{css-prefix}message";
 
-// .@{message-prefix-cls} {
-//   min-width: @--message-min-width;
-//   box-sizing: border-box;
-//   border-radius: @--border-radius-base;
-//   border-width: @--border-width-base;
-//   border-style: @--border-style-base;
-//   border-color: @--border-color-lighter;
-//   position: fixed;
-//   left: 50%;
-//   top: 20px;
-//   transform: translateX(-50%);
-//   background-color: @--message-background-color;
-//   transition: opacity 0.3s, transform .4s;
-//   overflow: hidden;
-//   padding: @--message-padding;
-//   display: flex;
-//   align-items: center;
+.@{message-prefix-cls} {
+  min-width: @--message-min-width;
+  box-sizing: border-box;
+  border-radius: @--border-radius-base;
+  border-width: @--border-width-base;
+  border-style: @--border-style-base;
+  border-color: @--border-color-lighter;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: @--message-background-color;
+  transition: opacity 0.3s, transform .4s;
+  overflow: hidden;
+  padding: @--message-padding;
+  display: flex;
+  align-items: center;
 
-//   .@{prefix-state}center {
-//     justify-content: center;
-//   }
+  .@{state-prefix}center {
+    justify-content: center;
+  }
 
-//   .@{prefix-state}closable {
-//     .@{message-prefix-cls}__content {
-//       padding-right: 16px;
-//     }
-//   }
+  .@{state-prefix}closable {
+    .@{message-prefix-cls}__content {
+      padding-right: 16px;
+    }
+  }
 
-//   p {
-//     margin: 0;
-//   }
+  p {
+    margin: 0 30px 0 0;
+  }
 
-//   &--info {
-//     .@{message-prefix-cls}__content {
-//       color: @--message-info-color;
-//     }
-//   }
+  &--info {
+    .@{message-prefix-cls}__content {
+      color: @--message-info-color;
+    }
+  }
 
-//   &--success {
-//     background-color: @--color-success-lighter;
-//     border-color: @--color-success-lighter;
+  &--success {
+    background-color: @--color-success-lighter;
+    border-color: @--color-success-lighter;
 
-//     .@{message-prefix-cls}__success {
-//       color: @--message-success-color;
-//     }
-//   }
+    .@{message-prefix-cls}__success {
+      color: @--message-success-color;
+    }
+  }
 
-//   &--warning {
-//     background-color: @--color-warning-lighter;
-//     border-color: @--color-warning-lighter;
+  &--warning {
+    background-color: @--color-warning-lighter;
+    border-color: @--color-warning-lighter;
 
-//     .@{message-prefix-cls}__warning {
-//       color: @--message-warning-color;
-//     }
-//   }
+    .@{message-prefix-cls}__warning {
+      color: @--message-warning-color;
+    }
+  }
 
-//   &--danger {
-//     background-color: @--color-danger-lighter;
-//     border-color: @--color-danger-lighter;
+  &--error {
+    background-color: @--color-error-lighter;
+    border-color: @--color-error-lighter;
 
-//     .@{message-prefix-cls}__danger {
-//       color: @--message-danger-color;
-//     }
-//   }
+    .@{message-prefix-cls}__error {
+      color: @--message-error-color;
+    }
+  }
 
-//   &--icon {
-//     margin-right: 10px;
-//   }
+  &__icon {
+    margin-right: 6px;
+  }
 
-//   &--content {
-//     padding: 0;
-//     font-size: 14px;
-//     line-height: 1;
-//     &:focus {
-//       outline-width: 0;
-//     }
-//   }
+  &__content {
+    padding: 0;
+    font-size: 14px;
+    line-height: 1;
+    &:focus {
+      outline-width: 0;
+    }
+  }
 
-//   &--closeBtn {
-//     position: absolute;
-//     top: 50%;
-//     right: 15px;
-//     transform: translateY(-50%);
-//     cursor: pointer;
-//     color: @--message-close-color;
-//     font-size: @--message-close-size;
+  &__closeBtn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: @--message-close-color;
+    font-size: @--message-close-size;
 
-//     &:focus {
-//       outline-width: 0;
-//     }
+    &:focus {
+      outline-width: 0;
+    }
 
-//     &:hover {
-//       color: @--message-close-hover-color;
-//     }
-//   }
+    &:hover {
+      color: @--message-close-hover-color;
+    }
+  }
 
-//   & .okendo-icon-success {
-//     color: @--message-success-color;
-//   }
+  & .okendo-icon-success {
+    color: @--message-success-color;
+  }
 
-//   & .okendo-icon-danger {
-//     color: @--message-danger-color;
-//   }
+  & .okendo-icon-error {
+    color: @--message-error-color;
+  }
 
-//   & .okendo-icon-info {
-//     color: @--message-info-color;
-//   }
+  & .okendo-icon-info {
+    color: @--message-info-color;
+  }
 
-//   & .okendo-icon-warning {
-//     color: @--message-color-warning;
-//   }
-// }
+  & .okendo-icon-warning {
+    color: @--message-warning-color;
+  }
+}
 
-// .@{message-prefix-cls}-fade-enter,
-// .@{message-prefix-cls}-fade-leave-active {
-//   opacity: 0;
-//   transform: translate(-50%, -100%);
-// }
+.@{message-prefix-cls}-fade-enter,
+.@{message-prefix-cls}-fade-leave-active {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

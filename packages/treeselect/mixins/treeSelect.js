@@ -22,8 +22,6 @@ import {
 // 设置默认多语言
 import { t } from '@opp/oview/src/locale'
 
-console.log(t)
-
 function sortValueByIndex (a, b) {
   let i = 0
   do {

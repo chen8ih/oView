@@ -32,16 +32,16 @@
 
 @--color-success: #05b570;
 @--color-warning: #fcaa31;
-@--color-danger: #ff4c4c;
+@--color-error: #ff4c4c;
 @--color-info: #05b570;
 
 @--color-success-light: mix(@--color-white, @--color-success, 80%);
 @--color-warning-light: mix(@--color-white, @--color-warning, 80%);
-@--color-danger-light: mix(@--color-white, @--color-danger, 80%);
+@--color-error-light: mix(@--color-white, @--color-error, 80%);
 
 @--color-success-lighter: mix(@--color-white, @--color-success, 90%);
 @--color-warning-lighter: mix(@--color-white, @--color-warning, 90%);
-@--color-danger-lighter: mix(@--color-white, @--color-danger, 90%);
+@--color-error-lighter: mix(@--color-white, @--color-error, 90%);
 
 @--color-text-primary: #252627;
 @--color-text-regular: #66686d;
@@ -142,9 +142,9 @@
 @--btn-warning-fill: @--color-warning;
 @--btn-warning-border: @--color-warning;
 
-@--btn-danger-color: @--color-white;
-@--btn-danger-fill: @--color-danger;
-@--btn-danger-border: @--color-danger;
+@--btn-error-color: @--color-white;
+@--btn-error-fill: @--color-error;
+@--btn-error-border: @--color-error;
 
 @--btn-medium-padding-vertical: 10px;
 @--btn-medium-padding-horizontal: 20px;
@@ -369,7 +369,7 @@
 @--alert-border-radius: @--border-radius-base;
 @--alert-success-color: @--color-success-lighter;
 @--alert-warning-color: @--color-warning-lighter;
-@--alert-danger-color: @--color-danger-lighter;
+@--alert-error-color: @--color-error-lighter;
 
 /* Message
 ------------------------ */
@@ -378,7 +378,11 @@
 @--message-padding: 10px;
 @--message-info-color: @--color-text-secondary;
 @--message-success-color: @--color-success;
-
+@--message-warning-color: @--color-warning;
+@--message-error-color: @--color-error;
+@--message-close-color: #858994;
+@--message-close-size: 16px;
+@--message-close-hover-color: #d0d2d8;
 /* MsgBox
 ------------------------ */
 

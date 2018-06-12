@@ -79,7 +79,7 @@
 
 使用`OIcon`组件, 通过指定图标对应的type属性，示例代码
 
-    <okendo-icon type="calendar"></okendo-icon>
+    <o-icon type="calendar"></o-icon>
 
 渲染后为
 

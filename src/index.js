@@ -30,7 +30,6 @@ const components = [
   OButton,
   OInput,
   OAlert,
-  OMessage,
   Treeselect
 ]
 
@@ -41,6 +40,9 @@ const install = (Vue, opts = {}) => {
   locale.i18n(opts.i18n)
 
   components.map(component => Vue.component(component.name, component))
+
+  // 对于Message等采取插件形式
+  Vue.prototype.$omessage = OMessage
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
