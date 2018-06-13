@@ -1,7 +1,7 @@
-import OMsgbox from './msgbox.vue'
+// import OMsgbox from './msgbox.vue'
 
-OMsgbox.install = (vue) => {
-  Vue.component(OMsgbox.name, OMsgbox)
-}
+// export default OMsgbox
+import Vue from 'vue'
+import OMsgboxComponent from './msgbox.vue'
 
-export default OMsgbox
+import { PopupManager } from '@opp/oview/src/utils/popup'

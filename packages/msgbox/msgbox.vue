@@ -82,7 +82,6 @@ import { addClass, removeClass } from '@opp/oview/src/utils/dom'
 import Locale from '@opp/oview/src/mixins/locale'
 import { t } from '@opp/oview/src/locale'
 
-// let msgbox
 let typeMap = {
   success: 'success',
   info: 'info',
