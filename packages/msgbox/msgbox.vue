@@ -2,7 +2,7 @@
   <transition name="okendo-msgbox-fade">
     <div class="okendo-msgbox__wrapper"
       tabindex="-1"
-      v-show="visiable"
+      v-show="visible"
       @click.self="handleWrapperClick"
       role="dialog"
       aria-modal="true"
@@ -11,8 +11,8 @@
         <div class="okendo-msgbox__header" v-if="title !== null">
           <div class="okendo-msgbox__title">
             <div
-            :class="['okendo-msgbox__status', typeClass]"
-            v-if="typeClass && center"></div>
+            :class="['okendo-msgbox__status', icon]"
+            v-if="icon && center"></div>
             <span>{{ title }}</span>
           </div>
           <button
@@ -22,13 +22,13 @@
             v-if="showClose"
             @click="handleAction('cancel')"
             @keydown-enter="handleAction('cancel')">
-            <i class="okendo-msgbox__close okendo-icon-close"></i>
+            <i class="okendo-msgbox__close okendo-icon-close k-icon k-i-close"></i>
           </button>
         </div>
         <div class="okendo-msgbox__content">
           <div
-          :class="['okendo-msgbox__status', typeClass]"
-          v-if="typeClass && !center && message !== ''"></div>
+          :class="['okendo-msgbox__status', icon]"
+          v-if="icon && !center && message !== ''"></div>
           <div class="okendo-msgbox__message" v-if="message !== ''">
             <slot>
               <p v-if="!dangerouslyUseHTMLString">{{ message }}</p>
@@ -42,7 +42,7 @@
               @keydown.enter.native="handleInputEnter"
               :placeholder="inputPlaceholder"
               ref="input"></o-input>
-              <div class="okendo-msgbox__errormsg" :style="{ visiability: !!editorErrorMessage ? 'visiable' : 'hidden'}">{{ editorErrorMessage }}</div>
+              <div class="okendo-msgbox__errormsg" :style="{ visiability: !!editorErrorMessage ? 'visible' : 'hidden'}">{{ editorErrorMessage }}</div>
           </div>
         </div>
         <div class="okendo-msgbox__btns">
@@ -50,22 +50,20 @@
           :loading="cancelButtonLoading"
           :class="[ cancelButtonClasses ]"
           v-if="showCancelButton"
-          :round="roundButton"
-          :size="small"
+          size="small"
           @click.native="handleAction('cancel')"
           @keydown.enter="handleAction('cancel')">
-          {{ cancelButtonText || t('okendo.msgbox.cancel')}}
+          {{ cancelButtonText || t('o.msgbox.cancel')}}
           </o-button>
           <o-button
           :loading="confirmButtonLoading"
           :class="[ confirmButtonClasses ]"
           ref="confirm"
           v-show="showConfirmButton"
-          :round="roundButton"
-          :size="small"
+          size="small"
           @click.native="handleAction('confirm')"
           @keydown.enter="handleAction('confirm')">
-          {{ confirmButtonText || t('okendo.msgbox.confirm')}}
+          {{ confirmButtonText || t('o.msgbox.confirm')}}
           </o-button>
         </div>
       </div>
@@ -82,6 +80,8 @@ import { addClass, removeClass } from '@opp/oview/src/utils/dom'
 import Locale from '@opp/oview/src/mixins/locale'
 import { t } from '@opp/oview/src/locale'
 
+let OMsgbox
+console.log(Popup)
 let typeMap = {
   success: 'success',
   info: 'info',
@@ -90,7 +90,7 @@ let typeMap = {
 }
 export default {
   mixins: [Popup, Locale],
-  porps: {
+  props: {
     modal: {
       default: true
     },
@@ -101,7 +101,7 @@ export default {
       type: Boolean,
       default: true
     },
-    closeClickModal: {
+    closeOnClickModal: {
       default: true
     },
     closeOnPressEscape: {
@@ -124,8 +124,9 @@ export default {
     OButton
   },
   computed: {
-    typeClass () {
-      return this.type && typeMap[this.type] ? `okendo-icon-${typeMap[this.type]}` : ''
+    icon () {
+      const { type, iconClass } = this
+      return iconClass || (type && typeMap[type] ? `okendo-icon-${typeMap[type]} k-icon k-i-${typeMap[type]}` : '')
     },
     confirmButtonClasses () {
       return `okendo-button--primary ${this.confirmButtonClass}`
@@ -148,7 +149,7 @@ export default {
       this.visible = false
       this._closing = true
       this.onClose && this.onClose()
-      messageBox.closeDialog() // 解绑
+      OMsgbox.closeDialog() // 解绑
       if (this.lockScroll) {
         setTimeout(this.restoreBodyStyle, 200)
       }
@@ -184,7 +185,7 @@ export default {
       if (this.$type === 'prompt') {
         const inputPattern = this.inputPattern
         if (inputPattern && !inputPattern.test(this.inputValue || '')) {
-          this.editorErrorMessage = this.inputErrorMessage || t('el.messagebox.error')
+          this.editorErrorMessage = this.inputErrorMessage || t('o.msgbox.error')
           addClass(this.getInputElement(), 'invalid')
           return false
         }
@@ -192,7 +193,7 @@ export default {
         if (typeof inputValidator === 'function') {
           const validateResult = inputValidator(this.inputValue)
           if (validateResult === false) {
-            this.editorErrorMessage = this.inputErrorMessage || t('el.messagebox.error')
+            this.editorErrorMessage = this.inputErrorMessage || t('o.msgbox.error')
             addClass(this.getInputElement(), 'invalid')
             return false
           }
@@ -237,7 +238,7 @@ export default {
           })
         }
         this.focusAfterClosed = document.activeElement
-        messageBox = new Dialog(this.$el, this.focusAfterClosed, this.getFirstFocus())
+        OMsgbox = new Dialog(this.$el, this.focusAfterClosed, this.getFirstFocus())
       }
       // prompt
       if (this.$type !== 'prompt') return

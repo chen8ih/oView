@@ -49,7 +49,7 @@
   export default {
     methods: {
       hello () {
-        alert('What Are You')
+        alert('Who Are You')
       }
     }
   }

@@ -15,7 +15,7 @@ import OButton from '../packages/button'
 import OInput from '../packages/input'
 import OAlert from '../packages/alert'
 import OMessage from '../packages/message'
-// import OMsgbox from '../packages/msgbox'
+import OMsgbox from '../packages/msgbox'
 import Treeselect from '../packages/treeselect'
 
 import locale from './locale'
@@ -43,6 +43,10 @@ const install = (Vue, opts = {}) => {
 
   // 对于Message等采取插件形式
   Vue.prototype.$omessage = OMessage
+  Vue.prototype.$omsgbox = OMsgbox
+  Vue.prototype.$alert = OMsgbox.alert
+  Vue.prototype.$confirm = OMsgbox.confirm
+  Vue.prototype.$prompt = OMsgbox.prompt
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -61,6 +65,7 @@ const API = {
   OInput,
   OAlert,
   OMessage,
+  OMsgbox,
   Treeselect
 }
 

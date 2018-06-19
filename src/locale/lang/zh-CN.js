@@ -10,6 +10,10 @@ export default {
       noresult: '查找无结果',
       retrytext: '是否重试？',
       retry: '点击重试'
+    },
+    msgbox: {
+      cancel: '取消',
+      confirm: '确认'
     }
   }
 }

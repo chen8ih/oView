@@ -1,0 +1,221 @@
+@import './variable.less';
+@import './mixins/index.less';
+@msgbox-prefix-cls: ~"@{css-prefix}msgbox";
+
+.@{msgbox-prefix-cls} {
+  display: inline-block;
+  width: @--msgbox-width;
+  padding-bottom: 10px;
+  vertical-align: middle;
+  background-color: @--color-white;
+  border-radius: @--msgbox-border-radius;
+  border: 1px solid @--border-color-lighter;
+  font-size: @--msgbox-font-size;
+  box-shadow: @--box-shadow-light;
+  text-align: left;
+  overflow: hidden;
+  backface-visibility: hidden;
+
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 0;
+      vertical-align: middle;
+    }
+  }
+
+  &__header {
+    position: relative;
+    padding: @--msgbox-padding-primary;
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    padding-left: 0;
+    margin-bottom: 0;
+    font-size: @--msgbox-font-size;
+    line-height: 1;
+    color: @--color-text-primary;
+  }
+
+  &__headerbtn {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: @--message-close-size;
+    cursor: pointer;
+
+    .@{msgbox-prefix-cls}__close {
+      color: @--color-info;
+    }
+
+    &:focus, &:hover {
+      .@{msgbox-prefix-cls}__close {
+        color: @--color-primary;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding: 10px @--msgbox-padding-primary;
+    color: @--msgbox-content-color;
+    font-size: @--msgbox-content-font-size;
+  }
+
+  &__input {
+    padding-top: 15px;
+
+    & input.invalid {
+      border-color: @--color-error;
+
+      &:focus {
+        border-color: @--color-error;
+      }
+    }
+  }
+
+  &__status {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+
+    &::before {
+      padding-left: 1px;
+    }
+
+    + .@{msgbox-prefix-cls}__message {
+      padding-left: 36px;
+      padding-right: 12px;
+    }
+
+    &.okendo-icon-success {
+      color: @--msgbox-success-color;
+    }
+
+    &.okendo-icon-info {
+      color: @--msgbox-info-color;
+    }
+
+    &.okendo-icon-warning {
+      color: @--msgbox-warning-color;
+    }
+
+    &.okendo-icon-error {
+      color: @--msgbox-danger-color;
+    }
+  }
+
+  &__message {
+    margin: 0;
+
+    & p {
+      margin: 0;
+      line-height: 24px;
+    }
+  }
+
+  &__errormsg {
+    color: @--color-error;
+    font-size: @--msgbox-error-font-size;
+    min-height: 18px;
+    margin-top: 2px;
+  }
+
+  &__btns {
+    padding: 5px 15px 0;
+    text-align: right;
+
+    & button:nth-child(2) {
+      margin-left: 10px;
+    }
+  }
+
+  &__btn-reverse {
+    flex-direction: row-reverse;
+  }
+  // centerAlign
+  &--center {
+    padding-bottom: 30px;
+
+    .@{msgbox-prefix-cls}__header {
+      padding-top: 30px;
+    }
+
+    .@{msgbox-prefix-cls}__title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .@{msgbox-prefix-cls}__status {
+      position: relative;
+      top: auto;
+      padding-right: 5px;
+      text-align: center;
+      transform: translateY(-1px);
+    }
+
+    .@{msgbox-prefix-cls}__message {
+      margin-left: 0;
+    }
+
+    .@{msgbox-prefix-cls}__btns, .@{msgbox-prefix-cls}__content {
+      text-align: center;
+    }
+
+    .@{msgbox-prefix-cls}__content {
+      @padding-horizontal: @--msgbox-padding-primary + 12px;
+
+      padding-left: @padding-horizontal;
+      padding-right: @padding-horizontal;
+    }
+  }
+}
+
+.okendo-msgbox-fade-enter-active {
+  animation: okendo-msgbox-fade-in .3s;
+}
+
+.okendo-msgbox-fade-leave-active {
+  animation: okendo-msgbox-fade-out .3s;
+}
+
+@keyframes okendo-msgbox-fade-in {
+  0% {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes okendo-msgbox-fade-out {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, -20%, 0);
+    opacity: 0;
+  }
+}

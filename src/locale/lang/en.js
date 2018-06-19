@@ -10,6 +10,10 @@ export default {
       noresult: 'No results found...',
       retrytext: 'Retry?',
       retry: 'Click to retry'
+    },
+    msgbox: {
+      cancel: 'Cancel',
+      confirm: 'Confirm'
     }
   }
 }
