@@ -10,7 +10,7 @@ import okendo from '../src/index'
 import '../lib/theme-defaults/index.css'
 import './styles/index.less'
 
-import locale from '../lib/locale/lang/zh-CN'
+import locale from '../src/locale/lang/zh-CN'
 
 Vue.config.productionTip = false
 

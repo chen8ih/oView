@@ -16,6 +16,8 @@ import OInput from '../packages/input'
 import OAlert from '../packages/alert'
 import OMessage from '../packages/message'
 import OMsgbox from '../packages/msgbox'
+import ODialog from '../packages/dialog'
+import OScrollerbars from '../packages/scrollerbars'
 import Treeselect from '../packages/treeselect'
 
 import locale from './locale'
@@ -30,6 +32,8 @@ const components = [
   OButton,
   OInput,
   OAlert,
+  ODialog,
+  OScrollerbars,
   Treeselect
 ]
 
@@ -66,6 +70,8 @@ const API = {
   OAlert,
   OMessage,
   OMsgbox,
+  ODialog,
+  OScrollerbars,
   Treeselect
 }
 

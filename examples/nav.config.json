@@ -104,6 +104,11 @@
           "path": "/msgbox"
         },
         {
+          "desc": "对话框 Dialog",
+          "name": "dialog",
+          "path": "/dialog"
+        },
+        {
           "desc": "树形选择框 TreeSelect",
           "name": "treeselect",
           "path": "/treeselect"
@@ -118,6 +123,11 @@
           "desc": "菜单 Menu",
           "name": "menu",
           "path": "/menu"
+        },
+        {
+          "desc": "无限滚动 Scrollerbar",
+          "name": "scrollerbar",
+          "path": "/scrollerbar"
         }
       ]
     },

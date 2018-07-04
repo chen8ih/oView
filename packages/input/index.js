@@ -1,6 +1,6 @@
 import OInput from './input.vue'
 
-OInput.install = (vue) => {
+OInput.install = (Vue) => {
   Vue.component(OInput.name, OInput)
 }
 

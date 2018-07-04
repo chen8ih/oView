@@ -1,6 +1,6 @@
 import OAlert from './alert.vue'
 
-OAlert.install = (vue) => {
+OAlert.install = (Vue) => {
   Vue.component(OAlert.name, OAlert)
 }
 

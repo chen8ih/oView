@@ -1,0 +1,124 @@
+@import './variable.less';
+@import './mixins/index.less';
+@dialog-prefix-cls: ~"@{css-prefix}dialog";
+
+.@{dialog-prefix-cls} {
+  position: relative;
+  margin: 0 auto 50px;
+  background: @--color-white;
+  border-radius: @--border-radius-small;
+  box-shadow: @--dialog-box-shadow;
+  box-sizing: border-box;
+  width: 50%;
+
+  .@{state-prefix}-fullscreen {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+    overflow: auto;
+  }
+
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    margin: 0;
+  }
+
+  &__header {
+    padding: @--dialog-padding-primary;
+    padding-bottom: 10px;
+  }
+
+  &__headerbtn {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: @--dialog-close-size;
+
+    .@{dialog-prefix-cls}__close {
+      color: @--color-info;
+    }
+
+    &::focus, &::hover {
+      .@{dialog-prefix-cls}__close {
+        color: @--color-primary;
+      }
+    }
+  }
+
+  &__title {
+    line-height: @--dialog-line-height;
+    font-size: @--dialog-title-font-size;
+    color: @--color-text-primary;
+  }
+
+  &__body {
+    padding: 30px 20px;
+    color: @--color-text-regular;
+    font-size: @--dialog-font-size;
+  }
+
+  &__footer {
+    padding: @--dialog-padding-primary;
+    padding-top: 10px;
+    text-align: right;
+    box-sizing: border-box;
+  }
+
+  // 内容居中布局
+  &--center {
+    text-align: center;
+
+
+    .@{dialog-prefix-cls}__body {
+      text-align: center;
+      padding: 25px (@--dialog-padding-primary + 5px) 30px;
+    }
+
+    .@{dialog-prefix-cls}__footer {
+      text-align: center;
+    }
+  }
+}
+
+.okendo-dialog-fade-enter-active {
+  animation: okendo-dialog-fade-in .3s;
+}
+
+.okendo-dialog-fade-leave-active {
+  animation: okendo-dialog-fade-out .3s;
+}
+
+@keyframes okendo-dialog-fade-in {
+  0% {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes okendo-dialog-fade-out {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+}

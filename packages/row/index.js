@@ -1,6 +1,6 @@
 import ORow from './row.vue'
 
-ORow.install = (vue) => {
+ORow.install = (Vue) => {
   Vue.component(ORow.name, ORow)
 }
 

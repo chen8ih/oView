@@ -1,6 +1,6 @@
 import OCol from './col.vue'
 
-OCol.install = (vue) => {
+OCol.install = (Vue) => {
   Vue.component(OCol.name, OCol)
 }
 

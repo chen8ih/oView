@@ -16,7 +16,7 @@
             <span>{{ title }}</span>
           </div>
           <button
-            type="button"
+            type="default"
             class="okendo-msgbox__headerbtn"
             aria-label="Close"
             v-if="showClose"
@@ -53,7 +53,7 @@
           size="small"
           @click.native="handleAction('cancel')"
           @keydown.enter="handleAction('cancel')">
-          {{ cancelButtonText || t('o.msgbox.cancel')}}
+          {{cancelButtonText || t('o.msgbox.cancel')}}
           </o-button>
           <o-button
           :loading="confirmButtonLoading"
@@ -63,7 +63,7 @@
           size="small"
           @click.native="handleAction('confirm')"
           @keydown.enter="handleAction('confirm')">
-          {{ confirmButtonText || t('o.msgbox.confirm')}}
+          {{confirmButtonText || t('o.msgbox.confirm')}}
           </o-button>
         </div>
       </div>
@@ -81,7 +81,6 @@ import Locale from '@opp/oview/src/mixins/locale'
 import { t } from '@opp/oview/src/locale'
 
 let OMsgbox
-console.log(Popup)
 let typeMap = {
   success: 'success',
   info: 'info',

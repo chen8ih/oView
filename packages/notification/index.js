@@ -1,6 +1,6 @@
 import ONotification from './notification.vue'
 
-ONotification.install = (vue) => {
+ONotification.install = (Vue) => {
   Vue.component(ONotification.name, ONotification)
 }
 

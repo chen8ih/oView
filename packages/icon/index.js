@@ -1,6 +1,6 @@
 import OIcon from './icon.vue'
 
-OIcon.install = (vue) => {
+OIcon.install = (Vue) => {
   Vue.component(OIcon.name, OIcon)
 }
 
