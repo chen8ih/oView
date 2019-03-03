@@ -1,0 +1,77 @@
+## Sentry优点
+
+* 多项目，多用户
+* 界面友好，功能完善，支持前后端多种语言
+* 可以配置异常发出规则，发送邮件等
+* 支持本地化部署
+
+## Sentry云服务版的配置和使用
+
+1. 注册账号,新建项目，获取DSN
+  https://sentry.io/auth/login/
+  注册账号或者直接使用github账号登陆，登陆后，进行首页->新建项目之后，点击settings,可以设置错误日志收集条件，其中客户端dsn（结构：协议://公钥:私钥@sentry平台地址／sentryId）, 在sentry客户端raven安装配置中会用到
+
+2. 配置客户端 (以Vue项目为例)
+  
+  在Vue项目中安装raven-js
+
+    npm install raven-js --save
+
+  在页面的app.js(或者其他名称的主Js文件，如main.js)中加入如下代码
+
+  ···js
+    import Vue from 'vue';
+    import Raven from 'raven-js';
+    import RavenVue from 'raven-js/plugins/vue';
+
+    Raven
+        .config('your DSN')
+        .addPlugin(RavenVue, Vue)
+        .install();
+  ···
+  这里的DSN指的是Sentry为每个项目配置的用来接入服务的链接
+
+  运行<red>npm run build</red>, 并将dist中的文件上传至Sentry中就可以捕获错误了
+
+3. 利用webpack打包文件并上传文件至Sentry中
+
+  Webpack有着非常多的source map模式，我们使用在生产环境下默认的“source-map”模式。我们可以发现在dist/static/js文件夹中每一个js文件都有着相对应的map文件。我们需要做的就是将这些map文件上传并将其与服务器上的js文件进行对应从而还原出原有的js文件
+
+  vue配合webpack,自动上传js,map文件到Sentry错误日志系统
+
+  使用sentry-webpack-plugin,自动将生成的jsmap文件上传
+
+  webpack.prod.conf中的配置
+
+    1. 安装 npm i @sentry/webpack-plugin -D
+    2. 添加配置文件.sentryclirc
+
+      在项目的跟目录下，添加配置文件.sentryclirc
+      [defaults]
+      url = https://sentry.io/
+      org = test-mb
+      project = myblog
+
+      [auth]
+      token =xxxxxxx
+
+    3. const SentryPlugin = require('@sentry/webpack-plugin')
+       new SentryPlugin({
+          release: process.env.RELEASE,                           //发布的版本
+          include: path.join(__dirname,'../dist/static/js/'), //需要上传到sentry服务器的资源目录,会自动匹配js 以及map文件
+          ignore: ['node_modules', 'webpack.config.js'],  //  忽略文件目录,当然我们在inlcude中制定了文件路径,这个忽略目录可以不加
+          configFile :`${__dirname}/sentry.properties`,   //  使用了类似于java的properties配置文件,里面包含了 -o组织 -p项目 以及authtoken
+          urlPrefix : "~/static/js"           //  线上对应的url资源的相对路径 比如我的域名是 http://mydomin.com/,静态资源都在 static文件夹里面,
+        })
+
+  配置完成后，重新打包编译文件并运行
+
+## Sentry异常反馈的结果显示
+
+    多出版本信息
+    多出原始、最小化的标签
+    这次的错误提示，不是压缩后JS的提示，而是看起来和源代码一样
+
+## 总结
+
+Sentry 的目的是为了让我们专注于系统与程序的异常信息，目的是提高排查问题的效率
